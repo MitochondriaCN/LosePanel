@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LoseNoneVisualization.Background
+namespace LoseNoneVisualization.DataSystem
 {
     class DataProvider
     {

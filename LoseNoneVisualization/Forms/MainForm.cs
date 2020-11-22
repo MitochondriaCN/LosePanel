@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LoseNoneVisualization.Background;
+using LoseNoneVisualization.DataSystem;
 
 namespace LoseNoneVisualization
 {
