@@ -38,7 +38,7 @@ namespace LosePanel
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblOnlinePlayerNumber = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblProviderName = new System.Windows.Forms.Label();
             this.lblLoseNoneAnalStat = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -64,9 +64,9 @@ namespace LosePanel
             this.tblMainLayouter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tblMainLayouter.Name = "tblMainLayouter";
             this.tblMainLayouter.RowCount = 3;
+            this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
             this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 28F));
+            this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 76F));
             this.tblMainLayouter.Size = new System.Drawing.Size(976, 444);
             this.tblMainLayouter.TabIndex = 0;
             // 
@@ -76,9 +76,9 @@ namespace LosePanel
             this.lblTitle.Font = new System.Drawing.Font("微软雅黑 Light", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTitle.Location = new System.Drawing.Point(3, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(212, 38);
+            this.lblTitle.Size = new System.Drawing.Size(221, 38);
             this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "洛书面板- 实时";
+            this.lblTitle.Text = "洛书面板 - 实时";
             // 
             // tableLayoutPanel1
             // 
@@ -90,14 +90,15 @@ namespace LosePanel
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblOnlinePlayerNumber, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblProviderName, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblLoseNoneAnalStat, 4, 0);
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 41);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 55);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 20);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -109,26 +110,28 @@ namespace LosePanel
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "在线玩家";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblOnlinePlayerNumber
             // 
             this.lblOnlinePlayerNumber.AutoSize = true;
             this.lblOnlinePlayerNumber.Location = new System.Drawing.Point(65, 0);
             this.lblOnlinePlayerNumber.Name = "lblOnlinePlayerNumber";
-            this.lblOnlinePlayerNumber.Size = new System.Drawing.Size(15, 17);
+            this.lblOnlinePlayerNumber.Size = new System.Drawing.Size(32, 17);
             this.lblOnlinePlayerNumber.TabIndex = 1;
-            this.lblOnlinePlayerNumber.Text = "0";
+            this.lblOnlinePlayerNumber.Text = "未知";
+            this.lblOnlinePlayerNumber.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label2
+            // lblProviderName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(86, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(605, 23);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "LoseNone 统计器";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblProviderName.AutoSize = true;
+            this.lblProviderName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblProviderName.Location = new System.Drawing.Point(849, 0);
+            this.lblProviderName.Name = "lblProviderName";
+            this.lblProviderName.Size = new System.Drawing.Size(112, 23);
+            this.lblProviderName.TabIndex = 2;
+            this.lblProviderName.Text = "正在连接数据源……";
+            this.lblProviderName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblLoseNoneAnalStat
             // 
@@ -136,18 +139,17 @@ namespace LosePanel
             this.lblLoseNoneAnalStat.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblLoseNoneAnalStat.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblLoseNoneAnalStat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(728, 0);
+            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(967, 0);
             this.lblLoseNoneAnalStat.Name = "lblLoseNoneAnalStat";
-            this.lblLoseNoneAnalStat.Size = new System.Drawing.Size(239, 23);
+            this.lblLoseNoneAnalStat.Size = new System.Drawing.Size(0, 23);
             this.lblLoseNoneAnalStat.TabIndex = 4;
-            this.lblLoseNoneAnalStat.Text = "正在以 5 秒一次的频率从服务器获得数据。";
             this.lblLoseNoneAnalStat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::LosePanel.Properties.Resources.Tick_24px_1061514_easyicon_net;
-            this.pictureBox1.Location = new System.Drawing.Point(697, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(818, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 17);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -159,10 +161,10 @@ namespace LosePanel
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 67);
+            this.tabControl1.Location = new System.Drawing.Point(3, 81);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(970, 374);
+            this.tabControl1.Size = new System.Drawing.Size(970, 360);
             this.tabControl1.TabIndex = 2;
             // 
             // tabPage1
@@ -171,7 +173,7 @@ namespace LosePanel
             this.tabPage1.Location = new System.Drawing.Point(4, 4);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(962, 344);
+            this.tabPage1.Size = new System.Drawing.Size(962, 330);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "在线人数";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -227,7 +229,7 @@ namespace LosePanel
             series1.ShadowOffset = 1;
             series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
             this.chartOnlinePlayers.Series.Add(series1);
-            this.chartOnlinePlayers.Size = new System.Drawing.Size(956, 338);
+            this.chartOnlinePlayers.Size = new System.Drawing.Size(956, 324);
             this.chartOnlinePlayers.TabIndex = 0;
             this.chartOnlinePlayers.Text = "chart1";
             title1.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -269,7 +271,7 @@ namespace LosePanel
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartOnlinePlayers;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblProviderName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblLoseNoneAnalStat;
     }

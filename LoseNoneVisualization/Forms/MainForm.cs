@@ -13,7 +13,7 @@ namespace LosePanel
 {
     public partial class MainForm : Form
     {
-        LosenoneDataProvider dp = new LosenoneDataProvider();
+        IDataProvidable dp = new LosenoneDataProvider();
 
         Timer timer = new Timer();
 
@@ -28,7 +28,6 @@ namespace LosePanel
         public MainForm()
         {
             InitializeComponent();
-            chartOnlinePlayers.Series[0].Points.DataBindXY(LosenoneDataProvider.Constants.olPlayerHours, dp.olPlayerNumber);
 
             //设置Timer
             timer.Interval = 5000;
@@ -38,7 +37,18 @@ namespace LosePanel
 
         private void UpdateDataDisplay(object sender, EventArgs e)
         {
+            lblProviderName.Text = "数据源：" + dp.ProviderName;
             lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
+            if (dp.IsConnected)
+            {
+                lblLoseNoneAnalStat.Text = "正在以 5 秒一次的频率从数据源获得数据。";
+                lblLoseNoneAnalStat.ForeColor = Color.Black;
+            }
+            else
+            {
+                lblLoseNoneAnalStat.Text = "无法连接到统计服务器。";
+                lblLoseNoneAnalStat.ForeColor = Color.Red;
+            }
         }
     }
 }
