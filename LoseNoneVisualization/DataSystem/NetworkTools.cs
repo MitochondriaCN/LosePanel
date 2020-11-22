@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Net;
 using System.IO;
 
-namespace LoseNoneVisualization.DataSystem
+namespace LosePanel.DataSystem
 {
     static class NetworkTools
     {

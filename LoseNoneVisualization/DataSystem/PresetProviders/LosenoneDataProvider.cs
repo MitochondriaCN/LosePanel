@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LoseNoneVisualization.DataSystem
+namespace LosePanel.DataSystem
 {
-    class DataProvider
+    class LosenoneDataProvider : IDataProvidable
     {
         #region 计时器
         /// <summary>
@@ -53,7 +53,7 @@ namespace LoseNoneVisualization.DataSystem
             21, 21.5, 22, 22.5, 23, 23.5 };
         }
 
-        public DataProvider()
+        public LosenoneDataProvider()
         {
             //初始化计时器
             _5secTimer.Interval = 5000;

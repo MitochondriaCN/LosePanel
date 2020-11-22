@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LoseNoneVisualization.DataSystem;
+using LosePanel.DataSystem;
 
-namespace LoseNoneVisualization
+namespace LosePanel
 {
     public partial class MainForm : Form
     {
-        DataProvider dp = new DataProvider();
+        LosenoneDataProvider dp = new LosenoneDataProvider();
 
         Timer timer = new Timer();
 
         public MainForm()
         {
             InitializeComponent();
-            chartOnlinePlayers.Series[0].Points.DataBindXY(DataProvider.Constants.olPlayerHours, dp.olPlayerNumber);
+            chartOnlinePlayers.Series[0].Points.DataBindXY(LosenoneDataProvider.Constants.olPlayerHours, dp.olPlayerNumber);
 
             //设置Timer
             timer.Interval = 5000;

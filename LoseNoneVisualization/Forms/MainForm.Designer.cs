@@ -1,5 +1,5 @@
 ﻿
-namespace LoseNoneVisualization
+namespace LosePanel
 {
     partial class MainForm
     {
@@ -146,7 +146,7 @@ namespace LoseNoneVisualization
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::LoseNoneVisualization.Properties.Resources.Tick_24px_1061514_easyicon_net;
+            this.pictureBox1.Image = global::LosePanel.Properties.Resources.Tick_24px_1061514_easyicon_net;
             this.pictureBox1.Location = new System.Drawing.Point(697, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 17);
