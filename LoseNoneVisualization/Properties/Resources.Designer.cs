@@ -63,6 +63,16 @@ namespace LosePanel.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap Cloud_256px_1075710_easyicon_net {
+            get {
+                object obj = ResourceManager.GetObject("Cloud_256px_1075710_easyicon.net", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Tick_24px_1061514_easyicon_net {
             get {
                 object obj = ResourceManager.GetObject("Tick_24px_1061514_easyicon.net", resourceCulture);

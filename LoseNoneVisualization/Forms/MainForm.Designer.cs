@@ -29,10 +29,10 @@ namespace LosePanel
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tblMainLayouter = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -42,14 +42,20 @@ namespace LosePanel
             this.lblLoseNoneAnalStat = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tbpOnlinePlayers = new System.Windows.Forms.TabPage();
             this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tbpSettings = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbDataProvider = new System.Windows.Forms.ComboBox();
             this.tblMainLayouter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tbpOnlinePlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
+            this.tbpSettings.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMainLayouter
@@ -98,7 +104,7 @@ namespace LosePanel
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(970, 20);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
@@ -148,7 +154,7 @@ namespace LosePanel
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::LosePanel.Properties.Resources.Tick_24px_1061514_easyicon_net;
+            this.pictureBox1.Image = global::LosePanel.Properties.Resources.Cloud_256px_1075710_easyicon_net;
             this.pictureBox1.Location = new System.Drawing.Point(818, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 17);
@@ -159,7 +165,8 @@ namespace LosePanel
             // tabControl1
             // 
             this.tabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tbpOnlinePlayers);
+            this.tabControl1.Controls.Add(this.tbpSettings);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 81);
             this.tabControl1.Name = "tabControl1";
@@ -167,75 +174,125 @@ namespace LosePanel
             this.tabControl1.Size = new System.Drawing.Size(970, 360);
             this.tabControl1.TabIndex = 2;
             // 
-            // tabPage1
+            // tbpOnlinePlayers
             // 
-            this.tabPage1.Controls.Add(this.chartOnlinePlayers);
-            this.tabPage1.Location = new System.Drawing.Point(4, 4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(962, 330);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "在线人数";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tbpOnlinePlayers.Controls.Add(this.chartOnlinePlayers);
+            this.tbpOnlinePlayers.Location = new System.Drawing.Point(4, 4);
+            this.tbpOnlinePlayers.Name = "tbpOnlinePlayers";
+            this.tbpOnlinePlayers.Padding = new System.Windows.Forms.Padding(3);
+            this.tbpOnlinePlayers.Size = new System.Drawing.Size(962, 330);
+            this.tbpOnlinePlayers.TabIndex = 0;
+            this.tbpOnlinePlayers.Text = "在线人数";
+            this.tbpOnlinePlayers.UseVisualStyleBackColor = true;
             // 
             // chartOnlinePlayers
             // 
-            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.IsMarginVisible = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX.MajorGrid.Interval = 1D;
-            chartArea1.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea1.AxisX.MajorTickMark.Enabled = false;
-            chartArea1.AxisX.Title = "从 0 点开始的小时数";
-            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
-            chartArea1.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.None;
-            chartArea1.AxisY.Title = "玩家数";
-            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.BackColor = System.Drawing.Color.White;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea1.CursorX.LineColor = System.Drawing.Color.Black;
-            chartArea1.CursorX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea1.Name = "ctaPlayers";
-            this.chartOnlinePlayers.ChartAreas.Add(chartArea1);
+            chartArea3.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea3.AxisX.IsLabelAutoFit = false;
+            chartArea3.AxisX.IsMarginVisible = false;
+            chartArea3.AxisX.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisX.MajorGrid.Interval = 1D;
+            chartArea3.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea3.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisX.MajorTickMark.Enabled = false;
+            chartArea3.AxisX.Title = "从 0 点开始的小时数";
+            chartArea3.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
+            chartArea3.AxisX.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea3.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.None;
+            chartArea3.AxisY.Title = "玩家数";
+            chartArea3.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
+            chartArea3.AxisY.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea3.BackColor = System.Drawing.Color.White;
+            chartArea3.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea3.CursorX.LineColor = System.Drawing.Color.Black;
+            chartArea3.CursorX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea3.Name = "ctaPlayers";
+            this.chartOnlinePlayers.ChartAreas.Add(chartArea3);
             this.chartOnlinePlayers.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend1.IsTextAutoFit = false;
-            legend1.Name = "lgnNormal";
-            legend1.Title = "图例";
-            this.chartOnlinePlayers.Legends.Add(legend1);
+            legend3.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend3.IsTextAutoFit = false;
+            legend3.Name = "lgnNormal";
+            legend3.Title = "图例";
+            this.chartOnlinePlayers.Legends.Add(legend3);
             this.chartOnlinePlayers.Location = new System.Drawing.Point(3, 3);
             this.chartOnlinePlayers.Name = "chartOnlinePlayers";
-            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series1.BorderWidth = 3;
-            series1.ChartArea = "ctaPlayers";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.RoyalBlue;
-            series1.Font = new System.Drawing.Font("Arial", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
-            series1.Legend = "lgnNormal";
-            series1.LegendText = "在线玩家数";
-            series1.MarkerBorderColor = System.Drawing.Color.RoyalBlue;
-            series1.MarkerColor = System.Drawing.Color.RoyalBlue;
-            series1.MarkerSize = 6;
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "serOnlinePlayerNumber";
-            series1.ShadowColor = System.Drawing.Color.White;
-            series1.ShadowOffset = 1;
-            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
-            this.chartOnlinePlayers.Series.Add(series1);
+            series3.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            series3.BorderWidth = 3;
+            series3.ChartArea = "ctaPlayers";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.RoyalBlue;
+            series3.Font = new System.Drawing.Font("Arial", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series3.IsValueShownAsLabel = true;
+            series3.Legend = "lgnNormal";
+            series3.LegendText = "在线玩家数";
+            series3.MarkerBorderColor = System.Drawing.Color.RoyalBlue;
+            series3.MarkerColor = System.Drawing.Color.RoyalBlue;
+            series3.MarkerSize = 6;
+            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series3.Name = "serOnlinePlayerNumber";
+            series3.ShadowColor = System.Drawing.Color.White;
+            series3.ShadowOffset = 1;
+            series3.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
+            this.chartOnlinePlayers.Series.Add(series3);
             this.chartOnlinePlayers.Size = new System.Drawing.Size(956, 324);
             this.chartOnlinePlayers.TabIndex = 0;
             this.chartOnlinePlayers.Text = "chart1";
-            title1.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            title1.Name = "titRealtimePlayers";
-            title1.Text = "实时玩家数";
-            this.chartOnlinePlayers.Titles.Add(title1);
+            title3.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            title3.Name = "titRealtimePlayers";
+            title3.Text = "实时玩家数";
+            this.chartOnlinePlayers.Titles.Add(title3);
+            // 
+            // tbpSettings
+            // 
+            this.tbpSettings.Controls.Add(this.tableLayoutPanel2);
+            this.tbpSettings.Location = new System.Drawing.Point(4, 4);
+            this.tbpSettings.Name = "tbpSettings";
+            this.tbpSettings.Size = new System.Drawing.Size(962, 330);
+            this.tbpSettings.TabIndex = 1;
+            this.tbpSettings.Text = "设置";
+            this.tbpSettings.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 386F));
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cmbDataProvider, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(962, 21);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "数据源";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbDataProvider
+            // 
+            this.cmbDataProvider.FormattingEnabled = true;
+            this.cmbDataProvider.Items.AddRange(new object[] {
+            "洛书南统计服务器",
+            "自定义数据源……"});
+            this.cmbDataProvider.Location = new System.Drawing.Point(53, 3);
+            this.cmbDataProvider.Name = "cmbDataProvider";
+            this.cmbDataProvider.Size = new System.Drawing.Size(201, 25);
+            this.cmbDataProvider.TabIndex = 1;
             // 
             // MainForm
             // 
@@ -255,8 +312,12 @@ namespace LosePanel
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tbpOnlinePlayers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).EndInit();
+            this.tbpSettings.ResumeLayout(false);
+            this.tbpSettings.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,11 +330,15 @@ namespace LosePanel
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblOnlinePlayerNumber;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tbpOnlinePlayers;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartOnlinePlayers;
         private System.Windows.Forms.Label lblProviderName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblLoseNoneAnalStat;
+        private System.Windows.Forms.TabPage tbpSettings;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbDataProvider;
     }
 }
 

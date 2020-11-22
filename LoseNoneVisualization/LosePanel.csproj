@@ -86,5 +86,8 @@
   <ItemGroup>
     <None Include="Resources\Tick_24px_1061514_easyicon.net.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cloud_256px_1075710_easyicon.net.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

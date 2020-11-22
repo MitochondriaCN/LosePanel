@@ -33,6 +33,9 @@ namespace LosePanel
             timer.Interval = 5000;
             timer.Tick += UpdateDataDisplay;
             timer.Start();
+
+            //设置控件
+            this.cmbDataProvider.SelectedIndex = 0;
         }
 
         private void UpdateDataDisplay(object sender, EventArgs e)
@@ -49,6 +52,9 @@ namespace LosePanel
                 lblLoseNoneAnalStat.Text = "无法连接到统计服务器。";
                 lblLoseNoneAnalStat.ForeColor = Color.Red;
             }
+
+            chartOnlinePlayers.Series[0].Points.DataBindXY(OnlinePlayerAxis, dp.PlayerNumberDuringDay);
         }
+
     }
 }
