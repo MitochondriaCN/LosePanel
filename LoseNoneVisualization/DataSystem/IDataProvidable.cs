@@ -33,5 +33,15 @@ namespace LosePanel.DataSystem
         /// 此数据提供器的名称。
         /// </summary>
         string ProviderName { get; }
+
+        /// <summary>
+        /// 此数据提供器的介绍和描述。
+        /// </summary>
+        string Description { get; }
+
+        /// <summary>
+        /// 此数据提供器的开发者。
+        /// </summary>
+        string WrittenBy { get; }
     }
 }

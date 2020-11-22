@@ -32,6 +32,22 @@ namespace LosePanel.DataSystem
 
         public string ProviderName { get { return "洛书南统计服务器"; } }
 
+        public string Description
+        {
+            get
+            {
+                return "本数据源由洛书南（Losenone）团队提供，线粒体（XianlitiCN）开发。" +
+                  "它可以提供洛书南服务器的各项信息，包括日志系统。此外，该数据源也作为其它" +
+                  "数据源的开发范例，为广大开发者提供指导。为了保护洛书南服务器的内部信息，它的源码" +
+                  "暂不能提供。\n洛书南服务器官网：losenone.cn";
+            }
+        }
+
+        public string WrittenBy
+        {
+            get { return "洛书南 Losenone && 线粒体 XianlitiCN"; }
+        }
+
         public LosenoneDataProvider()
         {
             //初始化各成员

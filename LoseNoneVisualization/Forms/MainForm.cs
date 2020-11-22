@@ -36,6 +36,9 @@ namespace LosePanel
 
             //设置控件
             this.cmbDataProvider.SelectedIndex = 0;
+            lblAbtProviderName.Text = dp.ProviderName;
+            lblAbtWrittenBy.Text = dp.WrittenBy;
+            rtbAbtDescription.Text = dp.Description;
         }
 
         private void UpdateDataDisplay(object sender, EventArgs e)
@@ -56,5 +59,9 @@ namespace LosePanel
             chartOnlinePlayers.Series[0].Points.DataBindXY(OnlinePlayerAxis, dp.PlayerNumberDuringDay);
         }
 
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
