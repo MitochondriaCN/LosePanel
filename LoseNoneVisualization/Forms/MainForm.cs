@@ -29,6 +29,10 @@ namespace LosePanel
         {
             InitializeComponent();
 
+            //设置字体
+            //Font FZYH = new Font(Program.CustomFont.Families[0], 11);
+            //this.Font = FZYH;
+
             //设置Timer
             timer.Interval = 5000;
             timer.Tick += UpdateDataDisplay;

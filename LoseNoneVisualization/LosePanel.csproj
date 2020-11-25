@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\FangZhengYouHeiJianTi-1.ttf" />
+    <None Include="Resources\NotoSansCJK-Regular-1.otf" />
+    <None Include="Resources\SourceHanSans-Medium.ttf" />
     <None Include="Resources\Tick_24px_1061514_easyicon.net.png" />
   </ItemGroup>
   <ItemGroup>

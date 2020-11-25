@@ -71,12 +71,42 @@ namespace LosePanel.Properties {
         }
         
         /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] FZYH {
+            get {
+                object obj = ResourceManager.GetObject("FZYH", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap logo_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("logo-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] NTS {
+            get {
+                object obj = ResourceManager.GetObject("NTS", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Byte[] 类型的本地化资源。
+        /// </summary>
+        internal static byte[] NTSTTF {
+            get {
+                object obj = ResourceManager.GetObject("NTSTTF", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
