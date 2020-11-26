@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
+using LosePanel.SDK;
+using LosePanel.DataSystem;
 
-namespace LosePanel.DataSystem
+namespace LosePanel.Presets
 {
     class LosenoneDataProvider : IDataProvidable
     {
@@ -75,7 +77,7 @@ namespace LosePanel.DataSystem
                 OnlinePlayerNumber = int.Parse(onlinenum);
                 IsConnected = true;
             }
-            catch (Exception ex)
+            catch
             {
                 IsConnected = false;
                 OnlinePlayerNumber = 0;

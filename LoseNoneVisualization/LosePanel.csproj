@@ -47,8 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSystem\PresetProviders\LosenoneDataProvider.cs" />
-    <Compile Include="DataSystem\IDataProvidable.cs" />
+    <Compile Include="Presets\LosenoneDataProvider.cs" />
     <Compile Include="DataSystem\NetworkTools.cs" />
     <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
@@ -95,6 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LosePanel.SDK\LosePanel.SDK.csproj">
+      <Project>{543da473-a7ff-4ed2-b35b-e7f4d76f9601}</Project>
+      <Name>LosePanel.SDK</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

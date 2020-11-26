@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LosePanel.DataSystem
+namespace LosePanel.SDK
 {
     /// <summary>
     /// 表示一个数据源。一般来讲，由于面板并不需要修改服务器数据，因此在实现本接口时，

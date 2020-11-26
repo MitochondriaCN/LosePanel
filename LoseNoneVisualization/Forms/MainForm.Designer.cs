@@ -1,5 +1,5 @@
 ﻿
-namespace LosePanel
+namespace LosePanel.Forms
 {
     partial class MainForm
     {

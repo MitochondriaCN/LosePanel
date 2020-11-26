@@ -7,9 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using LosePanel.DataSystem;
+using LosePanel.SDK;
+using LosePanel.Presets;
 
-namespace LosePanel
+namespace LosePanel.Forms
 {
     public partial class MainForm : Form
     {
