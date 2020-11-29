@@ -9,14 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LosePanel.SDK;
 using LosePanel.Presets;
+using LosePanel.DataSystem;
 
 namespace LosePanel.Forms
 {
     public partial class MainForm : Form
     {
-        IDataProvidable dp = new LosenoneDataProvider();
+        IDataProvidable dp;
 
         Timer timer = new Timer();
+        long TimerInterval { set; get; }
 
         /// <summary>
         /// 以半小时为单位的时间轴。
@@ -34,13 +36,27 @@ namespace LosePanel.Forms
             //Font FZYH = new Font(Program.CustomFont.Families[0], 11);
             //this.Font = FZYH;
 
+            //加载设置
+            SettingsManager.LoadOn();
+
             //设置Timer
-            timer.Interval = 5000;
+            timer.Interval = SettingsManager.RefreshFrequency * 1000;
             timer.Tick += UpdateDataDisplay;
             timer.Start();
 
+            //设置数据源
+            switch (SettingsManager.SelectedDataProvider)
+            {
+                case "_defLosenoneDataProvider":
+                    cmbDataProvider.SelectedItem = "（预置）洛书南统计服务器";
+                    dp = new LosenoneDataProvider();
+                    break;
+                default:
+                    //TODO: 使用反射初始化自定义数据源。
+                    break;
+            }
+
             //设置控件
-            this.cmbDataProvider.SelectedIndex = 0;
             lblAbtProviderName.Text = dp.ProviderName;
             lblAbtWrittenBy.Text = dp.WrittenBy;
             rtbAbtDescription.Text = dp.Description;
@@ -67,6 +83,23 @@ namespace LosePanel.Forms
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveSettings_Click(object sender, EventArgs e)
+        {
+            SettingsManager.RefreshFrequency = (int)numRefreshFrequency.Value;
+            switch (cmbDataProvider.SelectedItem)
+            {
+                case "（预置）洛书南统计服务器":
+                    SettingsManager.SelectedDataProvider = "_defLosenoneDataProvider";
+                    break;
+                default:
+                    SettingsManager.SelectedDataProvider = cmbDataProvider.SelectedItem.ToString();
+                    break;
+            }
+
+            SettingsManager.Save();
+            MessageBox.Show("已保存。");
         }
     }
 }

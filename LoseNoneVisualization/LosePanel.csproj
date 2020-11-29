@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSystem\SettingsManager.cs" />
     <Compile Include="Presets\LosenoneDataProvider.cs" />
     <Compile Include="DataSystem\NetworkTools.cs" />
     <Compile Include="Forms\MainForm.cs">

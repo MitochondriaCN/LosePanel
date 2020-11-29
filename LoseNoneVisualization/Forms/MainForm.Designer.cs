@@ -49,6 +49,8 @@ namespace LosePanel.Forms
             this.cmbDataProvider = new System.Windows.Forms.ComboBox();
             this.tbpAbout = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAbtProviderName = new System.Windows.Forms.Label();
             this.lblAbtWrittenBy = new System.Windows.Forms.Label();
@@ -56,8 +58,11 @@ namespace LosePanel.Forms
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.btnSaveSettings = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numRefreshFrequency = new System.Windows.Forms.NumericUpDown();
+            this.label7 = new System.Windows.Forms.Label();
             this.tblMainLayouter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,6 +75,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).BeginInit();
             this.SuspendLayout();
             // 
             // tblMainLayouter
@@ -116,7 +122,8 @@ namespace LosePanel.Forms
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Location = new System.Drawing.Point(10, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
             this.label1.TabIndex = 0;
@@ -126,7 +133,7 @@ namespace LosePanel.Forms
             // lblOnlinePlayerNumber
             // 
             this.lblOnlinePlayerNumber.AutoSize = true;
-            this.lblOnlinePlayerNumber.Location = new System.Drawing.Point(65, 0);
+            this.lblOnlinePlayerNumber.Location = new System.Drawing.Point(72, 0);
             this.lblOnlinePlayerNumber.Name = "lblOnlinePlayerNumber";
             this.lblOnlinePlayerNumber.Size = new System.Drawing.Size(32, 17);
             this.lblOnlinePlayerNumber.TabIndex = 1;
@@ -261,23 +268,30 @@ namespace LosePanel.Forms
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 116F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 612F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.cmbDataProvider, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSaveSettings, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.numRefreshFrequency, 1, 1);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowCount = 3;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(982, 31);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(982, 94);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Location = new System.Drawing.Point(15, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 31);
             this.label2.TabIndex = 0;
@@ -288,9 +302,8 @@ namespace LosePanel.Forms
             // 
             this.cmbDataProvider.FormattingEnabled = true;
             this.cmbDataProvider.Items.AddRange(new object[] {
-            "洛书南统计服务器",
-            "自定义数据源……"});
-            this.cmbDataProvider.Location = new System.Drawing.Point(53, 3);
+            "（预置）洛书南统计服务器"});
+            this.cmbDataProvider.Location = new System.Drawing.Point(65, 3);
             this.cmbDataProvider.Name = "cmbDataProvider";
             this.cmbDataProvider.Size = new System.Drawing.Size(201, 25);
             this.cmbDataProvider.TabIndex = 1;
@@ -326,6 +339,33 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(982, 445);
             this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(582, 107);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(397, 335);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "数据源说明";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(582, 66);
+            this.label5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(106, 38);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "数据源开发者";
             // 
             // label3
             // 
@@ -402,8 +442,8 @@ namespace LosePanel.Forms
             this.lblTitle.AutoSize = true;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(0, 0, 3, 0);
+            this.lblTitle.Location = new System.Drawing.Point(10, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(222, 67);
             this.lblTitle.TabIndex = 1;
@@ -421,32 +461,65 @@ namespace LosePanel.Forms
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // label5
+            // btnSaveSettings
             // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(582, 66);
-            this.label5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 38);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "数据源开发者";
+            this.btnSaveSettings.Location = new System.Drawing.Point(910, 63);
+            this.btnSaveSettings.Name = "btnSaveSettings";
+            this.btnSaveSettings.Size = new System.Drawing.Size(69, 28);
+            this.btnSaveSettings.TabIndex = 2;
+            this.btnSaveSettings.Text = "保存";
+            this.btnSaveSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
             // 
-            // richTextBox1
+            // label4
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(582, 107);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(397, 335);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "数据源说明";
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label4.Location = new System.Drawing.Point(3, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 29);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "刷新频率";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label6
+            // 
+            this.label6.AutoEllipsis = true;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label6.Location = new System.Drawing.Point(272, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(482, 31);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numRefreshFrequency
+            // 
+            this.numRefreshFrequency.AutoSize = true;
+            this.numRefreshFrequency.Location = new System.Drawing.Point(65, 34);
+            this.numRefreshFrequency.Name = "numRefreshFrequency";
+            this.numRefreshFrequency.Size = new System.Drawing.Size(45, 23);
+            this.numRefreshFrequency.TabIndex = 5;
+            this.numRefreshFrequency.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // label7
+            // 
+            this.label7.AutoEllipsis = true;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label7.Location = new System.Drawing.Point(272, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(536, 29);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 
@@ -478,6 +551,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,6 +583,11 @@ namespace LosePanel.Forms
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnSaveSettings;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.NumericUpDown numRefreshFrequency;
     }
 }
 
