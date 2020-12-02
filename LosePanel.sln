@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LosePanel.Mobile", "LosePan
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosePanel.SDK", "LosePanel.SDK\LosePanel.SDK.csproj", "{543DA473-A7FF-4ED2-B35B-E7F4D76F9601}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosePanel.WPF", "LosePanel.WPF\LosePanel.WPF.csproj", "{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,18 @@ Global
 		{543DA473-A7FF-4ED2-B35B-E7F4D76F9601}.Release|iPhone.Build.0 = Release|Any CPU
 		{543DA473-A7FF-4ED2-B35B-E7F4D76F9601}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{543DA473-A7FF-4ED2-B35B-E7F4D76F9601}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Release|iPhone.Build.0 = Release|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{02D16D18-6DCB-4FA9-9E24-6F2D267F3C1D}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
