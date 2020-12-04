@@ -24,7 +24,7 @@ namespace LosePanel.DataSystem
         {
             if (File.Exists("settings.ini"))
             {
-                XDocument xd = XDocument.Load("settings.ini");
+                XElement xd = XDocument.Load("settings.ini").Element("LosePanelSettings");
                 SelectedDataProvider = xd.Element("SelectedDataProvider").Value;
                 RefreshFrequency = int.Parse(xd.Element("RefreshFrequency").Value);
             }
@@ -39,8 +39,9 @@ namespace LosePanel.DataSystem
         public static void Save()
         {
             XDocument xd = new XDocument(
-                new XElement("SelectedDataProvider", SelectedDataProvider),
-                new XElement("RefreshFrequency", RefreshFrequency.ToString()));
+                new XElement("LosePanelSettings",
+                    new XElement("SelectedDataProvider", SelectedDataProvider),
+                    new XElement("RefreshFrequency", RefreshFrequency.ToString())));
             xd.Save("settings.ini");
         }
     }

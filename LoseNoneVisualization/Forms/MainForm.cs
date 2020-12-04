@@ -44,6 +44,7 @@ namespace LosePanel.Forms
             timer.Tick += UpdateDataDisplay;
             timer.Start();
 
+
             //设置数据源
             switch (SettingsManager.SelectedDataProvider)
             {
@@ -57,6 +58,7 @@ namespace LosePanel.Forms
             }
 
             //设置控件
+            numRefreshFrequency.Value = SettingsManager.RefreshFrequency;
             lblAbtProviderName.Text = dp.ProviderName;
             lblAbtWrittenBy.Text = dp.WrittenBy;
             rtbAbtDescription.Text = dp.Description;
@@ -68,7 +70,8 @@ namespace LosePanel.Forms
             lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
             if (dp.IsConnected)
             {
-                lblLoseNoneAnalStat.Text = "正在以 5 秒一次的频率从数据源获得数据。";
+                lblLoseNoneAnalStat.Text = "正在以 " + SettingsManager.RefreshFrequency.ToString() +
+                    " 秒一次的频率从数据源获得数据。";
                 lblLoseNoneAnalStat.ForeColor = Color.Black;
             }
             else
