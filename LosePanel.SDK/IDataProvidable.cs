@@ -43,5 +43,11 @@ namespace LosePanel.SDK
         /// 此数据提供器的开发者。
         /// </summary>
         string WrittenBy { get; }
+
+        /// <summary>
+        /// 此方法应当设计为返回ProviderName。
+        /// </summary>
+        /// <returns></returns>
+        string ToString();
     }
 }

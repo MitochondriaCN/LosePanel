@@ -36,29 +36,30 @@ namespace LosePanel.Forms
             //Font FZYH = new Font(Program.CustomFont.Families[0], 11);
             //this.Font = FZYH;
 
-            //加载设置
+            #region 加载设置
+            //将设置载入管理器
             SettingsManager.LoadOn();
+            //加载刷新频率
+            numRefreshFrequency.Value = SettingsManager.RefreshFrequency;
+            //将数据源列表载入管理器
+            DataProviderManager.LoadOnDataProviders();
+            //将当前选择的数据源载入管理器
+            DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider);
+            //加载数据源列表
+            cmbDataProvider.DataSource = DataProviderManager.DataProviders;
+            //加载已选数据源
+            cmbDataProvider.SelectedItem = DataProviderManager.CurrentDataProvider;
+            dp = DataProviderManager.CurrentDataProvider;
+            #endregion
+
 
             //设置Timer
             timer.Interval = SettingsManager.RefreshFrequency * 1000;
             timer.Tick += UpdateDataDisplay;
             timer.Start();
 
-
-            //设置数据源
-            switch (SettingsManager.SelectedDataProvider)
-            {
-                case "_defLosenoneDataProvider":
-                    cmbDataProvider.SelectedItem = "（预置）洛书南统计服务器";
-                    dp = new LosenoneDataProvider();
-                    break;
-                default:
-                    //TODO: 使用反射初始化自定义数据源。
-                    break;
-            }
-
             //设置控件
-            numRefreshFrequency.Value = SettingsManager.RefreshFrequency;
+
             lblAbtProviderName.Text = dp.ProviderName;
             lblAbtWrittenBy.Text = dp.WrittenBy;
             rtbAbtDescription.Text = dp.Description;
@@ -76,7 +77,7 @@ namespace LosePanel.Forms
             }
             else
             {
-                lblLoseNoneAnalStat.Text = "无法连接到统计服务器。";
+                lblLoseNoneAnalStat.Text = "无法连接到数据源。重试中……";
                 lblLoseNoneAnalStat.ForeColor = Color.Red;
             }
 
@@ -91,18 +92,11 @@ namespace LosePanel.Forms
         private void btnSaveSettings_Click(object sender, EventArgs e)
         {
             SettingsManager.RefreshFrequency = (int)numRefreshFrequency.Value;
-            switch (cmbDataProvider.SelectedItem)
-            {
-                case "（预置）洛书南统计服务器":
-                    SettingsManager.SelectedDataProvider = "_defLosenoneDataProvider";
-                    break;
-                default:
-                    SettingsManager.SelectedDataProvider = cmbDataProvider.SelectedItem.ToString();
-                    break;
-            }
+            SettingsManager.SelectedDataProvider = cmbDataProvider.SelectedItem.ToString();
 
             SettingsManager.Save();
-            MessageBox.Show("已保存。");
+            MessageBox.Show("已保存，即将重启。", "信息");
+            Application.Restart();
         }
     }
 }

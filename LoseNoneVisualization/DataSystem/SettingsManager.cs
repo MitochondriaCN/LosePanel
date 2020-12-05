@@ -11,7 +11,7 @@ namespace LosePanel.DataSystem
     public static class SettingsManager
     {
         /// <summary>
-        /// 已选择的数据源文件名，如DataProvider.dll，将在目录下DataProviders文件夹寻找。预置数据源在前面加“_def”，如_defLoseNoneDataProvider。
+        /// 已选择的数据源名（ProviderName）。
         /// </summary>
         public static string SelectedDataProvider { get; set; }
 
@@ -25,6 +25,7 @@ namespace LosePanel.DataSystem
             if (File.Exists("settings.ini"))
             {
                 XElement xd = XDocument.Load("settings.ini").Element("LosePanelSettings");
+
                 SelectedDataProvider = xd.Element("SelectedDataProvider").Value;
                 RefreshFrequency = int.Parse(xd.Element("RefreshFrequency").Value);
             }

@@ -85,5 +85,10 @@ namespace LosePanel.Presets
             
         }
         #endregion
+
+        override public string ToString()
+        {
+            return ProviderName;
+        }
     }
 }

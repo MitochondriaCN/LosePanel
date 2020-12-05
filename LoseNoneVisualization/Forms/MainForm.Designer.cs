@@ -45,8 +45,13 @@ namespace LosePanel.Forms
             this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbpSettings = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbDataProvider = new System.Windows.Forms.ComboBox();
+            this.btnSaveSettings = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.numRefreshFrequency = new System.Windows.Forms.NumericUpDown();
             this.tbpAbout = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -58,11 +63,6 @@ namespace LosePanel.Forms
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnSaveSettings = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numRefreshFrequency = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
             this.tblMainLayouter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -71,11 +71,11 @@ namespace LosePanel.Forms
             ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
             this.tbpSettings.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).BeginInit();
             this.tbpAbout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).BeginInit();
             this.SuspendLayout();
             // 
             // tblMainLayouter
@@ -287,6 +287,30 @@ namespace LosePanel.Forms
             this.tableLayoutPanel2.Size = new System.Drawing.Size(982, 94);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // label7
+            // 
+            this.label7.AutoEllipsis = true;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label7.Location = new System.Drawing.Point(272, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(536, 29);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label4.Location = new System.Drawing.Point(3, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 29);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "刷新频率";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -307,6 +331,44 @@ namespace LosePanel.Forms
             this.cmbDataProvider.Name = "cmbDataProvider";
             this.cmbDataProvider.Size = new System.Drawing.Size(201, 25);
             this.cmbDataProvider.TabIndex = 1;
+            // 
+            // btnSaveSettings
+            // 
+            this.btnSaveSettings.AutoSize = true;
+            this.btnSaveSettings.Location = new System.Drawing.Point(877, 63);
+            this.btnSaveSettings.Name = "btnSaveSettings";
+            this.btnSaveSettings.Size = new System.Drawing.Size(102, 28);
+            this.btnSaveSettings.TabIndex = 2;
+            this.btnSaveSettings.Text = "保存并重启软件";
+            this.btnSaveSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoEllipsis = true;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label6.Location = new System.Drawing.Point(272, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(482, 31);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numRefreshFrequency
+            // 
+            this.numRefreshFrequency.AutoSize = true;
+            this.numRefreshFrequency.Dock = System.Windows.Forms.DockStyle.Left;
+            this.numRefreshFrequency.Location = new System.Drawing.Point(65, 34);
+            this.numRefreshFrequency.Name = "numRefreshFrequency";
+            this.numRefreshFrequency.Size = new System.Drawing.Size(45, 23);
+            this.numRefreshFrequency.TabIndex = 5;
+            this.numRefreshFrequency.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             // 
             // tbpAbout
             // 
@@ -461,66 +523,6 @@ namespace LosePanel.Forms
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             // 
-            // btnSaveSettings
-            // 
-            this.btnSaveSettings.Location = new System.Drawing.Point(910, 63);
-            this.btnSaveSettings.Name = "btnSaveSettings";
-            this.btnSaveSettings.Size = new System.Drawing.Size(69, 28);
-            this.btnSaveSettings.TabIndex = 2;
-            this.btnSaveSettings.Text = "保存";
-            this.btnSaveSettings.UseVisualStyleBackColor = true;
-            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Location = new System.Drawing.Point(3, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "刷新频率";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label6
-            // 
-            this.label6.AutoEllipsis = true;
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label6.Location = new System.Drawing.Point(272, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(482, 31);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // numRefreshFrequency
-            // 
-            this.numRefreshFrequency.AutoSize = true;
-            this.numRefreshFrequency.Location = new System.Drawing.Point(65, 34);
-            this.numRefreshFrequency.Name = "numRefreshFrequency";
-            this.numRefreshFrequency.Size = new System.Drawing.Size(45, 23);
-            this.numRefreshFrequency.TabIndex = 5;
-            this.numRefreshFrequency.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // label7
-            // 
-            this.label7.AutoEllipsis = true;
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(272, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(536, 29);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -545,13 +547,13 @@ namespace LosePanel.Forms
             this.tbpSettings.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).EndInit();
             this.tbpAbout.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).EndInit();
             this.ResumeLayout(false);
 
         }
