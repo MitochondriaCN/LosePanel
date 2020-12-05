@@ -221,9 +221,15 @@ namespace LosePanel.Forms
             chartArea1.AxisX.Title = "从 0 点开始的小时数";
             chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.Interval = 1D;
             chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisY.MajorGrid.Interval = 1D;
+            chartArea1.AxisY.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
             chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.MajorTickMark.Interval = 1D;
             chartArea1.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.None;
+            chartArea1.AxisY.MinorGrid.Interval = 1D;
+            chartArea1.AxisY.MinorTickMark.Interval = 1D;
             chartArea1.AxisY.Title = "玩家数";
             chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

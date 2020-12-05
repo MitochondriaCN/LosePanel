@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using LosePanel.SDK;
 using LosePanel.DataSystem;
+using System.Text.RegularExpressions;
 
 namespace LosePanel.Presets
 {
@@ -73,19 +74,63 @@ namespace LosePanel.Presets
         #region 5秒定时方法
         private void UpdateOnlinePlayerNumber(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
+                //更新在线玩家数字
                 string str = NetworkTools.GetUrlReturn("http://139.199.127.51:23233/?Qgetnum");
                 //示例：document.write("在线人数:1:Qiaoyiiii6;")
                 string onlinenum = str.Substring(21, 1);
                 OnlinePlayerNumber = int.Parse(onlinenum);
                 OnlinePlayerNumberIsConnected = true;
-            }
-            catch
-            {
-                OnlinePlayerNumberIsConnected = false;
-                OnlinePlayerNumber = 0;
-            }
+
+                //更新各时段在线玩家数
+                string playersOnTime = NetworkTools.GetUrlReturn("http://139.199.127.51/Qnum/newest.txt");
+                char[] spchar = { '\\', '\\' };
+                string[] lines = Regex.Split(playersOnTime, "\\\\", RegexOptions.IgnoreCase);
+                foreach (string s in lines)
+                {
+                if (s == "")
+                { continue; }
+                    string time = s.Split(':')[0];
+                    string num = s.Split(':')[1];
+
+                    //*** 判断最接近的时间点并将数据填充到PlayerNumberDuringDay的合适位置 ***
+                    //以下算法极为烧脑，请酌情修改
+                    //可联系时间轴帮助理解算法
+                    int hour = int.Parse(time.Substring(8, 2));//取得小时
+                    int min = int.Parse(time.Substring(10, 2));//取得分钟
+                    int diff = min - 30;//将分钟数与30分钟作差
+                    if (diff >= 15)//若差大于等于15，即时间点已过半点又15分钟，也就是xx:45分以后
+                    {
+                        hour++;//将数据算入后一小时整点，
+                        min = 0;//即(hour+1):00
+                        int index = hour * 2;//在PlayerNumberDuringDay中的数据索引号，具体为什么自己想吧，数学问题
+                        PlayerNumberDuringDay[index] = int.Parse(num);//设置数据
+                    }
+                    else if (diff < 15 && diff >= 0)//若差小于15且大于等于0，即时间点已过半点但未到15分钟，也就是xx:45分以前、xx:30及以后
+                    {
+                        min = 30;//将数据算入半点
+                        int index = int.Parse(((hour + 0.5) * 2).ToString());//依然是数学问题
+                        PlayerNumberDuringDay[index] = int.Parse(num);
+                    }
+                    else if (diff > -15 && diff <= 0)//判断条件与上相反，代码同
+                    {
+                        min = 30;
+                        int index = int.Parse(((hour + 0.5) * 2).ToString());
+                        PlayerNumberDuringDay[index] = int.Parse(num);
+                    }
+                    else if (diff <= -15 && diff >= -30)
+                    {
+                        int index = hour * 2;
+                        PlayerNumberDuringDay[index] = int.Parse(num);
+                    }
+                }
+            //}
+            //catch
+            //{
+            //   OnlinePlayerNumberIsConnected = false;
+            //   OnlinePlayerNumber = 0;
+            //}
             
         }
         #endregion
