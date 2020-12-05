@@ -5,6 +5,9 @@
 
 # 开发者
 洛书面板项目由线粒体（XianlitiCN，GitHub：MitochondriaCN）和洛书南服务器团队合作发起，指定[技言网](www.apocalypse.icu)为本软件官方交流平台。我们将同心协力开发洛书面板。
+### 特别鸣谢
+- @mofcandy 提供洛书南服务器数据源接口。
+- @Qiaoyiiii6 沟通及协助开发。
 
 # 特点
 ### 非Web平台
