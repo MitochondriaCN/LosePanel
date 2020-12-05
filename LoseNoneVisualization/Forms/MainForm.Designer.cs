@@ -43,6 +43,12 @@ namespace LosePanel.Forms
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpOnlinePlayers = new System.Windows.Forms.TabPage();
             this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tbpLog = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.rtbLog = new System.Windows.Forms.RichTextBox();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblIsLogConnected = new System.Windows.Forms.Label();
             this.tbpSettings = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -62,29 +68,21 @@ namespace LosePanel.Forms
             this.rtbAbtDescription = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tbpLog = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblIsLogConnected = new System.Windows.Forms.Label();
-            this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.tblMainLayouter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tbpOnlinePlayers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
+            this.tbpLog.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tbpSettings.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).BeginInit();
             this.tbpAbout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tbpLog.SuspendLayout();
-            this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMainLayouter
@@ -108,6 +106,7 @@ namespace LosePanel.Forms
             // 
             // tableLayoutPanel1
             // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.White;
             this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
@@ -120,17 +119,19 @@ namespace LosePanel.Forms
             this.tableLayoutPanel1.Controls.Add(this.lblLoseNoneAnalStat, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 76);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 78);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(990, 20);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(996, 20);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(10, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label1.Name = "label1";
@@ -142,6 +143,7 @@ namespace LosePanel.Forms
             // lblOnlinePlayerNumber
             // 
             this.lblOnlinePlayerNumber.AutoSize = true;
+            this.lblOnlinePlayerNumber.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblOnlinePlayerNumber.Location = new System.Drawing.Point(72, 0);
             this.lblOnlinePlayerNumber.Name = "lblOnlinePlayerNumber";
             this.lblOnlinePlayerNumber.Size = new System.Drawing.Size(32, 17);
@@ -153,7 +155,8 @@ namespace LosePanel.Forms
             // 
             this.lblProviderName.AutoSize = true;
             this.lblProviderName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblProviderName.Location = new System.Drawing.Point(869, 0);
+            this.lblProviderName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblProviderName.Location = new System.Drawing.Point(875, 0);
             this.lblProviderName.Name = "lblProviderName";
             this.lblProviderName.Size = new System.Drawing.Size(112, 23);
             this.lblProviderName.TabIndex = 2;
@@ -166,7 +169,7 @@ namespace LosePanel.Forms
             this.lblLoseNoneAnalStat.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblLoseNoneAnalStat.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblLoseNoneAnalStat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(987, 0);
+            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(993, 0);
             this.lblLoseNoneAnalStat.Name = "lblLoseNoneAnalStat";
             this.lblLoseNoneAnalStat.Size = new System.Drawing.Size(0, 23);
             this.lblLoseNoneAnalStat.TabIndex = 4;
@@ -176,7 +179,7 @@ namespace LosePanel.Forms
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::LosePanel.Properties.Resources.Cloud_256px_1075710_easyicon_net;
-            this.pictureBox1.Location = new System.Drawing.Point(838, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(844, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 17);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -191,10 +194,10 @@ namespace LosePanel.Forms
             this.tabControl1.Controls.Add(this.tbpSettings);
             this.tabControl1.Controls.Add(this.tbpAbout);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 102);
+            this.tabControl1.Location = new System.Drawing.Point(3, 101);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(990, 475);
+            this.tabControl1.Size = new System.Drawing.Size(990, 476);
             this.tabControl1.TabIndex = 2;
             // 
             // tbpOnlinePlayers
@@ -203,7 +206,7 @@ namespace LosePanel.Forms
             this.tbpOnlinePlayers.Location = new System.Drawing.Point(4, 4);
             this.tbpOnlinePlayers.Name = "tbpOnlinePlayers";
             this.tbpOnlinePlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOnlinePlayers.Size = new System.Drawing.Size(982, 445);
+            this.tbpOnlinePlayers.Size = new System.Drawing.Size(982, 446);
             this.tbpOnlinePlayers.TabIndex = 0;
             this.tbpOnlinePlayers.Text = "在线人数";
             this.tbpOnlinePlayers.UseVisualStyleBackColor = true;
@@ -260,7 +263,7 @@ namespace LosePanel.Forms
             series1.ShadowOffset = 1;
             series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
             this.chartOnlinePlayers.Series.Add(series1);
-            this.chartOnlinePlayers.Size = new System.Drawing.Size(976, 439);
+            this.chartOnlinePlayers.Size = new System.Drawing.Size(976, 440);
             this.chartOnlinePlayers.TabIndex = 0;
             this.chartOnlinePlayers.Text = "实时玩家数";
             title1.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -268,12 +271,84 @@ namespace LosePanel.Forms
             title1.Text = "实时玩家数";
             this.chartOnlinePlayers.Titles.Add(title1);
             // 
+            // tbpLog
+            // 
+            this.tbpLog.Controls.Add(this.tableLayoutPanel5);
+            this.tbpLog.Location = new System.Drawing.Point(4, 4);
+            this.tbpLog.Name = "tbpLog";
+            this.tbpLog.Size = new System.Drawing.Size(982, 451);
+            this.tbpLog.TabIndex = 3;
+            this.tbpLog.Text = "日志";
+            this.tbpLog.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.rtbLog, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(982, 451);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // rtbLog
+            // 
+            this.rtbLog.BackColor = System.Drawing.Color.White;
+            this.rtbLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbLog.Location = new System.Drawing.Point(3, 26);
+            this.rtbLog.Name = "rtbLog";
+            this.rtbLog.ReadOnly = true;
+            this.rtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbLog.Size = new System.Drawing.Size(976, 422);
+            this.rtbLog.TabIndex = 3;
+            this.rtbLog.Text = "";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lblIsLogConnected, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(976, 17);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "日志系统连接状态：";
+            // 
+            // lblIsLogConnected
+            // 
+            this.lblIsLogConnected.AutoSize = true;
+            this.lblIsLogConnected.Location = new System.Drawing.Point(125, 0);
+            this.lblIsLogConnected.Name = "lblIsLogConnected";
+            this.lblIsLogConnected.Size = new System.Drawing.Size(44, 17);
+            this.lblIsLogConnected.TabIndex = 1;
+            this.lblIsLogConnected.Text = "未连接";
+            // 
             // tbpSettings
             // 
             this.tbpSettings.Controls.Add(this.tableLayoutPanel2);
             this.tbpSettings.Location = new System.Drawing.Point(4, 4);
             this.tbpSettings.Name = "tbpSettings";
-            this.tbpSettings.Size = new System.Drawing.Size(982, 445);
+            this.tbpSettings.Size = new System.Drawing.Size(982, 451);
             this.tbpSettings.TabIndex = 1;
             this.tbpSettings.Text = "设置";
             this.tbpSettings.UseVisualStyleBackColor = true;
@@ -391,7 +466,7 @@ namespace LosePanel.Forms
             this.tbpAbout.Controls.Add(this.tableLayoutPanel4);
             this.tbpAbout.Location = new System.Drawing.Point(4, 4);
             this.tbpAbout.Name = "tbpAbout";
-            this.tbpAbout.Size = new System.Drawing.Size(982, 445);
+            this.tbpAbout.Size = new System.Drawing.Size(982, 451);
             this.tbpAbout.TabIndex = 2;
             this.tbpAbout.Text = "关于";
             this.tbpAbout.UseVisualStyleBackColor = true;
@@ -415,7 +490,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(982, 445);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(982, 451);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // richTextBox1
@@ -428,7 +503,7 @@ namespace LosePanel.Forms
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(397, 335);
+            this.richTextBox1.Size = new System.Drawing.Size(397, 341);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "该版本为测试版本，诸多技术仍不成熟。\n\n线粒体，Qiaoyiiii6，mofcandy";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
@@ -495,122 +570,40 @@ namespace LosePanel.Forms
             this.rtbAbtDescription.Name = "rtbAbtDescription";
             this.rtbAbtDescription.ReadOnly = true;
             this.rtbAbtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbAbtDescription.Size = new System.Drawing.Size(428, 335);
+            this.rtbAbtDescription.Size = new System.Drawing.Size(428, 341);
             this.rtbAbtDescription.TabIndex = 2;
             this.rtbAbtDescription.Text = "数据源说明";
             this.rtbAbtDescription.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // tableLayoutPanel3
             // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.DodgerBlue;
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.Controls.Add(this.lblTitle, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.pictureBox2, 1, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 3);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(993, 67);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(996, 73);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(10, 0);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(222, 67);
+            this.lblTitle.Size = new System.Drawing.Size(265, 73);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "洛书面板 - 实时";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::LosePanel.Properties.Resources.logo_removebg_preview;
-            this.pictureBox2.Location = new System.Drawing.Point(934, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(56, 61);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            // 
-            // tbpLog
-            // 
-            this.tbpLog.Controls.Add(this.tableLayoutPanel5);
-            this.tbpLog.Location = new System.Drawing.Point(4, 4);
-            this.tbpLog.Name = "tbpLog";
-            this.tbpLog.Size = new System.Drawing.Size(982, 445);
-            this.tbpLog.TabIndex = 3;
-            this.tbpLog.Text = "日志";
-            this.tbpLog.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.rtbLog, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(982, 445);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.AutoSize = true;
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblIsLogConnected, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(976, 17);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "日志系统连接状态：";
-            // 
-            // lblIsLogConnected
-            // 
-            this.lblIsLogConnected.AutoSize = true;
-            this.lblIsLogConnected.Location = new System.Drawing.Point(125, 0);
-            this.lblIsLogConnected.Name = "lblIsLogConnected";
-            this.lblIsLogConnected.Size = new System.Drawing.Size(44, 17);
-            this.lblIsLogConnected.TabIndex = 1;
-            this.lblIsLogConnected.Text = "未连接";
-            // 
-            // rtbLog
-            // 
-            this.rtbLog.BackColor = System.Drawing.Color.White;
-            this.rtbLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbLog.Location = new System.Drawing.Point(3, 26);
-            this.rtbLog.Name = "rtbLog";
-            this.rtbLog.ReadOnly = true;
-            this.rtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbLog.Size = new System.Drawing.Size(976, 416);
-            this.rtbLog.TabIndex = 3;
-            this.rtbLog.Text = "";
             // 
             // MainForm
             // 
@@ -625,6 +618,7 @@ namespace LosePanel.Forms
             this.MinimumSize = new System.Drawing.Size(781, 380);
             this.Name = "MainForm";
             this.Text = "洛书面板 - 代号霜";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tblMainLayouter.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -632,6 +626,11 @@ namespace LosePanel.Forms
             this.tabControl1.ResumeLayout(false);
             this.tbpOnlinePlayers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).EndInit();
+            this.tbpLog.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tbpSettings.ResumeLayout(false);
             this.tbpSettings.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -642,12 +641,6 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tbpLog.ResumeLayout(false);
-            this.tableLayoutPanel5.ResumeLayout(false);
-            this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -670,7 +663,6 @@ namespace LosePanel.Forms
         private System.Windows.Forms.ComboBox cmbDataProvider;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TabPage tbpAbout;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label lblAbtProviderName;

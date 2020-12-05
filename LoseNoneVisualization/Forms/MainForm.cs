@@ -103,5 +103,10 @@ namespace LosePanel.Forms
         {
 
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
