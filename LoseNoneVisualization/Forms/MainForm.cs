@@ -69,7 +69,7 @@ namespace LosePanel.Forms
         {
             lblProviderName.Text = "数据源：" + dp.ProviderName;
             lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
-            if (dp.IsConnected)
+            if (dp.OnlinePlayerNumberIsConnected)
             {
                 lblLoseNoneAnalStat.Text = "正在以 " + SettingsManager.RefreshFrequency.ToString() +
                     " 秒一次的频率从数据源获得数据。";

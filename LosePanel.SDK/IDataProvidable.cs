@@ -25,9 +25,19 @@ namespace LosePanel.SDK
         int OnlinePlayerNumber { get; }
 
         /// <summary>
-        /// 实时服务器连接状态。该数据应当实时更新以确保时效性。
+        /// 实时在线玩家数服务器连接状态。该数据应当实时更新以确保时效性。
         /// </summary>
-        bool IsConnected { get; }
+        bool OnlinePlayerNumberIsConnected { get; }
+
+        /// <summary>
+        /// 服务器在线日志。该数据应当实时更新以确保时效性。
+        /// </summary>
+        StringBuilder Log { get; }
+
+        /// <summary>
+        /// 在线日志连接状态。该数据应当实时更新以确保时效性。
+        /// </summary>
+        bool LogIsConnected { get; }
 
         /// <summary>
         /// 此数据提供器的名称。

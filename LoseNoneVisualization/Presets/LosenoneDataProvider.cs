@@ -30,7 +30,7 @@ namespace LosePanel.Presets
         
         public int OnlinePlayerNumber { get; private set; }
 
-        public bool IsConnected { get; private set; }
+        public bool OnlinePlayerNumberIsConnected { get; private set; }
 
         public string ProviderName { get { return "洛书南统计服务器"; } }
 
@@ -49,6 +49,10 @@ namespace LosePanel.Presets
         {
             get { return "洛书南 Losenone && 线粒体 XianlitiCN"; }
         }
+
+        public StringBuilder Log { get { return new StringBuilder(""); } }
+
+        public bool LogIsConnected { get { return false; } }
 
         public LosenoneDataProvider()
         {
@@ -75,11 +79,11 @@ namespace LosePanel.Presets
                 //示例：document.write("在线人数:1:Qiaoyiiii6;")
                 string onlinenum = str.Substring(21, 1);
                 OnlinePlayerNumber = int.Parse(onlinenum);
-                IsConnected = true;
+                OnlinePlayerNumberIsConnected = true;
             }
             catch
             {
-                IsConnected = false;
+                OnlinePlayerNumberIsConnected = false;
                 OnlinePlayerNumber = 0;
             }
             
