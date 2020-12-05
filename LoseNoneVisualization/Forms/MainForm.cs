@@ -98,5 +98,10 @@ namespace LosePanel.Forms
             MessageBox.Show("已保存，即将重启。", "信息");
             Application.Restart();
         }
+
+        private void richTextBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

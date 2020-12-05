@@ -430,7 +430,8 @@ namespace LosePanel.Forms
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.richTextBox1.Size = new System.Drawing.Size(397, 335);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "数据源说明";
+            this.richTextBox1.Text = "该版本为测试版本，诸多技术仍不成熟。\n\n线粒体，Qiaoyiiii6，mofcandy";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
             // 
             // label5
             // 
@@ -441,9 +442,9 @@ namespace LosePanel.Forms
             this.label5.Location = new System.Drawing.Point(582, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(106, 38);
+            this.label5.Size = new System.Drawing.Size(64, 38);
             this.label5.TabIndex = 5;
-            this.label5.Text = "数据源开发者";
+            this.label5.Text = "V0.2 霜";
             // 
             // label3
             // 
