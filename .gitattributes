@@ -63,4 +63,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-*.xaml linguist-language=xaml
+*.xaml linguist-language=xml
