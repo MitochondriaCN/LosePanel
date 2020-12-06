@@ -37,6 +37,9 @@
   <PropertyGroup>
     <StartupObject>LosePanel.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>aumq2-w48sn-001.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -107,6 +110,9 @@
       <Project>{543da473-a7ff-4ed2-b35b-e7f4d76f9601}</Project>
       <Name>LosePanel.SDK</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aumq2-w48sn-001.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
