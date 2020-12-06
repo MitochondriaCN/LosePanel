@@ -32,7 +32,7 @@ namespace LosePanel.DataSystem
             else
             {
                 //加载默认值
-                SelectedDataProvider = "_defLosenoneDataProvider";
+                SelectedDataProvider = "洛书南统计服务器";
                 RefreshFrequency = 5;
             }
         }
