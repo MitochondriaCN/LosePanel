@@ -45,10 +45,13 @@ namespace LosePanel.Forms
             this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbpLog = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.rtbLogApp = new System.Windows.Forms.RichTextBox();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.lblIsLogConnected = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.tbpSettings = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label7 = new System.Windows.Forms.Label();
@@ -195,6 +198,7 @@ namespace LosePanel.Forms
             this.tabControl1.Controls.Add(this.tbpAbout);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(3, 101);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(990, 476);
@@ -217,22 +221,38 @@ namespace LosePanel.Forms
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.IsMarginVisible = false;
             chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.LineWidth = 2;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
             chartArea1.AxisX.MajorGrid.Interval = 1D;
             chartArea1.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.MajorGrid.LineWidth = 2;
             chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.MajorTickMark.LineWidth = 2;
             chartArea1.AxisX.Title = "从 0 点开始的小时数";
             chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.AxisY.Interval = 1D;
             chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.LineWidth = 2;
             chartArea1.AxisY.MajorGrid.Interval = 1D;
             chartArea1.AxisY.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorGrid.LineWidth = 2;
             chartArea1.AxisY.MajorTickMark.Interval = 1D;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineWidth = 2;
             chartArea1.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.None;
             chartArea1.AxisY.MinorGrid.Interval = 1D;
             chartArea1.AxisY.MinorTickMark.Interval = 1D;
+            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
             chartArea1.AxisY.Title = "玩家数";
             chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,29 +266,34 @@ namespace LosePanel.Forms
             this.chartOnlinePlayers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.chartOnlinePlayers.Location = new System.Drawing.Point(3, 3);
             this.chartOnlinePlayers.Name = "chartOnlinePlayers";
-            series1.BackSecondaryColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            series1.BorderWidth = 3;
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series1.BackImageTransparentColor = System.Drawing.Color.White;
+            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series1.BorderColor = System.Drawing.Color.DodgerBlue;
+            series1.BorderWidth = 5;
             series1.ChartArea = "ctaPlayers";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.RoyalBlue;
-            series1.Font = new System.Drawing.Font("Arial", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series1.IsValueShownAsLabel = true;
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Color = System.Drawing.Color.LightSteelBlue;
+            series1.EmptyPointStyle.AxisLabel = "0";
+            series1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             series1.LegendText = "在线玩家数";
-            series1.MarkerBorderColor = System.Drawing.Color.RoyalBlue;
-            series1.MarkerColor = System.Drawing.Color.RoyalBlue;
-            series1.MarkerSize = 6;
+            series1.MarkerBorderColor = System.Drawing.Color.DodgerBlue;
+            series1.MarkerColor = System.Drawing.Color.DodgerBlue;
             series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
             series1.Name = "serOnlinePlayerNumber";
-            series1.ShadowColor = System.Drawing.Color.White;
-            series1.ShadowOffset = 1;
-            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.No;
+            series1.ShadowColor = System.Drawing.Color.Transparent;
+            series1.ShadowOffset = 2;
+            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes;
+            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = System.Windows.Forms.DataVisualization.Charting.LineAnchorCapStyle.None;
+            series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series1.YValuesPerPoint = 2;
             this.chartOnlinePlayers.Series.Add(series1);
             this.chartOnlinePlayers.Size = new System.Drawing.Size(976, 440);
             this.chartOnlinePlayers.TabIndex = 0;
-            this.chartOnlinePlayers.Text = "实时玩家数";
-            title1.Font = new System.Drawing.Font("微软雅黑", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.chartOnlinePlayers.Text = "各时段在线玩家数";
+            title1.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             title1.Name = "titRealtimePlayers";
-            title1.Text = "实时玩家数";
+            title1.Text = "各时段在线玩家数";
             this.chartOnlinePlayers.Titles.Add(title1);
             // 
             // tbpLog
@@ -276,36 +301,67 @@ namespace LosePanel.Forms
             this.tbpLog.Controls.Add(this.tableLayoutPanel5);
             this.tbpLog.Location = new System.Drawing.Point(4, 4);
             this.tbpLog.Name = "tbpLog";
-            this.tbpLog.Size = new System.Drawing.Size(982, 451);
+            this.tbpLog.Size = new System.Drawing.Size(982, 446);
             this.tbpLog.TabIndex = 3;
             this.tbpLog.Text = "日志";
             this.tbpLog.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Controls.Add(this.rtbLog, 0, 1);
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label10, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.rtbLogApp, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.rtbLog, 0, 2);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 1);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowCount = 3;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(982, 451);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(982, 446);
             this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(494, 39);
+            this.label10.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(485, 28);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "面板";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rtbLogApp
+            // 
+            this.rtbLogApp.BackColor = System.Drawing.Color.White;
+            this.rtbLogApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbLogApp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbLogApp.Location = new System.Drawing.Point(494, 78);
+            this.rtbLogApp.Name = "rtbLogApp";
+            this.rtbLogApp.ReadOnly = true;
+            this.rtbLogApp.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbLogApp.Size = new System.Drawing.Size(485, 365);
+            this.rtbLogApp.TabIndex = 4;
+            this.rtbLogApp.Text = "";
             // 
             // rtbLog
             // 
             this.rtbLog.BackColor = System.Drawing.Color.White;
             this.rtbLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbLog.Location = new System.Drawing.Point(3, 26);
+            this.rtbLog.Location = new System.Drawing.Point(3, 78);
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.ReadOnly = true;
             this.rtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbLog.Size = new System.Drawing.Size(976, 422);
+            this.rtbLog.Size = new System.Drawing.Size(485, 365);
             this.rtbLog.TabIndex = 3;
             this.rtbLog.Text = "";
             // 
@@ -313,6 +369,7 @@ namespace LosePanel.Forms
             // 
             this.tableLayoutPanel6.AutoSize = true;
             this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel5.SetColumnSpan(this.tableLayoutPanel6, 2);
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
@@ -322,6 +379,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(976, 17);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
@@ -343,12 +401,25 @@ namespace LosePanel.Forms
             this.lblIsLogConnected.TabIndex = 1;
             this.lblIsLogConnected.Text = "未连接";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(3, 39);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(485, 28);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "服务器";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // tbpSettings
             // 
             this.tbpSettings.Controls.Add(this.tableLayoutPanel2);
             this.tbpSettings.Location = new System.Drawing.Point(4, 4);
             this.tbpSettings.Name = "tbpSettings";
-            this.tbpSettings.Size = new System.Drawing.Size(982, 451);
+            this.tbpSettings.Size = new System.Drawing.Size(982, 446);
             this.tbpSettings.TabIndex = 1;
             this.tbpSettings.Text = "设置";
             this.tbpSettings.UseVisualStyleBackColor = true;
@@ -466,7 +537,7 @@ namespace LosePanel.Forms
             this.tbpAbout.Controls.Add(this.tableLayoutPanel4);
             this.tbpAbout.Location = new System.Drawing.Point(4, 4);
             this.tbpAbout.Name = "tbpAbout";
-            this.tbpAbout.Size = new System.Drawing.Size(982, 451);
+            this.tbpAbout.Size = new System.Drawing.Size(982, 446);
             this.tbpAbout.TabIndex = 2;
             this.tbpAbout.Text = "关于";
             this.tbpAbout.UseVisualStyleBackColor = true;
@@ -490,7 +561,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(982, 451);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(982, 446);
             this.tableLayoutPanel4.TabIndex = 0;
             // 
             // richTextBox1
@@ -503,10 +574,9 @@ namespace LosePanel.Forms
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(397, 341);
+            this.richTextBox1.Size = new System.Drawing.Size(397, 336);
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "该版本为测试版本，诸多技术仍不成熟。\n\n线粒体，Qiaoyiiii6，mofcandy";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_1);
             // 
             // label5
             // 
@@ -570,10 +640,9 @@ namespace LosePanel.Forms
             this.rtbAbtDescription.Name = "rtbAbtDescription";
             this.rtbAbtDescription.ReadOnly = true;
             this.rtbAbtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbAbtDescription.Size = new System.Drawing.Size(428, 341);
+            this.rtbAbtDescription.Size = new System.Drawing.Size(428, 336);
             this.rtbAbtDescription.TabIndex = 2;
             this.rtbAbtDescription.Text = "数据源说明";
-            this.rtbAbtDescription.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // tableLayoutPanel3
             // 
@@ -618,7 +687,6 @@ namespace LosePanel.Forms
             this.MinimumSize = new System.Drawing.Size(781, 380);
             this.Name = "MainForm";
             this.Text = "洛书面板 - 代号霜";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tblMainLayouter.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -682,6 +750,9 @@ namespace LosePanel.Forms
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblIsLogConnected;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.RichTextBox rtbLogApp;
+        private System.Windows.Forms.Label label9;
     }
 }
 

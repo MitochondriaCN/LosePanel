@@ -39,10 +39,12 @@ namespace LosePanel.Forms
             #region 加载设置
             //将设置载入管理器
             SettingsManager.LoadOn();
+            LogApp("设置已载入管理器。");
             //加载刷新频率
             numRefreshFrequency.Value = SettingsManager.RefreshFrequency;
             //将数据源列表载入管理器
             DataProviderManager.LoadOnDataProviders();
+            LogApp("数据源列表已载入管理器。");
             //将当前选择的数据源载入管理器
             DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider);
             //加载数据源列表
@@ -50,6 +52,7 @@ namespace LosePanel.Forms
             //加载已选数据源
             cmbDataProvider.SelectedItem = DataProviderManager.CurrentDataProvider;
             dp = DataProviderManager.CurrentDataProvider;
+            LogApp("设置加载完毕。");
             #endregion
 
 
@@ -57,9 +60,9 @@ namespace LosePanel.Forms
             timer.Interval = SettingsManager.RefreshFrequency * 1000;
             timer.Tick += UpdateDataDisplay;
             timer.Start();
+            LogApp("计时器开始，每" + SettingsManager.RefreshFrequency.ToString() + "秒一次。");
 
             //设置控件
-
             lblAbtProviderName.Text = dp.ProviderName;
             lblAbtWrittenBy.Text = dp.WrittenBy;
             rtbAbtDescription.Text = dp.Description;
@@ -68,26 +71,35 @@ namespace LosePanel.Forms
         private void UpdateDataDisplay(object sender, EventArgs e)
         {
             lblProviderName.Text = "数据源：" + dp.ProviderName;
-            lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
+            
             if (dp.OnlinePlayerNumberIsConnected)
             {
                 lblLoseNoneAnalStat.Text = "正在以 " + SettingsManager.RefreshFrequency.ToString() +
                     " 秒一次的频率从数据源获得数据。";
                 lblLoseNoneAnalStat.ForeColor = Color.Black;
+                LogApp("数据源指示已连接到服务器。");
+                lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
+                LogApp("在线玩家数已获取。");
+                chartOnlinePlayers.Series[0].Points.DataBindXY(OnlinePlayerAxis, dp.PlayerNumberDuringDay);
+                LogApp("图表已更新。");
             }
             else
             {
                 lblLoseNoneAnalStat.Text = "无法连接到数据源。重试中……";
                 lblLoseNoneAnalStat.ForeColor = Color.Red;
+                LogApp("数据源指示未连接到服务器。");
             }
 
-            chartOnlinePlayers.Series[0].Points.DataBindXY(OnlinePlayerAxis, dp.PlayerNumberDuringDay);
+            
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        protected void LogApp(string str)
         {
-
+            string nowTime = DateTime.Now.ToString();
+            string log = nowTime + " " + str;
+            rtbLogApp.AppendText(log + "\n");
         }
+
 
         private void btnSaveSettings_Click(object sender, EventArgs e)
         {
@@ -99,14 +111,5 @@ namespace LosePanel.Forms
             Application.Restart();
         }
 
-        private void richTextBox1_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }
