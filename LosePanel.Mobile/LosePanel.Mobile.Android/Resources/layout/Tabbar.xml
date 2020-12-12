@@ -9,3 +9,4 @@
     app:tabIndicatorColor="@android:color/white"
     app:tabGravity="fill"
     app:tabMode="fixed" />
+
