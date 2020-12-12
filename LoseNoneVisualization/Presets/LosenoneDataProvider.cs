@@ -58,6 +58,7 @@ namespace LosePanel.Presets
         {
             //初始化各成员
             OnlinePlayerNumber = 0;
+            PlayerNumberDuringDay = new List<TimePointPlayerNumber>();
 
             //设定定时器方法
             _5secTimer.Elapsed += UpdateOnlinePlayerNumber;

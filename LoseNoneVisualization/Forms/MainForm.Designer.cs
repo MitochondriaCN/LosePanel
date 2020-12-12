@@ -232,7 +232,7 @@ namespace LosePanel.Forms
             chartArea1.AxisX.MajorTickMark.Enabled = false;
             chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Silver;
             chartArea1.AxisX.MajorTickMark.LineWidth = 2;
-            chartArea1.AxisX.Title = "从 0 点开始的小时数";
+            chartArea1.AxisX.Title = "时间";
             chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
             chartArea1.AxisX.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             chartArea1.AxisY.Interval = 1D;

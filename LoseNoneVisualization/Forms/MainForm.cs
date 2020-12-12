@@ -72,6 +72,7 @@ namespace LosePanel.Forms
         {
             //更新数据源名
             lblProviderName.Text = "数据源：" + dp.ProviderName;
+
             //更新在线玩家数
             if (dp.OnlinePlayerNumberIsConnected)
             {
@@ -89,6 +90,23 @@ namespace LosePanel.Forms
                 LogApp("数据源指示未连接到服务器。");
             }
 
+            //更新图表
+            List<TimePointPlayerNumber> timep = dp.PlayerNumberDuringDay;//取得各时段玩家数
+            if (timep != null)
+            {
+                List<string> XValues = new List<string>();
+                List<int> YValues = new List<int>();
+                foreach (var v in timep)
+                {
+                    string hour = v.TimePoint.Hour.ToString();
+                    string min = v.TimePoint.Minute.ToString();
+                    string full = hour + ":" + min;
+                    XValues.Add(full);
+
+                    YValues.Add(v.PlayerNumber);
+                }
+                chartOnlinePlayers.Series[0].Points.DataBindXY(XValues, YValues);
+            }
             
         }
 
