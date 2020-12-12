@@ -17,7 +17,7 @@ namespace LosePanel.SDK
         /// 一天中各时段玩家数量。30分钟为一单位，共48个数据，未知为0。顺序为从0点开始的每30分钟。
         /// 若数据数量不足48个，则报错。
         /// </summary>
-        List<int> PlayerNumberDuringDay { get; }
+        List<TimePointPlayerNumber> PlayerNumberDuringDay { get; }
 
         /// <summary>
         /// 实时在线玩家数。该数据应当实时更新以确保时效性。
