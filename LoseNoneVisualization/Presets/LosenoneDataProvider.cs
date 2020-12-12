@@ -27,7 +27,7 @@ namespace LosePanel.Presets
         private Timer _60minTimer = new Timer(3600000);
         #endregion
 
-        public List<int> PlayerNumberDuringDay { get; private set; }
+        public List<TimePointPlayerNumber> PlayerNumberDuringDay { get; private set; }
         
         public int OnlinePlayerNumber { get; private set; }
 
@@ -57,8 +57,6 @@ namespace LosePanel.Presets
         public LosenoneDataProvider()
         {
             //初始化各成员
-            PlayerNumberDuringDay = new List<int>(48) { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
             OnlinePlayerNumber = 0;
 
             //设定定时器方法
@@ -73,8 +71,8 @@ namespace LosePanel.Presets
         #region 5秒定时方法
         private void UpdateOnlinePlayerNumber(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
                 //更新在线玩家数字
                 string str = NetworkTools.GetUrlReturn("http://139.199.127.51:23233/?Qgetnum");
                 //示例：document.write("在线人数:1:Qiaoyiiii6;")
@@ -88,16 +86,23 @@ namespace LosePanel.Presets
                 string[] lines = Regex.Split(playersOnTime, "\\\\", RegexOptions.IgnoreCase);
                 foreach (string s in lines)
                 {
-                if (s == "")
-                { continue; }
+                    if (s == "")
+                    { continue; }
                     string time = s.Split(':')[0];
                     string num = s.Split(':')[1];
 
                     //*** 判断最接近的时间点并将数据填充到PlayerNumberDuringDay的合适位置 ***
                     //以下算法极为烧脑，请酌情修改
                     //可联系时间轴帮助理解算法
+                    int year = int.Parse(time.Substring(0, 4));//取得年
+                    int month = int.Parse(time.Substring(4, 2));//取得月
+                    int day = int.Parse(time.Substring(6, 2));//取得日
                     int hour = int.Parse(time.Substring(8, 2));//取得小时
                     int min = int.Parse(time.Substring(10, 2));//取得分钟
+                    PlayerNumberDuringDay.Add(new TimePointPlayerNumber(new DateTime(year, month, day, hour, min, 0), int.Parse(num)));
+
+                    #region 原算法
+                    /*
                     int diff = min - 30;//将分钟数与30分钟作差
                     if (diff >= 15)//若差大于等于15，即时间点已过半点又15分钟，也就是xx:45分以后
                     {
@@ -123,14 +128,16 @@ namespace LosePanel.Presets
                         int index = hour * 2;
                         PlayerNumberDuringDay[index] = int.Parse(num);
                     }
+                    */
+                    #endregion
                 }
-            //}
-            //catch
-            //{
-            //   OnlinePlayerNumberIsConnected = false;
-            //   OnlinePlayerNumber = 0;
-            //}
-            
+            }
+            catch
+            {
+                OnlinePlayerNumberIsConnected = false;
+                OnlinePlayerNumber = 0;
+            }
+
         }
         #endregion
 

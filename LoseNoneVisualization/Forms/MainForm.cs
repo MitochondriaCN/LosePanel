@@ -70,8 +70,9 @@ namespace LosePanel.Forms
 
         private void UpdateDataDisplay(object sender, EventArgs e)
         {
+            //更新数据源名
             lblProviderName.Text = "数据源：" + dp.ProviderName;
-            
+            //更新在线玩家数
             if (dp.OnlinePlayerNumberIsConnected)
             {
                 lblLoseNoneAnalStat.Text = "正在以 " + SettingsManager.RefreshFrequency.ToString() +
@@ -80,8 +81,6 @@ namespace LosePanel.Forms
                 LogApp("数据源指示已连接到服务器。");
                 lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
                 LogApp("在线玩家数已获取。");
-                chartOnlinePlayers.Series[0].Points.DataBindXY(OnlinePlayerAxis, dp.PlayerNumberDuringDay);
-                LogApp("图表已更新。");
             }
             else
             {
