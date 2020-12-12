@@ -20,6 +20,11 @@ namespace LosePanel.DataSystem
         /// </summary>
         public static int RefreshFrequency { get; set; }
 
+        /// <summary>
+        /// 背景图片路径。
+        /// </summary>
+        public static string BackgroundImagePath { get; set; }
+
         public static void LoadOn()
         {
             if (File.Exists("settings.ini"))
@@ -28,6 +33,7 @@ namespace LosePanel.DataSystem
 
                 SelectedDataProvider = xd.Element("SelectedDataProvider").Value;
                 RefreshFrequency = int.Parse(xd.Element("RefreshFrequency").Value);
+                BackgroundImagePath = xd.Element("BackgroundImagePath").Value;
             }
             else
             {
@@ -42,7 +48,8 @@ namespace LosePanel.DataSystem
             XDocument xd = new XDocument(
                 new XElement("LosePanelSettings",
                     new XElement("SelectedDataProvider", SelectedDataProvider),
-                    new XElement("RefreshFrequency", RefreshFrequency.ToString())));
+                    new XElement("RefreshFrequency", RefreshFrequency.ToString()),
+                    new XElement("BackgroundImagePath", BackgroundImagePath)));
             xd.Save("settings.ini");
         }
     }

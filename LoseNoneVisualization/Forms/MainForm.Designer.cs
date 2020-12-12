@@ -54,6 +54,9 @@ namespace LosePanel.Forms
             this.label9 = new System.Windows.Forms.Label();
             this.tbpSettings = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblBgImagePath = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,6 +64,7 @@ namespace LosePanel.Forms
             this.btnSaveSettings = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.numRefreshFrequency = new System.Windows.Forms.NumericUpDown();
+            this.btnBgImageSelect = new System.Windows.Forms.Button();
             this.tbpAbout = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
@@ -203,6 +207,7 @@ namespace LosePanel.Forms
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(990, 476);
             this.tabControl1.TabIndex = 2;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tbpOnlinePlayers
             // 
@@ -217,6 +222,9 @@ namespace LosePanel.Forms
             // 
             // chartOnlinePlayers
             // 
+            this.chartOnlinePlayers.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            this.chartOnlinePlayers.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartOnlinePlayers.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
             chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
             chartArea1.AxisX.IsLabelAutoFit = false;
             chartArea1.AxisX.IsMarginVisible = false;
@@ -256,7 +264,8 @@ namespace LosePanel.Forms
             chartArea1.AxisY.Title = "玩家数";
             chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
             chartArea1.AxisY.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.BackColor = System.Drawing.Color.White;
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
             chartArea1.BackSecondaryColor = System.Drawing.Color.White;
             chartArea1.CursorX.LineColor = System.Drawing.Color.Black;
             chartArea1.CursorX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
@@ -429,25 +438,65 @@ namespace LosePanel.Forms
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label12, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblBgImagePath, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label11, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.label7, 2, 1);
             this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.cmbDataProvider, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSaveSettings, 3, 2);
+            this.tableLayoutPanel2.Controls.Add(this.btnSaveSettings, 3, 3);
             this.tableLayoutPanel2.Controls.Add(this.label6, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.numRefreshFrequency, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnBgImageSelect, 3, 2);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 3;
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(982, 94);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(982, 126);
             this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoEllipsis = true;
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label12.Location = new System.Drawing.Point(335, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(140, 33);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "此图片将作为面板背景。";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblBgImagePath
+            // 
+            this.lblBgImagePath.AutoSize = true;
+            this.lblBgImagePath.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBgImagePath.Location = new System.Drawing.Point(65, 60);
+            this.lblBgImagePath.Name = "lblBgImagePath";
+            this.lblBgImagePath.Size = new System.Drawing.Size(20, 33);
+            this.lblBgImagePath.TabIndex = 8;
+            this.lblBgImagePath.Text = "无";
+            this.lblBgImagePath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label11.Location = new System.Drawing.Point(3, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 33);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "背景图片";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
             // 
@@ -455,7 +504,7 @@ namespace LosePanel.Forms
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Left;
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(272, 31);
+            this.label7.Location = new System.Drawing.Point(335, 31);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(536, 29);
             this.label7.TabIndex = 6;
@@ -497,9 +546,9 @@ namespace LosePanel.Forms
             // btnSaveSettings
             // 
             this.btnSaveSettings.AutoSize = true;
-            this.btnSaveSettings.Location = new System.Drawing.Point(877, 63);
+            this.btnSaveSettings.Location = new System.Drawing.Point(877, 96);
             this.btnSaveSettings.Name = "btnSaveSettings";
-            this.btnSaveSettings.Size = new System.Drawing.Size(102, 28);
+            this.btnSaveSettings.Size = new System.Drawing.Size(102, 27);
             this.btnSaveSettings.TabIndex = 2;
             this.btnSaveSettings.Text = "保存并重启软件";
             this.btnSaveSettings.UseVisualStyleBackColor = true;
@@ -511,7 +560,7 @@ namespace LosePanel.Forms
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
             this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label6.Location = new System.Drawing.Point(272, 0);
+            this.label6.Location = new System.Drawing.Point(335, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(482, 31);
             this.label6.TabIndex = 4;
@@ -531,6 +580,17 @@ namespace LosePanel.Forms
             0,
             0,
             0});
+            // 
+            // btnBgImageSelect
+            // 
+            this.btnBgImageSelect.AutoSize = true;
+            this.btnBgImageSelect.Location = new System.Drawing.Point(877, 63);
+            this.btnBgImageSelect.Name = "btnBgImageSelect";
+            this.btnBgImageSelect.Size = new System.Drawing.Size(63, 27);
+            this.btnBgImageSelect.TabIndex = 9;
+            this.btnBgImageSelect.Text = "选择...";
+            this.btnBgImageSelect.UseVisualStyleBackColor = true;
+            this.btnBgImageSelect.Click += new System.EventHandler(this.btnBgImageSelect_Click);
             // 
             // tbpAbout
             // 
@@ -669,9 +729,9 @@ namespace LosePanel.Forms
             this.lblTitle.Location = new System.Drawing.Point(10, 0);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(265, 73);
+            this.lblTitle.Size = new System.Drawing.Size(345, 73);
             this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "洛书面板 - 实时";
+            this.lblTitle.Text = "洛书面板 LosePanel";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
@@ -753,6 +813,10 @@ namespace LosePanel.Forms
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.RichTextBox rtbLogApp;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblBgImagePath;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button btnBgImageSelect;
     }
 }
 

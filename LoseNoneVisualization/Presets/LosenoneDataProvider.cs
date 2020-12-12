@@ -82,6 +82,7 @@ namespace LosePanel.Presets
                 OnlinePlayerNumberIsConnected = true;
 
                 //更新各时段在线玩家数
+                PlayerNumberDuringDay.Clear();
                 string playersOnTime = NetworkTools.GetUrlReturn("http://139.199.127.51/Qnum/newest.txt");
                 char[] spchar = { '\\', '\\' };
                 string[] lines = Regex.Split(playersOnTime, "\\\\", RegexOptions.IgnoreCase);

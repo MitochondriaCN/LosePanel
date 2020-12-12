@@ -36,25 +36,10 @@ namespace LosePanel.Forms
             //Font FZYH = new Font(Program.CustomFont.Families[0], 11);
             //this.Font = FZYH;
 
-            #region 加载设置
             //将设置载入管理器
             SettingsManager.LoadOn();
             LogApp("设置已载入管理器。");
-            //加载刷新频率
-            numRefreshFrequency.Value = SettingsManager.RefreshFrequency;
-            //将数据源列表载入管理器
-            DataProviderManager.LoadOnDataProviders();
-            LogApp("数据源列表已载入管理器。");
-            //将当前选择的数据源载入管理器
-            DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider);
-            //加载数据源列表
-            cmbDataProvider.DataSource = DataProviderManager.DataProviders;
-            //加载已选数据源
-            cmbDataProvider.SelectedItem = DataProviderManager.CurrentDataProvider;
-            dp = DataProviderManager.CurrentDataProvider;
-            LogApp("设置加载完毕。");
-            #endregion
-
+            LoadSettingsIntoUI();
 
             //设置Timer
             timer.Interval = SettingsManager.RefreshFrequency * 1000;
@@ -66,10 +51,16 @@ namespace LosePanel.Forms
             lblAbtProviderName.Text = dp.ProviderName;
             lblAbtWrittenBy.Text = dp.WrittenBy;
             rtbAbtDescription.Text = dp.Description;
+
+            //设置背景图片
+            //string url = SettingsManager.BackgroundImagePath;
+            //chartOnlinePlayers.BackImage = url;
         }
 
         private void UpdateDataDisplay(object sender, EventArgs e)
         {
+            
+
             //更新数据源名
             lblProviderName.Text = "数据源：" + dp.ProviderName;
 
@@ -99,7 +90,11 @@ namespace LosePanel.Forms
                 foreach (var v in timep)
                 {
                     string hour = v.TimePoint.Hour.ToString();
+                    if (hour.Length == 1)
+                    { hour = "0" + hour; }
                     string min = v.TimePoint.Minute.ToString();
+                    if (min.Length == 1)
+                    { min = "0" + min; }
                     string full = hour + ":" + min;
                     XValues.Add(full);
 
@@ -117,16 +112,53 @@ namespace LosePanel.Forms
             rtbLogApp.AppendText(log + "\n");
         }
 
+        private void LoadSettingsIntoUI()
+        {
+            //加载刷新频率
+            numRefreshFrequency.Value = SettingsManager.RefreshFrequency;
+            //将数据源列表载入管理器
+            DataProviderManager.LoadOnDataProviders();
+            LogApp("数据源列表已载入管理器。");
+            //将当前选择的数据源载入管理器
+            DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider);
+            //加载数据源列表
+            cmbDataProvider.DataSource = DataProviderManager.DataProviders;
+            //加载已选数据源
+            cmbDataProvider.SelectedItem = DataProviderManager.CurrentDataProvider;
+            dp = DataProviderManager.CurrentDataProvider;
+            //加载背景图片
+            lblBgImagePath.Text = SettingsManager.BackgroundImagePath;
+            LogApp("设置加载完毕。");
+            
+        }
+
 
         private void btnSaveSettings_Click(object sender, EventArgs e)
         {
             SettingsManager.RefreshFrequency = (int)numRefreshFrequency.Value;
             SettingsManager.SelectedDataProvider = cmbDataProvider.SelectedItem.ToString();
+            SettingsManager.BackgroundImagePath = lblBgImagePath.Text;
 
             SettingsManager.Save();
             MessageBox.Show("已保存，即将重启。", "信息");
             Application.Restart();
         }
 
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LoadSettingsIntoUI();
+        }
+
+        private void btnBgImageSelect_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog of = new OpenFileDialog();
+            of.Title = "选择背景图片";
+            of.Filter = "图片(JPEG,GIF)|*.jpg;*.jpeg;*.gif";
+            if (of.ShowDialog() == DialogResult.OK)
+            {
+                string path = of.FileName;
+                lblBgImagePath.Text = path;
+            }
+        }
     }
 }
