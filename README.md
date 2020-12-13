@@ -2,9 +2,13 @@
 洛书面板——Minecraft服务器面板，多平台通用，可自行适配服务器，提供数据统计、日志管理等功能。
 
 欢迎加入洛书南（Losenone）服务器：[洛书南服务器官网](www.losenone.cn)
+更多信息请移步：[洛书面板官方网站](https://lp.apocalypse.icu)
+
+# 相关文章
+[SDK适配教程](http://lp.apocalypse.icu/programming.html)
 
 # 开发者
-洛书面板项目由线粒体（XianlitiCN，GitHub：MitochondriaCN）和洛书南服务器团队合作发起，指定[技言网](www.apocalypse.icu)为本软件官方交流平台。我们将同心协力开发洛书面板。
+洛书面板项目由线粒体（XianlitiCN，GitHub：MitochondriaCN）和洛书南服务器团队合作发起，我们将同心协力开发洛书面板。
 ### 特别鸣谢
 - @mofcandy 提供洛书南服务器数据源接口。
 - @Qiaoyiiii6 沟通及协助开发。
