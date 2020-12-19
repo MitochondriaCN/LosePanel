@@ -637,6 +637,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.Controls.Add(this.rtbAbtDescription, 0, 2);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 3;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
@@ -650,27 +651,31 @@ namespace LosePanel.Forms
             this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.richTextBox1.Location = new System.Drawing.Point(718, 107);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(15, 3, 10, 3);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.ReadOnly = true;
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(397, 351);
+            this.richTextBox1.Size = new System.Drawing.Size(390, 351);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "该版本为测试版本，诸多技术仍不成熟。\n\n线粒体，Qiaoyiiii6，mofcandy";
+            this.richTextBox1.Text = "主程序：XianlitiCN\n测试：mofcandy\n协助：Qiaoyiiii6\n\n洛书面板——Minecraft 服务器面板，多平台通用，可自行适配服务器，提供" +
+    "数据统计、日志管理等功能。\n欢迎加入洛书南（Losenone）服务器：https://www.losenone.cn\n更多信息请移步洛书面板官网：https:/" +
+    "/lp.apocalypse.icu";
+            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label5.Location = new System.Drawing.Point(718, 66);
             this.label5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 38);
+            this.label5.Size = new System.Drawing.Size(67, 38);
             this.label5.TabIndex = 5;
-            this.label5.Text = "V0.2 霜";
+            this.label5.Text = "V0.3 霜";
             // 
             // label3
             // 
@@ -702,8 +707,8 @@ namespace LosePanel.Forms
             // 
             this.lblAbtWrittenBy.AutoSize = true;
             this.lblAbtWrittenBy.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblAbtWrittenBy.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblAbtWrittenBy.ForeColor = System.Drawing.Color.Gray;
+            this.lblAbtWrittenBy.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblAbtWrittenBy.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblAbtWrittenBy.Location = new System.Drawing.Point(15, 66);
             this.lblAbtWrittenBy.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
             this.lblAbtWrittenBy.Name = "lblAbtWrittenBy";
@@ -716,6 +721,7 @@ namespace LosePanel.Forms
             this.rtbAbtDescription.BackColor = System.Drawing.Color.White;
             this.rtbAbtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbAbtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbAbtDescription.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rtbAbtDescription.Location = new System.Drawing.Point(15, 107);
             this.rtbAbtDescription.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.rtbAbtDescription.Name = "rtbAbtDescription";

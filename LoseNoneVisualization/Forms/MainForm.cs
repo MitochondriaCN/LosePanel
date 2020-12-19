@@ -171,5 +171,10 @@ namespace LosePanel.Forms
             //强制执行计时器方法
             UpdateDataDisplay(timer, null);
         }
+
+        private void richTextBox1_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.LinkText);
+        }
     }
 }
