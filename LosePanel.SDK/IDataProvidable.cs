@@ -13,21 +13,18 @@ namespace LosePanel.SDK
     /// </summary>
     public interface IDataProvidable
     {
+
         /// <summary>
-        /// 一天中各时段玩家数量。30分钟为一单位，共48个数据，未知为0。顺序为从0点开始的每30分钟。
-        /// 若数据数量不足48个，则报错。
+        /// 获取指定日期一天中各时段玩家数。
         /// </summary>
-        List<TimePointPlayerNumber> PlayerNumberDuringDay { get; }
+        /// <param name="date">指定日期。</param>
+        /// <returns>指定日期一天中各时段玩家数。</returns>
+        List<TimePointPlayerNumber> GetPlayerNumbersOfDay(DateTime date);
 
         /// <summary>
         /// 实时在线玩家数。该数据应当实时更新以确保时效性。
         /// </summary>
         int OnlinePlayerNumber { get; }
-
-        /// <summary>
-        /// 实时在线玩家数服务器连接状态。该数据应当实时更新以确保时效性。
-        /// </summary>
-        bool OnlinePlayerNumberIsConnected { get; }
 
         /// <summary>
         /// 服务器在线日志。该数据应当实时更新以确保时效性。

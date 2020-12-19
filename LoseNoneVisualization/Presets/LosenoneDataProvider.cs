@@ -27,11 +27,7 @@ namespace LosePanel.Presets
         private Timer _60minTimer = new Timer(3600000);
         #endregion
 
-        public List<TimePointPlayerNumber> PlayerNumberDuringDay { get; private set; }
-        
         public int OnlinePlayerNumber { get; private set; }
-
-        public bool OnlinePlayerNumberIsConnected { get; private set; }
 
         public string ProviderName { get { return "洛书南统计服务器"; } }
 
@@ -58,7 +54,6 @@ namespace LosePanel.Presets
         {
             //初始化各成员
             OnlinePlayerNumber = 0;
-            PlayerNumberDuringDay = new List<TimePointPlayerNumber>();
 
             //设定定时器方法
             _5secTimer.Elapsed += UpdateOnlinePlayerNumber;
@@ -79,11 +74,33 @@ namespace LosePanel.Presets
                 //示例：document.write("在线人数:1:Qiaoyiiii6;")
                 string onlinenum = str.Substring(21, 1);
                 OnlinePlayerNumber = int.Parse(onlinenum);
-                OnlinePlayerNumberIsConnected = true;
+            }
+            catch
+            {
+                throw;
+            }
 
-                //更新各时段在线玩家数
-                PlayerNumberDuringDay.Clear();
-                string playersOnTime = NetworkTools.GetUrlReturn("http://139.199.127.51/Qnum/newest.txt");
+        }
+        #endregion
+
+        override public string ToString()
+        {
+            return ProviderName;
+        }
+
+        /// <summary>
+        /// 获取指定日期各时段玩家数。
+        /// </summary>
+        /// <param name="date"></param>
+        /// <returns></returns>
+        public List<TimePointPlayerNumber> GetPlayerNumbersOfDay(DateTime date)
+        {
+            try
+            {
+                List<TimePointPlayerNumber> ret = new List<TimePointPlayerNumber>();
+                string _date = date.Year.ToString() + (date.Month.ToString().Length == 2 ? date.Month.ToString() : "0" + date.Month.ToString()) +
+                    (date.Day.ToString().Length == 2 ? date.Day.ToString() : "0" + date.Day.ToString());
+                string playersOnTime = NetworkTools.GetUrlReturn("http://139.199.127.51/Qnum/" + _date + ".txt");
                 char[] spchar = { '\\', '\\' };
                 string[] lines = Regex.Split(playersOnTime, "\\\\", RegexOptions.IgnoreCase);
                 foreach (string s in lines)
@@ -101,51 +118,15 @@ namespace LosePanel.Presets
                     int day = int.Parse(time.Substring(6, 2));//取得日
                     int hour = int.Parse(time.Substring(8, 2));//取得小时
                     int min = int.Parse(time.Substring(10, 2));//取得分钟
-                    PlayerNumberDuringDay.Add(new TimePointPlayerNumber(new DateTime(year, month, day, hour, min, 0), int.Parse(num)));
-
-                    #region 原算法
-                    /*
-                    int diff = min - 30;//将分钟数与30分钟作差
-                    if (diff >= 15)//若差大于等于15，即时间点已过半点又15分钟，也就是xx:45分以后
-                    {
-                        hour++;//将数据算入后一小时整点，
-                        min = 0;//即(hour+1):00
-                        int index = hour * 2;//在PlayerNumberDuringDay中的数据索引号，具体为什么自己想吧，数学问题
-                        PlayerNumberDuringDay[index] = int.Parse(num);//设置数据
-                    }
-                    else if (diff < 15 && diff >= 0)//若差小于15且大于等于0，即时间点已过半点但未到15分钟，也就是xx:45分以前、xx:30及以后
-                    {
-                        min = 30;//将数据算入半点
-                        int index = int.Parse(((hour + 0.5) * 2).ToString());//依然是数学问题
-                        PlayerNumberDuringDay[index] = int.Parse(num);
-                    }
-                    else if (diff > -15 && diff <= 0)//判断条件与上相反，代码同
-                    {
-                        min = 30;
-                        int index = int.Parse(((hour + 0.5) * 2).ToString());
-                        PlayerNumberDuringDay[index] = int.Parse(num);
-                    }
-                    else if (diff <= -15 && diff >= -30)
-                    {
-                        int index = hour * 2;
-                        PlayerNumberDuringDay[index] = int.Parse(num);
-                    }
-                    */
-                    #endregion
+                    ret.Add(new TimePointPlayerNumber(new DateTime(year, month, day, hour, min, 0), int.Parse(num)));
                 }
+                return ret;
             }
-            catch
+            catch(Exception e)
             {
-                OnlinePlayerNumberIsConnected = false;
-                OnlinePlayerNumber = 0;
+                throw e;
             }
-
-        }
-        #endregion
-
-        override public string ToString()
-        {
-            return ProviderName;
         }
     }
 }
+

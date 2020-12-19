@@ -57,52 +57,57 @@ namespace LosePanel.Forms
             //chartOnlinePlayers.BackImage = url;
         }
 
+        /// <summary>
+        /// 更新数据显示。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateDataDisplay(object sender, EventArgs e)
         {
-            
-
-            //更新数据源名
-            lblProviderName.Text = "数据源：" + dp.ProviderName;
-
-            //更新在线玩家数
-            if (dp.OnlinePlayerNumberIsConnected)
+            try
             {
+                //更新数据源名
+                lblProviderName.Text = "数据源：" + dp.ProviderName;
+
+                //更新在线玩家数
+                lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
+                LogApp("在线玩家数已获取。");
+
+                //更新图表
+                List<TimePointPlayerNumber> timep = dp.GetPlayerNumbersOfDay(mclDateSelector.SelectionStart);//取得各时段玩家数
+                if (timep != null)
+                {
+                    List<string> XValues = new List<string>();
+                    List<int> YValues = new List<int>();
+                    foreach (var v in timep)
+                    {
+                        string hour = v.TimePoint.Hour.ToString();
+                        if (hour.Length == 1)
+                        { hour = "0" + hour; }
+                        string min = v.TimePoint.Minute.ToString();
+                        if (min.Length == 1)
+                        { min = "0" + min; }
+                        string full = hour + ":" + min;
+                        XValues.Add(full);
+
+                        YValues.Add(v.PlayerNumber);
+                    }
+                    chartOnlinePlayers.Series[0].Points.DataBindXY(XValues, YValues);
+                }
+
+                //更新状态
                 lblLoseNoneAnalStat.Text = "正在以 " + SettingsManager.RefreshFrequency.ToString() +
                     " 秒一次的频率从数据源获得数据。";
                 lblLoseNoneAnalStat.ForeColor = Color.Black;
                 LogApp("数据源指示已连接到服务器。");
-                lblOnlinePlayerNumber.Text = dp.OnlinePlayerNumber.ToString();
-                LogApp("在线玩家数已获取。");
             }
-            else
+            catch(Exception ex)
             {
-                lblLoseNoneAnalStat.Text = "无法连接到数据源。重试中……";
+                //更新状态
+                lblLoseNoneAnalStat.Text = "获取一项或多项数据出现问题。重试中……";
                 lblLoseNoneAnalStat.ForeColor = Color.Red;
-                LogApp("数据源指示未连接到服务器。");
+                LogApp("获取数据出现问题：" + ex.Message);
             }
-
-            //更新图表
-            List<TimePointPlayerNumber> timep = dp.PlayerNumberDuringDay;//取得各时段玩家数
-            if (timep != null)
-            {
-                List<string> XValues = new List<string>();
-                List<int> YValues = new List<int>();
-                foreach (var v in timep)
-                {
-                    string hour = v.TimePoint.Hour.ToString();
-                    if (hour.Length == 1)
-                    { hour = "0" + hour; }
-                    string min = v.TimePoint.Minute.ToString();
-                    if (min.Length == 1)
-                    { min = "0" + min; }
-                    string full = hour + ":" + min;
-                    XValues.Add(full);
-
-                    YValues.Add(v.PlayerNumber);
-                }
-                chartOnlinePlayers.Series[0].Points.DataBindXY(XValues, YValues);
-            }
-            
         }
 
         protected void LogApp(string str)
@@ -159,6 +164,12 @@ namespace LosePanel.Forms
                 string path = of.FileName;
                 lblBgImagePath.Text = path;
             }
+        }
+
+        private void mclDateSelector_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            //强制执行计时器方法
+            UpdateDataDisplay(timer, null);
         }
     }
 }

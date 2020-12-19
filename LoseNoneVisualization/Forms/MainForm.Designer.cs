@@ -42,6 +42,9 @@ namespace LosePanel.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpOnlinePlayers = new System.Windows.Forms.TabPage();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.mclDateSelector = new System.Windows.Forms.MonthCalendar();
             this.tbpLog = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -74,14 +77,13 @@ namespace LosePanel.Forms
             this.rtbAbtDescription = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tblMainLayouter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tbpOnlinePlayers.SuspendLayout();
+            this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
             this.tbpLog.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -91,8 +93,6 @@ namespace LosePanel.Forms
             this.tbpAbout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
-            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMainLayouter
@@ -223,434 +223,20 @@ namespace LosePanel.Forms
             this.tbpOnlinePlayers.Text = "在线人数";
             this.tbpOnlinePlayers.UseVisualStyleBackColor = true;
             // 
-            // tbpLog
+            // tableLayoutPanel7
             // 
-            this.tbpLog.Controls.Add(this.tableLayoutPanel5);
-            this.tbpLog.Location = new System.Drawing.Point(4, 4);
-            this.tbpLog.Name = "tbpLog";
-            this.tbpLog.Size = new System.Drawing.Size(982, 446);
-            this.tbpLog.TabIndex = 3;
-            this.tbpLog.Text = "日志";
-            this.tbpLog.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.label10, 1, 1);
-            this.tableLayoutPanel5.Controls.Add(this.rtbLogApp, 1, 2);
-            this.tableLayoutPanel5.Controls.Add(this.rtbLog, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
-            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 1);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 3;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(982, 446);
-            this.tableLayoutPanel5.TabIndex = 0;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(494, 39);
-            this.label10.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(485, 28);
-            this.label10.TabIndex = 6;
-            this.label10.Text = "面板";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // rtbLogApp
-            // 
-            this.rtbLogApp.BackColor = System.Drawing.Color.White;
-            this.rtbLogApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbLogApp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbLogApp.Location = new System.Drawing.Point(494, 78);
-            this.rtbLogApp.Name = "rtbLogApp";
-            this.rtbLogApp.ReadOnly = true;
-            this.rtbLogApp.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbLogApp.Size = new System.Drawing.Size(485, 365);
-            this.rtbLogApp.TabIndex = 4;
-            this.rtbLogApp.Text = "";
-            // 
-            // rtbLog
-            // 
-            this.rtbLog.BackColor = System.Drawing.Color.White;
-            this.rtbLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbLog.Location = new System.Drawing.Point(3, 78);
-            this.rtbLog.Name = "rtbLog";
-            this.rtbLog.ReadOnly = true;
-            this.rtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbLog.Size = new System.Drawing.Size(485, 365);
-            this.rtbLog.TabIndex = 3;
-            this.rtbLog.Text = "";
-            // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.AutoSize = true;
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel5.SetColumnSpan(this.tableLayoutPanel6, 2);
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lblIsLogConnected, 1, 0);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 1;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(976, 17);
-            this.tableLayoutPanel6.TabIndex = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 17);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "日志系统连接状态：";
-            // 
-            // lblIsLogConnected
-            // 
-            this.lblIsLogConnected.AutoSize = true;
-            this.lblIsLogConnected.Location = new System.Drawing.Point(125, 0);
-            this.lblIsLogConnected.Name = "lblIsLogConnected";
-            this.lblIsLogConnected.Size = new System.Drawing.Size(44, 17);
-            this.lblIsLogConnected.TabIndex = 1;
-            this.lblIsLogConnected.Text = "未连接";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label9.Location = new System.Drawing.Point(3, 39);
-            this.label9.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(485, 28);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "服务器";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tbpSettings
-            // 
-            this.tbpSettings.Controls.Add(this.tableLayoutPanel2);
-            this.tbpSettings.Location = new System.Drawing.Point(4, 4);
-            this.tbpSettings.Name = "tbpSettings";
-            this.tbpSettings.Size = new System.Drawing.Size(982, 446);
-            this.tbpSettings.TabIndex = 1;
-            this.tbpSettings.Text = "设置";
-            this.tbpSettings.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.AutoSize = true;
-            this.tableLayoutPanel2.ColumnCount = 4;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.Controls.Add(this.label12, 2, 2);
-            this.tableLayoutPanel2.Controls.Add(this.lblBgImagePath, 1, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label11, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cmbDataProvider, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnSaveSettings, 3, 3);
-            this.tableLayoutPanel2.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.numRefreshFrequency, 1, 1);
-            this.tableLayoutPanel2.Controls.Add(this.btnBgImageSelect, 3, 2);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(982, 126);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // label12
-            // 
-            this.label12.AutoEllipsis = true;
-            this.label12.AutoSize = true;
-            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label12.Location = new System.Drawing.Point(335, 60);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(140, 33);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "此图片将作为面板背景。";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblBgImagePath
-            // 
-            this.lblBgImagePath.AutoSize = true;
-            this.lblBgImagePath.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblBgImagePath.Location = new System.Drawing.Point(65, 60);
-            this.lblBgImagePath.Name = "lblBgImagePath";
-            this.lblBgImagePath.Size = new System.Drawing.Size(20, 33);
-            this.lblBgImagePath.TabIndex = 8;
-            this.lblBgImagePath.Text = "无";
-            this.lblBgImagePath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label11.Location = new System.Drawing.Point(3, 60);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(56, 33);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "背景图片";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label7
-            // 
-            this.label7.AutoEllipsis = true;
-            this.label7.AutoSize = true;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(335, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(536, 29);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Location = new System.Drawing.Point(3, 31);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 29);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "刷新频率";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label2.Location = new System.Drawing.Point(15, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 31);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "数据源";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbDataProvider
-            // 
-            this.cmbDataProvider.FormattingEnabled = true;
-            this.cmbDataProvider.Items.AddRange(new object[] {
-            "（预置）洛书南统计服务器"});
-            this.cmbDataProvider.Location = new System.Drawing.Point(65, 3);
-            this.cmbDataProvider.Name = "cmbDataProvider";
-            this.cmbDataProvider.Size = new System.Drawing.Size(201, 25);
-            this.cmbDataProvider.TabIndex = 1;
-            // 
-            // btnSaveSettings
-            // 
-            this.btnSaveSettings.AutoSize = true;
-            this.btnSaveSettings.Location = new System.Drawing.Point(877, 96);
-            this.btnSaveSettings.Name = "btnSaveSettings";
-            this.btnSaveSettings.Size = new System.Drawing.Size(102, 27);
-            this.btnSaveSettings.TabIndex = 2;
-            this.btnSaveSettings.Text = "保存并重启软件";
-            this.btnSaveSettings.UseVisualStyleBackColor = true;
-            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoEllipsis = true;
-            this.label6.AutoSize = true;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label6.Location = new System.Drawing.Point(335, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(482, 31);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // numRefreshFrequency
-            // 
-            this.numRefreshFrequency.AutoSize = true;
-            this.numRefreshFrequency.Dock = System.Windows.Forms.DockStyle.Left;
-            this.numRefreshFrequency.Location = new System.Drawing.Point(65, 34);
-            this.numRefreshFrequency.Name = "numRefreshFrequency";
-            this.numRefreshFrequency.Size = new System.Drawing.Size(45, 23);
-            this.numRefreshFrequency.TabIndex = 5;
-            this.numRefreshFrequency.Value = new decimal(new int[] {
-            5,
-            0,
-            0,
-            0});
-            // 
-            // btnBgImageSelect
-            // 
-            this.btnBgImageSelect.AutoSize = true;
-            this.btnBgImageSelect.Location = new System.Drawing.Point(877, 63);
-            this.btnBgImageSelect.Name = "btnBgImageSelect";
-            this.btnBgImageSelect.Size = new System.Drawing.Size(63, 27);
-            this.btnBgImageSelect.TabIndex = 9;
-            this.btnBgImageSelect.Text = "选择...";
-            this.btnBgImageSelect.UseVisualStyleBackColor = true;
-            this.btnBgImageSelect.Click += new System.EventHandler(this.btnBgImageSelect_Click);
-            // 
-            // tbpAbout
-            // 
-            this.tbpAbout.Controls.Add(this.tableLayoutPanel4);
-            this.tbpAbout.Location = new System.Drawing.Point(4, 4);
-            this.tbpAbout.Name = "tbpAbout";
-            this.tbpAbout.Size = new System.Drawing.Size(982, 446);
-            this.tbpAbout.TabIndex = 2;
-            this.tbpAbout.Text = "关于";
-            this.tbpAbout.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel4
-            // 
-            this.tableLayoutPanel4.ColumnCount = 3;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 415F));
-            this.tableLayoutPanel4.Controls.Add(this.richTextBox1, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label5, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblAbtProviderName, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.lblAbtWrittenBy, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.rtbAbtDescription, 0, 2);
-            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 3;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(982, 446);
-            this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(582, 107);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(397, 336);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "该版本为测试版本，诸多技术仍不成熟。\n\n线粒体，Qiaoyiiii6，mofcandy";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(582, 66);
-            this.label5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 38);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "V0.2 霜";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(577, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 66);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "洛书面板";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblAbtProviderName
-            // 
-            this.lblAbtProviderName.AutoSize = true;
-            this.lblAbtProviderName.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblAbtProviderName.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblAbtProviderName.Location = new System.Drawing.Point(10, 0);
-            this.lblAbtProviderName.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.lblAbtProviderName.Name = "lblAbtProviderName";
-            this.lblAbtProviderName.Size = new System.Drawing.Size(104, 66);
-            this.lblAbtProviderName.TabIndex = 0;
-            this.lblAbtProviderName.Text = "数据源";
-            this.lblAbtProviderName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // lblAbtWrittenBy
-            // 
-            this.lblAbtWrittenBy.AutoSize = true;
-            this.lblAbtWrittenBy.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblAbtWrittenBy.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblAbtWrittenBy.ForeColor = System.Drawing.Color.Gray;
-            this.lblAbtWrittenBy.Location = new System.Drawing.Point(15, 66);
-            this.lblAbtWrittenBy.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.lblAbtWrittenBy.Name = "lblAbtWrittenBy";
-            this.lblAbtWrittenBy.Size = new System.Drawing.Size(106, 38);
-            this.lblAbtWrittenBy.TabIndex = 1;
-            this.lblAbtWrittenBy.Text = "数据源开发者";
-            // 
-            // rtbAbtDescription
-            // 
-            this.rtbAbtDescription.BackColor = System.Drawing.Color.White;
-            this.rtbAbtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbAbtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbAbtDescription.Location = new System.Drawing.Point(15, 107);
-            this.rtbAbtDescription.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
-            this.rtbAbtDescription.Name = "rtbAbtDescription";
-            this.rtbAbtDescription.ReadOnly = true;
-            this.rtbAbtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbAbtDescription.Size = new System.Drawing.Size(428, 336);
-            this.rtbAbtDescription.TabIndex = 2;
-            this.rtbAbtDescription.Text = "数据源说明";
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.BackColor = System.Drawing.Color.DodgerBlue;
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel3.Controls.Add(this.lblTitle, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 1;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1132, 73);
-            this.tableLayoutPanel3.TabIndex = 3;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(10, 0);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(345, 73);
-            this.lblTitle.TabIndex = 1;
-            this.lblTitle.Text = "洛书面板 LosePanel";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel7.Controls.Add(this.chartOnlinePlayers, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.mclDateSelector, 1, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1112, 455);
+            this.tableLayoutPanel7.TabIndex = 1;
             // 
             // chartOnlinePlayers
             // 
@@ -729,7 +315,7 @@ namespace LosePanel.Forms
             series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
             series1.YValuesPerPoint = 2;
             this.chartOnlinePlayers.Series.Add(series1);
-            this.chartOnlinePlayers.Size = new System.Drawing.Size(865, 449);
+            this.chartOnlinePlayers.Size = new System.Drawing.Size(868, 449);
             this.chartOnlinePlayers.TabIndex = 0;
             this.chartOnlinePlayers.Text = "各时段在线玩家数";
             title1.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -737,26 +323,442 @@ namespace LosePanel.Forms
             title1.Text = "各时段在线玩家数";
             this.chartOnlinePlayers.Titles.Add(title1);
             // 
-            // tableLayoutPanel7
+            // mclDateSelector
             // 
-            this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel7.Controls.Add(this.chartOnlinePlayers, 0, 0);
-            this.tableLayoutPanel7.Controls.Add(this.monthCalendar1, 1, 0);
-            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 1;
-            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1112, 455);
-            this.tableLayoutPanel7.TabIndex = 1;
+            this.mclDateSelector.Location = new System.Drawing.Point(883, 9);
+            this.mclDateSelector.Name = "mclDateSelector";
+            this.mclDateSelector.TabIndex = 1;
+            this.mclDateSelector.TodayDate = new System.DateTime(2020, 12, 19, 0, 0, 0, 0);
+            this.mclDateSelector.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mclDateSelector_DateChanged);
             // 
-            // monthCalendar1
+            // tbpLog
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(880, 9);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.TabIndex = 1;
+            this.tbpLog.Controls.Add(this.tableLayoutPanel5);
+            this.tbpLog.Location = new System.Drawing.Point(4, 4);
+            this.tbpLog.Name = "tbpLog";
+            this.tbpLog.Size = new System.Drawing.Size(1118, 461);
+            this.tbpLog.TabIndex = 3;
+            this.tbpLog.Text = "日志";
+            this.tbpLog.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label10, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.rtbLogApp, 1, 2);
+            this.tableLayoutPanel5.Controls.Add(this.rtbLog, 0, 2);
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel6, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.label9, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 3;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(1118, 461);
+            this.tableLayoutPanel5.TabIndex = 0;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label10.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Location = new System.Drawing.Point(562, 39);
+            this.label10.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(553, 28);
+            this.label10.TabIndex = 6;
+            this.label10.Text = "面板";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // rtbLogApp
+            // 
+            this.rtbLogApp.BackColor = System.Drawing.Color.White;
+            this.rtbLogApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbLogApp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbLogApp.Location = new System.Drawing.Point(562, 78);
+            this.rtbLogApp.Name = "rtbLogApp";
+            this.rtbLogApp.ReadOnly = true;
+            this.rtbLogApp.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbLogApp.Size = new System.Drawing.Size(553, 380);
+            this.rtbLogApp.TabIndex = 4;
+            this.rtbLogApp.Text = "";
+            // 
+            // rtbLog
+            // 
+            this.rtbLog.BackColor = System.Drawing.Color.White;
+            this.rtbLog.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbLog.Location = new System.Drawing.Point(3, 78);
+            this.rtbLog.Name = "rtbLog";
+            this.rtbLog.ReadOnly = true;
+            this.rtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbLog.Size = new System.Drawing.Size(553, 380);
+            this.rtbLog.TabIndex = 3;
+            this.rtbLog.Text = "";
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.AutoSize = true;
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel5.SetColumnSpan(this.tableLayoutPanel6, 2);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel6.Controls.Add(this.label8, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lblIsLogConnected, 1, 0);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 1;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(1112, 17);
+            this.tableLayoutPanel6.TabIndex = 0;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(116, 17);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "日志系统连接状态：";
+            // 
+            // lblIsLogConnected
+            // 
+            this.lblIsLogConnected.AutoSize = true;
+            this.lblIsLogConnected.Location = new System.Drawing.Point(125, 0);
+            this.lblIsLogConnected.Name = "lblIsLogConnected";
+            this.lblIsLogConnected.Size = new System.Drawing.Size(44, 17);
+            this.lblIsLogConnected.TabIndex = 1;
+            this.lblIsLogConnected.Text = "未连接";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label9.Font = new System.Drawing.Font("微软雅黑", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label9.Location = new System.Drawing.Point(3, 39);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(553, 28);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "服务器";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbpSettings
+            // 
+            this.tbpSettings.Controls.Add(this.tableLayoutPanel2);
+            this.tbpSettings.Location = new System.Drawing.Point(4, 4);
+            this.tbpSettings.Name = "tbpSettings";
+            this.tbpSettings.Size = new System.Drawing.Size(1118, 461);
+            this.tbpSettings.TabIndex = 1;
+            this.tbpSettings.Text = "设置";
+            this.tbpSettings.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.AutoSize = true;
+            this.tableLayoutPanel2.ColumnCount = 4;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.Controls.Add(this.label12, 2, 2);
+            this.tableLayoutPanel2.Controls.Add(this.lblBgImagePath, 1, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label11, 0, 2);
+            this.tableLayoutPanel2.Controls.Add(this.label7, 2, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label4, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label2, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cmbDataProvider, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnSaveSettings, 3, 3);
+            this.tableLayoutPanel2.Controls.Add(this.label6, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.numRefreshFrequency, 1, 1);
+            this.tableLayoutPanel2.Controls.Add(this.btnBgImageSelect, 3, 2);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 4;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1118, 126);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // label12
+            // 
+            this.label12.AutoEllipsis = true;
+            this.label12.AutoSize = true;
+            this.label12.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label12.Location = new System.Drawing.Point(471, 60);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(140, 33);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "此图片将作为面板背景。";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblBgImagePath
+            // 
+            this.lblBgImagePath.AutoSize = true;
+            this.lblBgImagePath.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblBgImagePath.Location = new System.Drawing.Point(65, 60);
+            this.lblBgImagePath.Name = "lblBgImagePath";
+            this.lblBgImagePath.Size = new System.Drawing.Size(20, 33);
+            this.lblBgImagePath.TabIndex = 8;
+            this.lblBgImagePath.Text = "无";
+            this.lblBgImagePath.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label11.Location = new System.Drawing.Point(3, 60);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 33);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "背景图片";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label7
+            // 
+            this.label7.AutoEllipsis = true;
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label7.Location = new System.Drawing.Point(471, 31);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(536, 29);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label4.Location = new System.Drawing.Point(3, 31);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 29);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "刷新频率";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.label2.Location = new System.Drawing.Point(15, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 31);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "数据源";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbDataProvider
+            // 
+            this.cmbDataProvider.FormattingEnabled = true;
+            this.cmbDataProvider.Items.AddRange(new object[] {
+            "（预置）洛书南统计服务器"});
+            this.cmbDataProvider.Location = new System.Drawing.Point(65, 3);
+            this.cmbDataProvider.Name = "cmbDataProvider";
+            this.cmbDataProvider.Size = new System.Drawing.Size(201, 25);
+            this.cmbDataProvider.TabIndex = 1;
+            // 
+            // btnSaveSettings
+            // 
+            this.btnSaveSettings.AutoSize = true;
+            this.btnSaveSettings.Location = new System.Drawing.Point(1013, 96);
+            this.btnSaveSettings.Name = "btnSaveSettings";
+            this.btnSaveSettings.Size = new System.Drawing.Size(102, 27);
+            this.btnSaveSettings.TabIndex = 2;
+            this.btnSaveSettings.Text = "保存并重启软件";
+            this.btnSaveSettings.UseVisualStyleBackColor = true;
+            this.btnSaveSettings.Click += new System.EventHandler(this.btnSaveSettings_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoEllipsis = true;
+            this.label6.AutoSize = true;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.label6.Location = new System.Drawing.Point(471, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(482, 31);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // numRefreshFrequency
+            // 
+            this.numRefreshFrequency.AutoSize = true;
+            this.numRefreshFrequency.Dock = System.Windows.Forms.DockStyle.Left;
+            this.numRefreshFrequency.Location = new System.Drawing.Point(65, 34);
+            this.numRefreshFrequency.Name = "numRefreshFrequency";
+            this.numRefreshFrequency.Size = new System.Drawing.Size(45, 23);
+            this.numRefreshFrequency.TabIndex = 5;
+            this.numRefreshFrequency.Value = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
+            // 
+            // btnBgImageSelect
+            // 
+            this.btnBgImageSelect.AutoSize = true;
+            this.btnBgImageSelect.Location = new System.Drawing.Point(1013, 63);
+            this.btnBgImageSelect.Name = "btnBgImageSelect";
+            this.btnBgImageSelect.Size = new System.Drawing.Size(63, 27);
+            this.btnBgImageSelect.TabIndex = 9;
+            this.btnBgImageSelect.Text = "选择...";
+            this.btnBgImageSelect.UseVisualStyleBackColor = true;
+            this.btnBgImageSelect.Click += new System.EventHandler(this.btnBgImageSelect_Click);
+            // 
+            // tbpAbout
+            // 
+            this.tbpAbout.Controls.Add(this.tableLayoutPanel4);
+            this.tbpAbout.Location = new System.Drawing.Point(4, 4);
+            this.tbpAbout.Name = "tbpAbout";
+            this.tbpAbout.Size = new System.Drawing.Size(1118, 461);
+            this.tbpAbout.TabIndex = 2;
+            this.tbpAbout.Text = "关于";
+            this.tbpAbout.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 415F));
+            this.tableLayoutPanel4.Controls.Add(this.richTextBox1, 2, 2);
+            this.tableLayoutPanel4.Controls.Add(this.label5, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblAbtProviderName, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.lblAbtWrittenBy, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.rtbAbtDescription, 0, 2);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 3;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(1118, 461);
+            this.tableLayoutPanel4.TabIndex = 0;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(718, 107);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.richTextBox1.Size = new System.Drawing.Size(397, 351);
+            this.richTextBox1.TabIndex = 6;
+            this.richTextBox1.Text = "该版本为测试版本，诸多技术仍不成熟。\n\n线粒体，Qiaoyiiii6，mofcandy";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label5.ForeColor = System.Drawing.Color.Gray;
+            this.label5.Location = new System.Drawing.Point(718, 66);
+            this.label5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 38);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "V0.2 霜";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.label3.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(713, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 66);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "洛书面板";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblAbtProviderName
+            // 
+            this.lblAbtProviderName.AutoSize = true;
+            this.lblAbtProviderName.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblAbtProviderName.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblAbtProviderName.Location = new System.Drawing.Point(10, 0);
+            this.lblAbtProviderName.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblAbtProviderName.Name = "lblAbtProviderName";
+            this.lblAbtProviderName.Size = new System.Drawing.Size(104, 66);
+            this.lblAbtProviderName.TabIndex = 0;
+            this.lblAbtProviderName.Text = "数据源";
+            this.lblAbtProviderName.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
+            // lblAbtWrittenBy
+            // 
+            this.lblAbtWrittenBy.AutoSize = true;
+            this.lblAbtWrittenBy.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblAbtWrittenBy.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblAbtWrittenBy.ForeColor = System.Drawing.Color.Gray;
+            this.lblAbtWrittenBy.Location = new System.Drawing.Point(15, 66);
+            this.lblAbtWrittenBy.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
+            this.lblAbtWrittenBy.Name = "lblAbtWrittenBy";
+            this.lblAbtWrittenBy.Size = new System.Drawing.Size(106, 38);
+            this.lblAbtWrittenBy.TabIndex = 1;
+            this.lblAbtWrittenBy.Text = "数据源开发者";
+            // 
+            // rtbAbtDescription
+            // 
+            this.rtbAbtDescription.BackColor = System.Drawing.Color.White;
+            this.rtbAbtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtbAbtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbAbtDescription.Location = new System.Drawing.Point(15, 107);
+            this.rtbAbtDescription.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
+            this.rtbAbtDescription.Name = "rtbAbtDescription";
+            this.rtbAbtDescription.ReadOnly = true;
+            this.rtbAbtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.rtbAbtDescription.Size = new System.Drawing.Size(564, 351);
+            this.rtbAbtDescription.TabIndex = 2;
+            this.rtbAbtDescription.Text = "数据源说明";
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.BackColor = System.Drawing.Color.DodgerBlue;
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.lblTitle, 0, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1132, 73);
+            this.tableLayoutPanel3.TabIndex = 3;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lblTitle.Font = new System.Drawing.Font("微软雅黑", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(10, 0);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(345, 73);
+            this.lblTitle.TabIndex = 1;
+            this.lblTitle.Text = "洛书面板 LosePanel";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // MainForm
             // 
@@ -777,6 +779,8 @@ namespace LosePanel.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tbpOnlinePlayers.ResumeLayout(false);
+            this.tableLayoutPanel7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).EndInit();
             this.tbpLog.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -792,8 +796,6 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).EndInit();
-            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -843,7 +845,7 @@ namespace LosePanel.Forms
         private System.Windows.Forms.Button btnBgImageSelect;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartOnlinePlayers;
-        private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.MonthCalendar mclDateSelector;
     }
 }
 
