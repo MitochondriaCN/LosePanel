@@ -42,7 +42,6 @@ namespace LosePanel.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tbpOnlinePlayers = new System.Windows.Forms.TabPage();
-            this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tbpLog = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -75,12 +74,14 @@ namespace LosePanel.Forms
             this.rtbAbtDescription = new System.Windows.Forms.RichTextBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tblMainLayouter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tbpOnlinePlayers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
             this.tbpLog.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -90,6 +91,8 @@ namespace LosePanel.Forms
             this.tbpAbout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
+            this.tableLayoutPanel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMainLayouter
@@ -108,7 +111,7 @@ namespace LosePanel.Forms
             this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblMainLayouter.Size = new System.Drawing.Size(996, 580);
+            this.tblMainLayouter.Size = new System.Drawing.Size(1132, 595);
             this.tblMainLayouter.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -132,7 +135,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(996, 20);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1132, 20);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -163,7 +166,7 @@ namespace LosePanel.Forms
             this.lblProviderName.AutoSize = true;
             this.lblProviderName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblProviderName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblProviderName.Location = new System.Drawing.Point(875, 0);
+            this.lblProviderName.Location = new System.Drawing.Point(1011, 0);
             this.lblProviderName.Name = "lblProviderName";
             this.lblProviderName.Size = new System.Drawing.Size(112, 23);
             this.lblProviderName.TabIndex = 2;
@@ -176,7 +179,7 @@ namespace LosePanel.Forms
             this.lblLoseNoneAnalStat.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblLoseNoneAnalStat.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblLoseNoneAnalStat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(993, 0);
+            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(1129, 0);
             this.lblLoseNoneAnalStat.Name = "lblLoseNoneAnalStat";
             this.lblLoseNoneAnalStat.Size = new System.Drawing.Size(0, 23);
             this.lblLoseNoneAnalStat.TabIndex = 4;
@@ -186,7 +189,7 @@ namespace LosePanel.Forms
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::LosePanel.Properties.Resources.Cloud_256px_1075710_easyicon_net;
-            this.pictureBox1.Location = new System.Drawing.Point(844, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(980, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 17);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -205,105 +208,20 @@ namespace LosePanel.Forms
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(990, 476);
+            this.tabControl1.Size = new System.Drawing.Size(1126, 491);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tbpOnlinePlayers
             // 
-            this.tbpOnlinePlayers.Controls.Add(this.chartOnlinePlayers);
+            this.tbpOnlinePlayers.Controls.Add(this.tableLayoutPanel7);
             this.tbpOnlinePlayers.Location = new System.Drawing.Point(4, 4);
             this.tbpOnlinePlayers.Name = "tbpOnlinePlayers";
             this.tbpOnlinePlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOnlinePlayers.Size = new System.Drawing.Size(982, 446);
+            this.tbpOnlinePlayers.Size = new System.Drawing.Size(1118, 461);
             this.tbpOnlinePlayers.TabIndex = 0;
             this.tbpOnlinePlayers.Text = "在线人数";
             this.tbpOnlinePlayers.UseVisualStyleBackColor = true;
-            // 
-            // chartOnlinePlayers
-            // 
-            this.chartOnlinePlayers.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            this.chartOnlinePlayers.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            this.chartOnlinePlayers.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
-            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisX.IsLabelAutoFit = false;
-            chartArea1.AxisX.IsMarginVisible = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gray;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.LineWidth = 2;
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisX.MajorGrid.Interval = 1D;
-            chartArea1.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.MajorGrid.LineWidth = 2;
-            chartArea1.AxisX.MajorTickMark.Enabled = false;
-            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisX.MajorTickMark.LineWidth = 2;
-            chartArea1.AxisX.Title = "时间";
-            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.Interval = 1D;
-            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
-            chartArea1.AxisY.IsLabelAutoFit = false;
-            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gray;
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.LineWidth = 2;
-            chartArea1.AxisY.MajorGrid.Interval = 1D;
-            chartArea1.AxisY.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.MajorGrid.LineWidth = 2;
-            chartArea1.AxisY.MajorTickMark.Interval = 1D;
-            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
-            chartArea1.AxisY.MajorTickMark.LineWidth = 2;
-            chartArea1.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.None;
-            chartArea1.AxisY.MinorGrid.Interval = 1D;
-            chartArea1.AxisY.MinorTickMark.Interval = 1D;
-            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
-            chartArea1.AxisY.Title = "玩家数";
-            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
-            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
-            chartArea1.CursorX.LineColor = System.Drawing.Color.Black;
-            chartArea1.CursorX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            chartArea1.Name = "ctaPlayers";
-            this.chartOnlinePlayers.ChartAreas.Add(chartArea1);
-            this.chartOnlinePlayers.Cursor = System.Windows.Forms.Cursors.Cross;
-            this.chartOnlinePlayers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartOnlinePlayers.Location = new System.Drawing.Point(3, 3);
-            this.chartOnlinePlayers.Name = "chartOnlinePlayers";
-            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            series1.BackImageTransparentColor = System.Drawing.Color.White;
-            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
-            series1.BorderColor = System.Drawing.Color.DodgerBlue;
-            series1.BorderWidth = 5;
-            series1.ChartArea = "ctaPlayers";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
-            series1.Color = System.Drawing.Color.LightSteelBlue;
-            series1.EmptyPointStyle.AxisLabel = "0";
-            series1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            series1.LegendText = "在线玩家数";
-            series1.MarkerBorderColor = System.Drawing.Color.DodgerBlue;
-            series1.MarkerColor = System.Drawing.Color.DodgerBlue;
-            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series1.Name = "serOnlinePlayerNumber";
-            series1.ShadowColor = System.Drawing.Color.Transparent;
-            series1.ShadowOffset = 2;
-            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes;
-            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = System.Windows.Forms.DataVisualization.Charting.LineAnchorCapStyle.None;
-            series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series1.YValuesPerPoint = 2;
-            this.chartOnlinePlayers.Series.Add(series1);
-            this.chartOnlinePlayers.Size = new System.Drawing.Size(976, 440);
-            this.chartOnlinePlayers.TabIndex = 0;
-            this.chartOnlinePlayers.Text = "各时段在线玩家数";
-            title1.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            title1.Name = "titRealtimePlayers";
-            title1.Text = "各时段在线玩家数";
-            this.chartOnlinePlayers.Titles.Add(title1);
             // 
             // tbpLog
             // 
@@ -717,7 +635,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(996, 73);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(1132, 73);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // lblTitle
@@ -734,12 +652,118 @@ namespace LosePanel.Forms
             this.lblTitle.Text = "洛书面板 LosePanel";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // chartOnlinePlayers
+            // 
+            this.chartOnlinePlayers.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            this.chartOnlinePlayers.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            this.chartOnlinePlayers.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.Scaled;
+            chartArea1.AxisX.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.IsMarginVisible = false;
+            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisX.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.LineWidth = 2;
+            chartArea1.AxisX.MajorGrid.Enabled = false;
+            chartArea1.AxisX.MajorGrid.Interval = 1D;
+            chartArea1.AxisX.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea1.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.MajorGrid.LineWidth = 2;
+            chartArea1.AxisX.MajorTickMark.Enabled = false;
+            chartArea1.AxisX.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisX.MajorTickMark.LineWidth = 2;
+            chartArea1.AxisX.Title = "时间";
+            chartArea1.AxisX.TitleAlignment = System.Drawing.StringAlignment.Near;
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.Interval = 1D;
+            chartArea1.AxisY.IntervalAutoMode = System.Windows.Forms.DataVisualization.Charting.IntervalAutoMode.VariableCount;
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.AxisY.LabelStyle.ForeColor = System.Drawing.Color.Gray;
+            chartArea1.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.LineWidth = 2;
+            chartArea1.AxisY.MajorGrid.Interval = 1D;
+            chartArea1.AxisY.MajorGrid.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorGrid.LineWidth = 2;
+            chartArea1.AxisY.MajorTickMark.Interval = 1D;
+            chartArea1.AxisY.MajorTickMark.LineColor = System.Drawing.Color.Silver;
+            chartArea1.AxisY.MajorTickMark.LineWidth = 2;
+            chartArea1.AxisY.MajorTickMark.TickMarkStyle = System.Windows.Forms.DataVisualization.Charting.TickMarkStyle.None;
+            chartArea1.AxisY.MinorGrid.Interval = 1D;
+            chartArea1.AxisY.MinorTickMark.Interval = 1D;
+            chartArea1.AxisY.TextOrientation = System.Windows.Forms.DataVisualization.Charting.TextOrientation.Stacked;
+            chartArea1.AxisY.Title = "玩家数";
+            chartArea1.AxisY.TitleAlignment = System.Drawing.StringAlignment.Near;
+            chartArea1.AxisY.TitleFont = new System.Drawing.Font("微软雅黑", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea1.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackImageTransparentColor = System.Drawing.Color.Transparent;
+            chartArea1.BackSecondaryColor = System.Drawing.Color.White;
+            chartArea1.CursorX.LineColor = System.Drawing.Color.Black;
+            chartArea1.CursorX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            chartArea1.Name = "ctaPlayers";
+            this.chartOnlinePlayers.ChartAreas.Add(chartArea1);
+            this.chartOnlinePlayers.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.chartOnlinePlayers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartOnlinePlayers.Location = new System.Drawing.Point(3, 3);
+            this.chartOnlinePlayers.Name = "chartOnlinePlayers";
+            series1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            series1.BackImageTransparentColor = System.Drawing.Color.White;
+            series1.BackSecondaryColor = System.Drawing.Color.Transparent;
+            series1.BorderColor = System.Drawing.Color.DodgerBlue;
+            series1.BorderWidth = 5;
+            series1.ChartArea = "ctaPlayers";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.SplineArea;
+            series1.Color = System.Drawing.Color.LightSteelBlue;
+            series1.EmptyPointStyle.AxisLabel = "0";
+            series1.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            series1.LegendText = "在线玩家数";
+            series1.MarkerBorderColor = System.Drawing.Color.DodgerBlue;
+            series1.MarkerColor = System.Drawing.Color.DodgerBlue;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "serOnlinePlayerNumber";
+            series1.ShadowColor = System.Drawing.Color.Transparent;
+            series1.ShadowOffset = 2;
+            series1.SmartLabelStyle.AllowOutsidePlotArea = System.Windows.Forms.DataVisualization.Charting.LabelOutsidePlotAreaStyle.Yes;
+            series1.SmartLabelStyle.CalloutLineAnchorCapStyle = System.Windows.Forms.DataVisualization.Charting.LineAnchorCapStyle.None;
+            series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series1.YValuesPerPoint = 2;
+            this.chartOnlinePlayers.Series.Add(series1);
+            this.chartOnlinePlayers.Size = new System.Drawing.Size(865, 449);
+            this.chartOnlinePlayers.TabIndex = 0;
+            this.chartOnlinePlayers.Text = "各时段在线玩家数";
+            title1.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            title1.Name = "titRealtimePlayers";
+            title1.Text = "各时段在线玩家数";
+            this.chartOnlinePlayers.Titles.Add(title1);
+            // 
+            // tableLayoutPanel7
+            // 
+            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel7.Controls.Add(this.chartOnlinePlayers, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.monthCalendar1, 1, 0);
+            this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel7.Name = "tableLayoutPanel7";
+            this.tableLayoutPanel7.RowCount = 1;
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1112, 455);
+            this.tableLayoutPanel7.TabIndex = 1;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(880, 9);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(996, 580);
+            this.ClientSize = new System.Drawing.Size(1132, 595);
             this.Controls.Add(this.tblMainLayouter);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -753,7 +777,6 @@ namespace LosePanel.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tbpOnlinePlayers.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).EndInit();
             this.tbpLog.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -769,6 +792,8 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).EndInit();
+            this.tableLayoutPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -781,7 +806,6 @@ namespace LosePanel.Forms
         private System.Windows.Forms.Label lblOnlinePlayerNumber;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tbpOnlinePlayers;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartOnlinePlayers;
         private System.Windows.Forms.Label lblProviderName;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblLoseNoneAnalStat;
@@ -817,6 +841,9 @@ namespace LosePanel.Forms
         private System.Windows.Forms.Label lblBgImagePath;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnBgImageSelect;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartOnlinePlayers;
+        private System.Windows.Forms.MonthCalendar monthCalendar1;
     }
 }
 
