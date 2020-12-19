@@ -659,9 +659,7 @@ namespace LosePanel.Forms
             this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
             this.richTextBox1.Size = new System.Drawing.Size(390, 351);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "主程序：XianlitiCN\n测试：mofcandy\n协助：Qiaoyiiii6\n\n洛书面板——Minecraft 服务器面板，多平台通用，可自行适配服务器，提供" +
-    "数据统计、日志管理等功能。\n欢迎加入洛书南（Losenone）服务器：https://www.losenone.cn\n更多信息请移步洛书面板官网：https:/" +
-    "/lp.apocalypse.icu";
+            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // label5

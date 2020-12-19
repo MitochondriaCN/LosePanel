@@ -35,15 +35,17 @@ namespace LosePanel.Presets
         {
             get
             {
-                return "本数据源由洛书南（Losenone）团队提供，线粒体（XianlitiCN）开发。" +
+                return "本数据源由洛书南团队提供，云游科社开发。" +
                   "它可以提供洛书南服务器的各项信息，包括日志系统。\n特别鸣谢：Qiaoyiiii6，mofcandy。" +
-                  "\n洛书南服务器官网：https://www.losenone.cn";
+                  "\n洛书南服务器官网：https://www.losenone.cn" +
+                  "\n云游科社官网：https://www.cwtc.xyz" +
+                  "\n\n© 2020 洛书南 & 云游科社，保留一切权利。";
             }
         }
 
         public string WrittenBy
         {
-            get { return "洛书南 Losenone && 线粒体 XianlitiCN"; }
+            get { return "洛书南 && 云游科社"; }
         }
 
         public StringBuilder Log { get { return new StringBuilder(""); } }

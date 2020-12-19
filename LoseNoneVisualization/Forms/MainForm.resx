@@ -117,6 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>主程序：XianlitiCN
+测试：mofcandy
+协助：Qiaoyiiii6
+
+洛书面板——Minecraft 服务器面板，多平台通用，可自行适配服务器，提供数据统计、日志管理等功能。
+欢迎加入洛书南（Losenone）服务器：https://www.losenone.cn
+更多信息请移步洛书面板官网：https://lp.apocalypse.icu
+云游科社官网：https://www.cwtc.xyz
+
+© 2020 洛书南 &amp; 云游科社，保留一切权利。</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
