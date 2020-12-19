@@ -730,6 +730,7 @@ namespace LosePanel.Forms
             this.rtbAbtDescription.Size = new System.Drawing.Size(564, 351);
             this.rtbAbtDescription.TabIndex = 2;
             this.rtbAbtDescription.Text = "数据源说明";
+            this.rtbAbtDescription.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
             // 
             // tableLayoutPanel3
             // 
