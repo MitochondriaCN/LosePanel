@@ -44,6 +44,9 @@ namespace LosePanel.Forms
             this.tbpOnlinePlayers = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.chartOnlinePlayers = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.mclDateSelector = new System.Windows.Forms.MonthCalendar();
+            this.label13 = new System.Windows.Forms.Label();
             this.tbpLog = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
@@ -68,17 +71,12 @@ namespace LosePanel.Forms
             this.btnBgImageSelect = new System.Windows.Forms.Button();
             this.tbpAbout = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblAbtProviderName = new System.Windows.Forms.Label();
             this.lblAbtWrittenBy = new System.Windows.Forms.Label();
             this.rtbAbtDescription = new System.Windows.Forms.RichTextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.mclDateSelector = new System.Windows.Forms.MonthCalendar();
-            this.label13 = new System.Windows.Forms.Label();
             this.tblMainLayouter.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +84,7 @@ namespace LosePanel.Forms
             this.tbpOnlinePlayers.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).BeginInit();
+            this.tableLayoutPanel8.SuspendLayout();
             this.tbpLog.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -94,8 +93,8 @@ namespace LosePanel.Forms
             ((System.ComponentModel.ISupportInitialize)(this.numRefreshFrequency)).BeginInit();
             this.tbpAbout.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            this.tableLayoutPanel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblMainLayouter
@@ -114,7 +113,7 @@ namespace LosePanel.Forms
             this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
             this.tblMainLayouter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tblMainLayouter.Size = new System.Drawing.Size(1132, 595);
+            this.tblMainLayouter.Size = new System.Drawing.Size(874, 659);
             this.tblMainLayouter.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -138,7 +137,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 23F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1132, 20);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(874, 20);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -169,7 +168,7 @@ namespace LosePanel.Forms
             this.lblProviderName.AutoSize = true;
             this.lblProviderName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblProviderName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblProviderName.Location = new System.Drawing.Point(1011, 0);
+            this.lblProviderName.Location = new System.Drawing.Point(753, 0);
             this.lblProviderName.Name = "lblProviderName";
             this.lblProviderName.Size = new System.Drawing.Size(112, 23);
             this.lblProviderName.TabIndex = 2;
@@ -182,7 +181,7 @@ namespace LosePanel.Forms
             this.lblLoseNoneAnalStat.Dock = System.Windows.Forms.DockStyle.Left;
             this.lblLoseNoneAnalStat.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblLoseNoneAnalStat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(1129, 0);
+            this.lblLoseNoneAnalStat.Location = new System.Drawing.Point(871, 0);
             this.lblLoseNoneAnalStat.Name = "lblLoseNoneAnalStat";
             this.lblLoseNoneAnalStat.Size = new System.Drawing.Size(0, 23);
             this.lblLoseNoneAnalStat.TabIndex = 4;
@@ -192,7 +191,7 @@ namespace LosePanel.Forms
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.pictureBox1.Image = global::LosePanel.Properties.Resources.Cloud_256px_1075710_easyicon_net;
-            this.pictureBox1.Location = new System.Drawing.Point(980, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(722, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(25, 17);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -211,7 +210,7 @@ namespace LosePanel.Forms
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1126, 491);
+            this.tabControl1.Size = new System.Drawing.Size(868, 555);
             this.tabControl1.TabIndex = 2;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -221,7 +220,7 @@ namespace LosePanel.Forms
             this.tbpOnlinePlayers.Location = new System.Drawing.Point(4, 4);
             this.tbpOnlinePlayers.Name = "tbpOnlinePlayers";
             this.tbpOnlinePlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOnlinePlayers.Size = new System.Drawing.Size(1118, 461);
+            this.tbpOnlinePlayers.Size = new System.Drawing.Size(1105, 458);
             this.tbpOnlinePlayers.TabIndex = 0;
             this.tbpOnlinePlayers.Text = "在线人数";
             this.tbpOnlinePlayers.UseVisualStyleBackColor = true;
@@ -238,7 +237,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1112, 455);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(1099, 452);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // chartOnlinePlayers
@@ -318,13 +317,50 @@ namespace LosePanel.Forms
             series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
             series1.YValuesPerPoint = 2;
             this.chartOnlinePlayers.Series.Add(series1);
-            this.chartOnlinePlayers.Size = new System.Drawing.Size(862, 449);
+            this.chartOnlinePlayers.Size = new System.Drawing.Size(849, 446);
             this.chartOnlinePlayers.TabIndex = 0;
             this.chartOnlinePlayers.Text = "各时段在线玩家数";
             title1.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             title1.Name = "titRealtimePlayers";
             title1.Text = "各时段在线玩家数";
             this.chartOnlinePlayers.Titles.Add(title1);
+            // 
+            // tableLayoutPanel8
+            // 
+            this.tableLayoutPanel8.AutoSize = true;
+            this.tableLayoutPanel8.ColumnCount = 1;
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Controls.Add(this.mclDateSelector, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.label13, 0, 0);
+            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(858, 3);
+            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
+            this.tableLayoutPanel8.RowCount = 2;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(238, 446);
+            this.tableLayoutPanel8.TabIndex = 1;
+            // 
+            // mclDateSelector
+            // 
+            this.mclDateSelector.Dock = System.Windows.Forms.DockStyle.Top;
+            this.mclDateSelector.Location = new System.Drawing.Point(9, 37);
+            this.mclDateSelector.Name = "mclDateSelector";
+            this.mclDateSelector.TabIndex = 2;
+            this.mclDateSelector.TodayDate = new System.DateTime(2020, 12, 19, 0, 0, 0, 0);
+            this.mclDateSelector.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mclDateSelector_DateChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label13.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label13.Location = new System.Drawing.Point(3, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(232, 28);
+            this.label13.TabIndex = 3;
+            this.label13.Text = "历史记录";
+            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tbpLog
             // 
@@ -459,8 +495,8 @@ namespace LosePanel.Forms
             this.tableLayoutPanel2.AutoSize = true;
             this.tableLayoutPanel2.ColumnCount = 4;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.label12, 2, 2);
             this.tableLayoutPanel2.Controls.Add(this.lblBgImagePath, 1, 2);
@@ -486,11 +522,10 @@ namespace LosePanel.Forms
             // 
             // label12
             // 
-            this.label12.AutoEllipsis = true;
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Left;
             this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label12.Location = new System.Drawing.Point(471, 60);
+            this.label12.Location = new System.Drawing.Point(272, 60);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(140, 33);
             this.label12.TabIndex = 10;
@@ -521,11 +556,10 @@ namespace LosePanel.Forms
             // 
             // label7
             // 
-            this.label7.AutoEllipsis = true;
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Left;
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(471, 31);
+            this.label7.Location = new System.Drawing.Point(272, 31);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(536, 29);
             this.label7.TabIndex = 6;
@@ -577,11 +611,10 @@ namespace LosePanel.Forms
             // 
             // label6
             // 
-            this.label6.AutoEllipsis = true;
             this.label6.AutoSize = true;
             this.label6.Dock = System.Windows.Forms.DockStyle.Left;
             this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label6.Location = new System.Drawing.Point(471, 0);
+            this.label6.Location = new System.Drawing.Point(272, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(482, 31);
             this.label6.TabIndex = 4;
@@ -618,23 +651,21 @@ namespace LosePanel.Forms
             this.tbpAbout.Controls.Add(this.tableLayoutPanel4);
             this.tbpAbout.Location = new System.Drawing.Point(4, 4);
             this.tbpAbout.Name = "tbpAbout";
-            this.tbpAbout.Size = new System.Drawing.Size(1118, 461);
+            this.tbpAbout.Size = new System.Drawing.Size(860, 525);
             this.tbpAbout.TabIndex = 2;
             this.tbpAbout.Text = "关于";
             this.tbpAbout.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 121F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 415F));
-            this.tableLayoutPanel4.Controls.Add(this.richTextBox1, 2, 2);
-            this.tableLayoutPanel4.Controls.Add(this.label5, 2, 1);
-            this.tableLayoutPanel4.Controls.Add(this.label3, 2, 0);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel4.Controls.Add(this.lblAbtProviderName, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.lblAbtWrittenBy, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.rtbAbtDescription, 0, 2);
+            this.tableLayoutPanel4.Controls.Add(this.pictureBox2, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
@@ -643,50 +674,8 @@ namespace LosePanel.Forms
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 66F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(1118, 461);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(860, 525);
             this.tableLayoutPanel4.TabIndex = 0;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.BackColor = System.Drawing.Color.White;
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.richTextBox1.Location = new System.Drawing.Point(718, 107);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(15, 3, 10, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(390, 351);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
-            this.richTextBox1.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label5.Font = new System.Drawing.Font("微软雅黑", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(718, 66);
-            this.label5.Margin = new System.Windows.Forms.Padding(15, 0, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(67, 38);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "V0.3 霜";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.label3.Font = new System.Drawing.Font("微软雅黑", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(713, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 66);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "洛书面板";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // lblAbtProviderName
             // 
@@ -718,17 +707,29 @@ namespace LosePanel.Forms
             // 
             this.rtbAbtDescription.BackColor = System.Drawing.Color.White;
             this.rtbAbtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtbAbtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbAbtDescription.Dock = System.Windows.Forms.DockStyle.Left;
             this.rtbAbtDescription.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.rtbAbtDescription.Location = new System.Drawing.Point(15, 107);
             this.rtbAbtDescription.Margin = new System.Windows.Forms.Padding(15, 3, 3, 3);
             this.rtbAbtDescription.Name = "rtbAbtDescription";
             this.rtbAbtDescription.ReadOnly = true;
             this.rtbAbtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbAbtDescription.Size = new System.Drawing.Size(564, 351);
+            this.rtbAbtDescription.Size = new System.Drawing.Size(333, 415);
             this.rtbAbtDescription.TabIndex = 2;
             this.rtbAbtDescription.Text = "数据源说明";
             this.rtbAbtDescription.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.richTextBox1_LinkClicked);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox2.Image = global::LosePanel.Properties.Resources.logo;
+            this.pictureBox2.Location = new System.Drawing.Point(448, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.tableLayoutPanel4.SetRowSpan(this.pictureBox2, 3);
+            this.pictureBox2.Size = new System.Drawing.Size(409, 519);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // tableLayoutPanel3
             // 
@@ -743,7 +744,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1132, 73);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(874, 73);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // lblTitle
@@ -760,49 +761,12 @@ namespace LosePanel.Forms
             this.lblTitle.Text = "洛书面板 LosePanel";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // tableLayoutPanel8
-            // 
-            this.tableLayoutPanel8.AutoSize = true;
-            this.tableLayoutPanel8.ColumnCount = 1;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Controls.Add(this.mclDateSelector, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.label13, 0, 0);
-            this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(871, 3);
-            this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 2;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(238, 449);
-            this.tableLayoutPanel8.TabIndex = 1;
-            // 
-            // mclDateSelector
-            // 
-            this.mclDateSelector.Dock = System.Windows.Forms.DockStyle.Top;
-            this.mclDateSelector.Location = new System.Drawing.Point(9, 37);
-            this.mclDateSelector.Name = "mclDateSelector";
-            this.mclDateSelector.TabIndex = 2;
-            this.mclDateSelector.TodayDate = new System.DateTime(2020, 12, 19, 0, 0, 0, 0);
-            this.mclDateSelector.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.mclDateSelector_DateChanged);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(3, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(232, 28);
-            this.label13.TabIndex = 3;
-            this.label13.Text = "历史记录";
-            this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1132, 595);
+            this.ClientSize = new System.Drawing.Size(874, 659);
             this.Controls.Add(this.tblMainLayouter);
             this.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -819,6 +783,8 @@ namespace LosePanel.Forms
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartOnlinePlayers)).EndInit();
+            this.tableLayoutPanel8.ResumeLayout(false);
+            this.tableLayoutPanel8.PerformLayout();
             this.tbpLog.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
@@ -832,10 +798,9 @@ namespace LosePanel.Forms
             this.tbpAbout.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -862,9 +827,6 @@ namespace LosePanel.Forms
         private System.Windows.Forms.Label lblAbtProviderName;
         private System.Windows.Forms.Label lblAbtWrittenBy;
         private System.Windows.Forms.RichTextBox rtbAbtDescription;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnSaveSettings;
         private System.Windows.Forms.Label label6;
@@ -888,6 +850,7 @@ namespace LosePanel.Forms
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
         private System.Windows.Forms.MonthCalendar mclDateSelector;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

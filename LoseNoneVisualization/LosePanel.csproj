@@ -113,6 +113,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="aumq2-w48sn-001.ico" />
+    <None Include="Resources\logo.png" />
     <None Include="Resources\eOEmgk4M4J.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -51,6 +51,7 @@ namespace LosePanel.Forms
             lblAbtProviderName.Text = dp.ProviderName;
             lblAbtWrittenBy.Text = dp.WrittenBy;
             rtbAbtDescription.Text = dp.Description;
+            mclDateSelector.TodayDate = DateTime.Today;
 
             //设置背景图片
             //string url = SettingsManager.BackgroundImagePath;
