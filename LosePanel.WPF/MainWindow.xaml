@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LosePanel.WPF"
         mc:Ignorable="d"
         Title="洛书面板" Height="450" Width="800"
-        FontFamily="/LosePanel.WPF;component/Resources/#Source Han Sans Medium" FontSize="14">
+        FontFamily="pack://application:,,,/Resources/SHM.otf#Source Han Sans SC" FontSize="14">
     
 
     <Grid>
@@ -33,7 +33,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Label FontSize="18" FontWeight="Bold"
+                        <Label FontSize="18"
                                Padding="10,10,0,0">服务器日志</Label>
                         <TextBlock x:Name="txbServerLog" Grid.Row="1" Padding="10,10,10,10" />
                     </Grid>
@@ -46,7 +46,7 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Label FontSize="18" FontWeight="Bold"
+                        <Label FontSize="18"
                                Padding="10,10,0,0">面板日志</Label>
                         <TextBlock x:Name="txbAppLog" Grid.Row="1" Padding="10,10,10,10" />
                     </Grid>
