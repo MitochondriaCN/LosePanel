@@ -6,8 +6,13 @@
         xmlns:local="clr-namespace:LosePanel.WPF"
         mc:Ignorable="d"
         Title="洛书面板" Height="450" Width="800"
-        FontFamily="pack://application:,,,/Resources/SHM.otf#Source Han Sans SC" FontSize="14">
+        FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal" FontSize="14">
     
+    <!--
+    字体 FontFamily
+    * 粗体： FontFamily="pack://application:,,,/Resources/SHB.otf#思源黑体"
+    * 常规： FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal"
+    -->
 
     <Grid>
         <Grid.RowDefinitions>
@@ -33,9 +38,12 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Label FontSize="18"
-                               Padding="10,10,0,0">服务器日志</Label>
-                        <TextBlock x:Name="txbServerLog" Grid.Row="1" Padding="10,10,10,10" />
+                        <Label FontSize="20"
+                               Padding="10,10,0,0"
+                               FontFamily="pack://application:,,,/Resources/SHB.otf#思源黑体">服务器日志</Label>
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            <TextBlock x:Name="txbServerLog" Grid.Row="1" Padding="10,10,10,10"/>
+                        </ScrollViewer>
                     </Grid>
 
                     <GridSplitter Grid.Column="1" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Center" Background="#FFCDCDCD"/>
@@ -46,9 +54,13 @@
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Label FontSize="18"
-                               Padding="10,10,0,0">面板日志</Label>
-                        <TextBlock x:Name="txbAppLog" Grid.Row="1" Padding="10,10,10,10" />
+                        <Label FontSize="20"
+                               Padding="10,10,0,0"
+                               FontFamily="pack://application:,,,/Resources/SHB.otf#思源黑体">面板日志</Label>
+                        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                            <TextBlock x:Name="txbAppLog" Padding="10,10,10,10" Width="Auto" TextWrapping="NoWrap"/>
+                        </ScrollViewer>
+                        
                     </Grid>
                 </Grid>
             </TabItem>

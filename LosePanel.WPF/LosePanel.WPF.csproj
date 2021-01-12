@@ -92,6 +92,8 @@
     </None>
     <Resource Include="Resources\SHM.ttf" />
     <Resource Include="Resources\SHM.otf" />
+    <Resource Include="Resources\SHN.otf" />
+    <Resource Include="Resources\SHB.otf" />
     <None Include="Resources\SourceHanSerifSC-Regular.otf" />
   </ItemGroup>
   <ItemGroup>
