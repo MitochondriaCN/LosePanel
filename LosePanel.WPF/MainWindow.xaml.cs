@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LosePanel.SDK;
+using LosePanel.DataSystem;
 
 namespace LosePanel.WPF
 {
@@ -20,9 +22,18 @@ namespace LosePanel.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        IDataProvidable dp;
+
+        long TimerInterval { set; get; }
+
         public MainWindow()
         {
             InitializeComponent();
+
+            //将设置载入管理器
+            SettingsManager.LoadOn();
+            //LogApp("设置已载入管理器。");
+            //LoadSettingsIntoUI();
         }
     }
 }

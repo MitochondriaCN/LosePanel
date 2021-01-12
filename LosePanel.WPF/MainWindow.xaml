@@ -5,8 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LosePanel.WPF"
         mc:Ignorable="d"
-        Title="洛书面板" Height="450" Width="800">
+        Title="洛书面板" Height="450" Width="800"
+        FontFamily="pack://application:,,,/Resources/SHM#思源黑体" FontSize="14">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TabControl TabStripPlacement="Left">
+            <TabItem Header="在线">
+                
+            </TabItem>
+            <TabItem Header="日志">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition MinWidth="200"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition MinWidth="200"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label FontSize="18" FontWeight="Bold"
+                               Padding="10,10,0,0">服务器日志</Label>
+                        <TextBlock x:Name="txbServerLog" Grid.Row="1" Padding="10,10,10,10" />
+                    </Grid>
+
+                    <GridSplitter Grid.Column="1" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Center" Background="#FFCDCDCD"/>
+
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <Label FontSize="18" FontWeight="Bold"
+                               Padding="10,10,0,0">面板日志</Label>
+                        <TextBlock x:Name="txbAppLog" Grid.Row="1" Padding="10,10,10,10" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
         
+        <!--底部栏-->
+        <StackPanel Orientation="Horizontal" Grid.Row="1" Background="DodgerBlue">
+            <Label Foreground="White" >在线玩家</Label>
+            <Label x:Name="lblOnlinePlayerNumber" Foreground="White" >0</Label>
+        </StackPanel>
+
     </Grid>
 </Window>
