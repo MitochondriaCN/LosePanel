@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:LosePanel.WPF"
         mc:Ignorable="d"
         Title="洛书面板" Height="450" Width="800"
-        FontFamily="pack://application:,,,/Resources/SHM#思源黑体" FontSize="14">
+        FontFamily="/LosePanel.WPF;component/Resources/#Source Han Sans Medium" FontSize="14">
+    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>

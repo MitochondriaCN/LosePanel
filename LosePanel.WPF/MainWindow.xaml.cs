@@ -32,8 +32,15 @@ namespace LosePanel.WPF
 
             //将设置载入管理器
             SettingsManager.LoadOn();
-            //LogApp("设置已载入管理器。");
+            LogApp("设置已载入管理器。");
             //LoadSettingsIntoUI();
+        }
+
+        private void LogApp(string str)
+        {
+            string nowTime = DateTime.Now.ToString();
+            string log = nowTime + " " + str;
+            txbAppLog.Text += log + "\n";
         }
     }
 }
