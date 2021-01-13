@@ -83,18 +83,16 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Resource Include="Resources\SHM.ttf" />
-    <Resource Include="Resources\SHM.otf" />
     <Resource Include="Resources\SHN.otf" />
     <Resource Include="Resources\SHB.otf" />
-    <None Include="Resources\SourceHanSerifSC-Regular.otf" />
+    <None Include="Resources\SHS.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

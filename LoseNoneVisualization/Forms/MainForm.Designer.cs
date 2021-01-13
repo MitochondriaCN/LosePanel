@@ -220,7 +220,7 @@ namespace LosePanel.Forms
             this.tbpOnlinePlayers.Location = new System.Drawing.Point(4, 4);
             this.tbpOnlinePlayers.Name = "tbpOnlinePlayers";
             this.tbpOnlinePlayers.Padding = new System.Windows.Forms.Padding(3);
-            this.tbpOnlinePlayers.Size = new System.Drawing.Size(1105, 458);
+            this.tbpOnlinePlayers.Size = new System.Drawing.Size(860, 525);
             this.tbpOnlinePlayers.TabIndex = 0;
             this.tbpOnlinePlayers.Text = "在线人数";
             this.tbpOnlinePlayers.UseVisualStyleBackColor = true;
@@ -237,7 +237,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
             this.tableLayoutPanel7.RowCount = 1;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(1099, 452);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(854, 519);
             this.tableLayoutPanel7.TabIndex = 1;
             // 
             // chartOnlinePlayers
@@ -317,7 +317,7 @@ namespace LosePanel.Forms
             series1.SmartLabelStyle.CalloutLineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
             series1.YValuesPerPoint = 2;
             this.chartOnlinePlayers.Series.Add(series1);
-            this.chartOnlinePlayers.Size = new System.Drawing.Size(849, 446);
+            this.chartOnlinePlayers.Size = new System.Drawing.Size(604, 513);
             this.chartOnlinePlayers.TabIndex = 0;
             this.chartOnlinePlayers.Text = "各时段在线玩家数";
             title1.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -333,12 +333,12 @@ namespace LosePanel.Forms
             this.tableLayoutPanel8.Controls.Add(this.mclDateSelector, 0, 1);
             this.tableLayoutPanel8.Controls.Add(this.label13, 0, 0);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel8.Location = new System.Drawing.Point(858, 3);
+            this.tableLayoutPanel8.Location = new System.Drawing.Point(613, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(238, 446);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(238, 513);
             this.tableLayoutPanel8.TabIndex = 1;
             // 
             // mclDateSelector
@@ -367,7 +367,7 @@ namespace LosePanel.Forms
             this.tbpLog.Controls.Add(this.tableLayoutPanel5);
             this.tbpLog.Location = new System.Drawing.Point(4, 4);
             this.tbpLog.Name = "tbpLog";
-            this.tbpLog.Size = new System.Drawing.Size(1118, 461);
+            this.tbpLog.Size = new System.Drawing.Size(860, 525);
             this.tbpLog.TabIndex = 3;
             this.tbpLog.Text = "日志";
             this.tbpLog.UseVisualStyleBackColor = true;
@@ -389,7 +389,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(1118, 461);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(860, 525);
             this.tableLayoutPanel5.TabIndex = 0;
             // 
             // label10
@@ -397,10 +397,10 @@ namespace LosePanel.Forms
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label10.Font = new System.Drawing.Font("微软雅黑 Light", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label10.Location = new System.Drawing.Point(562, 39);
+            this.label10.Location = new System.Drawing.Point(433, 39);
             this.label10.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(553, 28);
+            this.label10.Size = new System.Drawing.Size(424, 28);
             this.label10.TabIndex = 6;
             this.label10.Text = "面板";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -410,11 +410,11 @@ namespace LosePanel.Forms
             this.rtbLogApp.BackColor = System.Drawing.Color.White;
             this.rtbLogApp.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtbLogApp.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbLogApp.Location = new System.Drawing.Point(562, 78);
+            this.rtbLogApp.Location = new System.Drawing.Point(433, 78);
             this.rtbLogApp.Name = "rtbLogApp";
             this.rtbLogApp.ReadOnly = true;
             this.rtbLogApp.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbLogApp.Size = new System.Drawing.Size(553, 380);
+            this.rtbLogApp.Size = new System.Drawing.Size(424, 444);
             this.rtbLogApp.TabIndex = 4;
             this.rtbLogApp.Text = "";
             // 
@@ -427,7 +427,7 @@ namespace LosePanel.Forms
             this.rtbLog.Name = "rtbLog";
             this.rtbLog.ReadOnly = true;
             this.rtbLog.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.rtbLog.Size = new System.Drawing.Size(553, 380);
+            this.rtbLog.Size = new System.Drawing.Size(424, 444);
             this.rtbLog.TabIndex = 3;
             this.rtbLog.Text = "";
             // 
@@ -446,7 +446,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(1112, 17);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(854, 17);
             this.tableLayoutPanel6.TabIndex = 0;
             // 
             // label8
@@ -475,7 +475,7 @@ namespace LosePanel.Forms
             this.label9.Location = new System.Drawing.Point(3, 39);
             this.label9.Margin = new System.Windows.Forms.Padding(3, 16, 3, 8);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(553, 28);
+            this.label9.Size = new System.Drawing.Size(424, 28);
             this.label9.TabIndex = 5;
             this.label9.Text = "服务器";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -485,7 +485,7 @@ namespace LosePanel.Forms
             this.tbpSettings.Controls.Add(this.tableLayoutPanel2);
             this.tbpSettings.Location = new System.Drawing.Point(4, 4);
             this.tbpSettings.Name = "tbpSettings";
-            this.tbpSettings.Size = new System.Drawing.Size(1118, 461);
+            this.tbpSettings.Size = new System.Drawing.Size(860, 525);
             this.tbpSettings.TabIndex = 1;
             this.tbpSettings.Text = "设置";
             this.tbpSettings.UseVisualStyleBackColor = true;
@@ -517,7 +517,7 @@ namespace LosePanel.Forms
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1118, 126);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(860, 134);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label12
@@ -525,7 +525,7 @@ namespace LosePanel.Forms
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Left;
             this.label12.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label12.Location = new System.Drawing.Point(272, 60);
+            this.label12.Location = new System.Drawing.Point(272, 68);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(140, 33);
             this.label12.TabIndex = 10;
@@ -536,7 +536,7 @@ namespace LosePanel.Forms
             // 
             this.lblBgImagePath.AutoSize = true;
             this.lblBgImagePath.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lblBgImagePath.Location = new System.Drawing.Point(65, 60);
+            this.lblBgImagePath.Location = new System.Drawing.Point(65, 68);
             this.lblBgImagePath.Name = "lblBgImagePath";
             this.lblBgImagePath.Size = new System.Drawing.Size(20, 33);
             this.lblBgImagePath.TabIndex = 8;
@@ -547,7 +547,7 @@ namespace LosePanel.Forms
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label11.Location = new System.Drawing.Point(3, 60);
+            this.label11.Location = new System.Drawing.Point(3, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(56, 33);
             this.label11.TabIndex = 7;
@@ -559,9 +559,9 @@ namespace LosePanel.Forms
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Left;
             this.label7.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.label7.Location = new System.Drawing.Point(272, 31);
+            this.label7.Location = new System.Drawing.Point(272, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(536, 29);
+            this.label7.Size = new System.Drawing.Size(476, 34);
             this.label7.TabIndex = 6;
             this.label7.Text = "数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -570,9 +570,9 @@ namespace LosePanel.Forms
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.label4.Location = new System.Drawing.Point(3, 31);
+            this.label4.Location = new System.Drawing.Point(3, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 29);
+            this.label4.Size = new System.Drawing.Size(56, 34);
             this.label4.TabIndex = 3;
             this.label4.Text = "刷新频率";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -583,7 +583,7 @@ namespace LosePanel.Forms
             this.label2.Dock = System.Windows.Forms.DockStyle.Right;
             this.label2.Location = new System.Drawing.Point(15, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 31);
+            this.label2.Size = new System.Drawing.Size(44, 34);
             this.label2.TabIndex = 0;
             this.label2.Text = "数据源";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -601,7 +601,7 @@ namespace LosePanel.Forms
             // btnSaveSettings
             // 
             this.btnSaveSettings.AutoSize = true;
-            this.btnSaveSettings.Location = new System.Drawing.Point(1013, 96);
+            this.btnSaveSettings.Location = new System.Drawing.Point(755, 104);
             this.btnSaveSettings.Name = "btnSaveSettings";
             this.btnSaveSettings.Size = new System.Drawing.Size(102, 27);
             this.btnSaveSettings.TabIndex = 2;
@@ -616,7 +616,7 @@ namespace LosePanel.Forms
             this.label6.ForeColor = System.Drawing.SystemColors.GrayText;
             this.label6.Location = new System.Drawing.Point(272, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(482, 31);
+            this.label6.Size = new System.Drawing.Size(458, 34);
             this.label6.TabIndex = 4;
             this.label6.Text = "选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -625,7 +625,7 @@ namespace LosePanel.Forms
             // 
             this.numRefreshFrequency.AutoSize = true;
             this.numRefreshFrequency.Dock = System.Windows.Forms.DockStyle.Left;
-            this.numRefreshFrequency.Location = new System.Drawing.Point(65, 34);
+            this.numRefreshFrequency.Location = new System.Drawing.Point(65, 37);
             this.numRefreshFrequency.Name = "numRefreshFrequency";
             this.numRefreshFrequency.Size = new System.Drawing.Size(45, 23);
             this.numRefreshFrequency.TabIndex = 5;
@@ -638,7 +638,7 @@ namespace LosePanel.Forms
             // btnBgImageSelect
             // 
             this.btnBgImageSelect.AutoSize = true;
-            this.btnBgImageSelect.Location = new System.Drawing.Point(1013, 63);
+            this.btnBgImageSelect.Location = new System.Drawing.Point(755, 71);
             this.btnBgImageSelect.Name = "btnBgImageSelect";
             this.btnBgImageSelect.Size = new System.Drawing.Size(63, 27);
             this.btnBgImageSelect.TabIndex = 9;

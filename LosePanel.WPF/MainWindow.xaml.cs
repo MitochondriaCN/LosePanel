@@ -33,7 +33,7 @@ namespace LosePanel.WPF
             //将设置载入管理器
             SettingsManager.LoadOn();
             LogApp("设置已载入管理器。");
-            //LoadSettingsIntoUI();
+            LoadSettingsIntoUI();
         }
 
         private void LogApp(string str)
@@ -41,6 +41,25 @@ namespace LosePanel.WPF
             string nowTime = DateTime.Now.ToString();
             string log = nowTime + " " + str;
             txbAppLog.Text += log + "\n";
+        }
+
+        private void LoadSettingsIntoUI()
+        {
+            //加载刷新频率
+            sldRefreshFrequency.Value = SettingsManager.RefreshFrequency;
+            //将数据源列表载入管理器
+            DataProviderManager.LoadOnDataProviders();
+            LogApp("数据源列表已载入管理器。");
+            //将当前选择的数据源载入管理器
+            DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider);
+            //加载数据源列表
+            cmbDataProviders.DataContext = DataProviderManager.DataProviders;
+            //加载已选数据源
+            cmbDataProviders.SelectedItem = DataProviderManager.CurrentDataProvider;
+            dp = DataProviderManager.CurrentDataProvider;
+            //加载背景图片
+            //lblBgImagePath.Text = SettingsManager.BackgroundImagePath;
+            //LogApp("设置加载完毕。");
         }
     }
 }

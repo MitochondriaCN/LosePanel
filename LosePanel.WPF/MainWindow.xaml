@@ -64,6 +64,46 @@
                     </Grid>
                 </Grid>
             </TabItem>
+
+            <TabItem Header="设置">
+                <ScrollViewer>
+                    <StackPanel>
+                        <Expander Header="数据源" FontFamily="pack://application:,,,/Resources/SHB.otf#思源黑体">
+                            <StackPanel>
+                                <TextBlock TextWrapping="Wrap" FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal" FontSize="12">
+                                    选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。
+                                </TextBlock>
+                                <DockPanel Margin="0,5,0,5">
+                                    <TextBlock FontSize="12" FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal"
+                                       DockPanel.Dock="Left">选择数据源：</TextBlock>
+                                    <ComboBox x:Name="cmbDataProviders" DockPanel.Dock="Right" FontSize="12"/>
+                                </DockPanel>
+                            </StackPanel>
+                        </Expander>
+                        <Expander Header="刷新频率" FontFamily="pack://application:,,,/Resources/SHB.otf#思源黑体">
+                            <StackPanel>
+                                <TextBlock TextWrapping="Wrap" FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal" FontSize="12">
+                                    数据刷新频率，单位为秒。最低为 1，最高为 60。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。
+                                </TextBlock>
+                                <Grid Margin="0,5,0,5" Height="Auto">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Slider x:Name="sldRefreshFrequency" Grid.Column="0"
+                                            TickPlacement="TopLeft" TickFrequency="1" IsSnapToTickEnabled="True"
+                                            Maximum="60" Minimum="1"/>
+                                    <TextBlock Grid.Column="1" 
+                                               Text="{Binding ElementName=sldRefreshFrequency,Path=Value}"
+                                               FontSize="12"
+                                               FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal"/>
+                                </Grid>
+                                
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
         </TabControl>
         
         <!--底部栏-->

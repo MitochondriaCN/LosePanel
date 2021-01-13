@@ -59,25 +59,5 @@ namespace LosePanel.WPF.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   查找 System.Byte[] 类型的本地化资源。
-        /// </summary>
-        internal static byte[] SHM {
-            get {
-                object obj = ResourceManager.GetObject("SHM", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   查找 System.Byte[] 类型的本地化资源。
-        /// </summary>
-        internal static byte[] SHSerif {
-            get {
-                object obj = ResourceManager.GetObject("SHSerif", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }

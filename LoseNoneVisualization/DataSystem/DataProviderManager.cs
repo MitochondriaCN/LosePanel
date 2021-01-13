@@ -8,7 +8,7 @@ using LosePanel.Presets;
 
 namespace LosePanel.DataSystem
 {
-    static class DataProviderManager
+    public static class DataProviderManager
     {
         /// <summary>
         /// 所有可用的数据源（包括预置）。
