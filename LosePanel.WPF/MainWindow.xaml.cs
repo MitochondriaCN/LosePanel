@@ -41,6 +41,8 @@ namespace LosePanel.WPF
             //将当前选择的数据源载入管理器
             DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider);
             dp = DataProviderManager.CurrentDataProvider;
+
+            //frmSettings.Content = new Pages.SettingsMain();
         }
 
         private void LogApp(string str)
@@ -55,6 +57,7 @@ namespace LosePanel.WPF
         /// </summary>
         private void LoadSettingsIntoUI()
         {
+            /*
             //加载刷新频率
             sldRefreshFrequency.Value = SettingsManager.RefreshFrequency;
             //加载数据源列表
@@ -67,11 +70,16 @@ namespace LosePanel.WPF
             //TODO:完成这个
 
             LogApp("“设置”已同步。");
+            */
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             LoadSettingsIntoUI();
+        }
+
+        private void frmSettings_Loaded(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
