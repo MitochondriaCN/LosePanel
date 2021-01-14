@@ -20,7 +20,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <TabControl TabStripPlacement="Left" SelectionChanged="TabControl_SelectionChanged">
+        <TabControl TabStripPlacement="Left">
             <TabItem Header="在线">
                 
             </TabItem>
@@ -75,10 +75,8 @@
                                 </TextBlock>
                                 <DockPanel Margin="0,5,0,5">
                                     <TextBlock FontSize="12" FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal"
-                                       DockPanel.Dock="Left" VerticalAlignment="Center">选择数据源：</TextBlock>
-                                    <ComboBox x:Name="cmbDataProviders" 
-                                              DockPanel.Dock="Right" FontSize="12"
-                                              FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal"/>
+                                       DockPanel.Dock="Left">选择数据源：</TextBlock>
+                                    <ComboBox x:Name="cmbDataProviders" DockPanel.Dock="Right" FontSize="12"/>
                                 </DockPanel>
                             </StackPanel>
                         </Expander>
@@ -95,9 +93,9 @@
                                     <Slider x:Name="sldRefreshFrequency" Grid.Column="0"
                                             TickPlacement="TopLeft" TickFrequency="1" IsSnapToTickEnabled="True"
                                             Maximum="60" Minimum="1"/>
-                                    <TextBlock Grid.Column="1"  Margin="5,0,0,0"
+                                    <TextBlock Grid.Column="1" 
                                                Text="{Binding ElementName=sldRefreshFrequency,Path=Value}"
-                                               FontSize="12" VerticalAlignment="Center"
+                                               FontSize="12"
                                                FontFamily="pack://application:,,,/Resources/SHN.otf#思源黑体 Normal"/>
                                 </Grid>
                                 
