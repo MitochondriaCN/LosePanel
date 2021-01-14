@@ -66,7 +66,7 @@ namespace LosePanel.WPF
             //LogApp("设置加载完毕。");
             //TODO:完成这个
 
-            LogApp("“设置”已同步。")
+            LogApp("“设置”已同步。");
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
