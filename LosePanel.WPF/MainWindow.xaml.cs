@@ -33,7 +33,6 @@ namespace LosePanel.WPF
             //将设置载入管理器
             SettingsManager.LoadOn();
             LogApp("设置已载入管理器。");
-            LoadSettingsIntoUI();
 
             //将数据源列表载入管理器
             DataProviderManager.LoadOnDataProviders();
@@ -42,7 +41,6 @@ namespace LosePanel.WPF
             DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider);
             dp = DataProviderManager.CurrentDataProvider;
 
-            //frmSettings.Content = new Pages.SettingsMain();
         }
 
         private void LogApp(string str)
@@ -52,30 +50,9 @@ namespace LosePanel.WPF
             txbAppLog.Text += log + "\n";
         }
 
-        /// <summary>
-        /// 该方法只刷新界面，不处理逻辑。
-        /// </summary>
-        private void LoadSettingsIntoUI()
-        {
-            /*
-            //加载刷新频率
-            sldRefreshFrequency.Value = SettingsManager.RefreshFrequency;
-            //加载数据源列表
-            cmbDataProviders.ItemsSource = DataProviderManager.DataProviders;
-            //加载已选数据源
-            cmbDataProviders.SelectedItem = DataProviderManager.CurrentDataProvider;
-            //加载背景图片
-            //lblBgImagePath.Text = SettingsManager.BackgroundImagePath;
-            //LogApp("设置加载完毕。");
-            //TODO:完成这个
-
-            LogApp("“设置”已同步。");
-            */
-        }
-
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            LoadSettingsIntoUI();
+            
         }
 
         private void frmSettings_Loaded(object sender, RoutedEventArgs e)

@@ -24,5 +24,11 @@ namespace LosePanel.WPF.Pages
         {
             InitializeComponent();
         }
+
+        private void btnstDataProvider_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService nav = NavigationService.GetNavigationService(this);
+            nav.Navigate(new setDataProvider());
+        }
     }
 }

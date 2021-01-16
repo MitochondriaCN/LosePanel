@@ -6,12 +6,11 @@
       xmlns:local="clr-namespace:LosePanel.WPF.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="SettingsMain">
+      Title="设置首页">
 
     <ScrollViewer Height="Auto">
         <StackPanel Background="#FFCFCFCF" Margin="5" Height="Auto">
-            <Button x:Name="btnstDataProvider" HorizontalContentAlignment="Left" Background="White" Padding="10,5,0,5" BorderBrush="{x:Null}" Margin="0">数据源</Button>
-            <Button x:Name="btnstDataProvide" HorizontalContentAlignment="Left" Background="White" Padding="10,5,0,5" BorderBrush="{x:Null}" Margin="0">数据源</Button>
+            <Button x:Name="btnstDataProvider" Click="btnstDataProvider_Click" FontSize="14" HorizontalContentAlignment="Left" Background="White" Padding="10,5,0,5" BorderBrush="{x:Null}" Margin="0">数据源</Button>
         </StackPanel>
     </ScrollViewer>
 </Page>
