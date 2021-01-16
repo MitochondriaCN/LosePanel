@@ -1,11 +1,12 @@
-﻿<Window x:Class="LosePanel.WPF.MainWindow"
+﻿<mah:MetroWindow x:Class="LosePanel.WPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
         xmlns:local="clr-namespace:LosePanel.WPF"
         mc:Ignorable="d"
-        Title="洛书面板" Height="450" Width="800" FontSize="14">
+        Title="洛书面板" Height="450" Width="800" FontSize="14" FontFamily="Microsoft YaHei">
 
     <!--
     字体 FontFamily
@@ -64,7 +65,7 @@
 
             <TabItem Header="设置">
                 <Frame x:Name="frmSettings" Loaded="frmSettings_Loaded" Source="Pages/SettingsMain.xaml"
-                       NavigationUIVisibility="Automatic"/>
+                       NavigationUIVisibility="Visible"/>
             </TabItem>
         </TabControl>
 
@@ -72,7 +73,9 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1" Background="DodgerBlue">
             <Label Foreground="White" >在线玩家</Label>
             <Label x:Name="lblOnlinePlayerNumber" Foreground="White" >0</Label>
+            <Label Margin="20,0,0,0" x:Name="lblDataProviderName" Foreground="White"/>
+            <Label Margin="20,0,0,0" x:Name="lblStatus" Foreground="White">就绪</Label>
         </StackPanel>
 
     </Grid>
-</Window>
+</mah:MetroWindow>
