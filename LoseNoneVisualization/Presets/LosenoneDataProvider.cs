@@ -79,7 +79,7 @@ namespace LosePanel.Presets
             }
             catch
             {
-                throw;
+                OnlinePlayerNumber = 0;
             }
 
         }

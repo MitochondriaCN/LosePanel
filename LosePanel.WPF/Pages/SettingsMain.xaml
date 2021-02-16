@@ -4,13 +4,28 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LosePanel.WPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="设置首页">
 
-    <ScrollViewer Height="Auto">
-        <StackPanel Background="#FFCFCFCF" Margin="5" Height="Auto">
-            <Button x:Name="btnstDataProvider" Click="btnstDataProvider_Click" FontSize="14" HorizontalContentAlignment="Left" Background="White" Padding="10,5,0,5" BorderBrush="{x:Null}" Margin="0">数据源</Button>
+    <ScrollViewer Height="Auto" Margin="20">
+        <StackPanel x:Name="stackPanel" Height="Auto">
+            <Label FontSize="30" FontWeight="Light" >设置</Label>
+            <Label Margin="0,30,0,20" FontSize="20">常规</Label>
+            <Button x:Name="btnstDataProvider" Click="btnstDataProvider_Click" 
+                    Style="{DynamicResource MaterialDesignFlatMidBgButton}"
+                    HorizontalAlignment="Left"
+                    Width="{Binding ActualWidth, ElementName=stackPanel, Mode=OneWay}">数据源</Button>
+            <Button x:Name="btnstLog" Click="btnstLog_Click"
+                    Style="{DynamicResource MaterialDesignFlatMidBgButton}"
+                    HorizontalAlignment="Left"
+                    Width="{Binding ActualWidth, ElementName=stackPanel, Mode=OneWay}">日志</Button>
+            <Label Margin="0,30,0,20" FontSize="20">开发者选项</Label>
+            <Button x:Name="btnstViewFile" Click="btnstViewFile_Click"
+                    Style="{DynamicResource MaterialDesignFlatMidBgButton}"
+                    HorizontalAlignment="Left"
+                    Width="{Binding ActualWidth, ElementName=stackPanel, Mode=OneWay}">查看设置文件</Button>
         </StackPanel>
     </ScrollViewer>
 </Page>

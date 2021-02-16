@@ -30,5 +30,23 @@ namespace LosePanel.WPF.Pages
             NavigationService nav = NavigationService.GetNavigationService(this);
             nav.Navigate(new setDataProvider());
         }
+
+        private void btnstLog_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService nav = NavigationService.GetNavigationService(this);
+            nav.Navigate(new setLog());
+        }
+
+        private void btnstViewFile_Click(object sender, RoutedEventArgs e)
+        {
+            if (System.IO.File.Exists("settings.ini"))
+            {
+                System.Diagnostics.Process.Start("settings.ini");
+            }
+            else
+            {
+                MessageBox.Show("文件不存在，可能您正在使用默认设置。", "错误");
+            }
+        }
     }
 }

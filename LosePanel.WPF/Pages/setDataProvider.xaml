@@ -4,11 +4,13 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:LosePanel.WPF.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="设置 - 数据源" Loaded="Page_Loaded">
+   
 
-    <Grid Margin="10">
+    <Grid Margin="10" HorizontalAlignment="Left">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
@@ -29,12 +31,12 @@
                 <ColumnDefinition/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Slider Margin="10" x:Name="sldRefreshFrequency" Minimum="1" Maximum="60" TickFrequency="1" IsSnapToTickEnabled="True"/>
+            <Slider Margin="10" x:Name="sldRefreshFrequency" Minimum="1" Maximum="60" TickFrequency="1" IsSnapToTickEnabled="True" Style="{DynamicResource MaterialDesignSlider}"/>
             <TextBlock Grid.Column="1" x:Name="txbRefreshFrequency"
                        Text="{Binding ElementName=sldRefreshFrequency,Path=Value}"
                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         </Grid>
         
-        <Button Grid.Row="6" x:Name="btnSaveDataProvider" Click="btnSaveDataProvider_Click" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Right">保存并重启软件</Button>
+        <Button Grid.Row="6" x:Name="btnSaveDataProvider" Click="btnSaveDataProvider_Click" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto">保存并重启软件</Button>
     </Grid>
 </Page>

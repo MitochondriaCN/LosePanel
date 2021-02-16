@@ -15,14 +15,14 @@ using System.Windows.Shapes;
 using LosePanel.SDK;
 using LosePanel.DataSystem;
 using System.Windows.Threading;
-using MahApps.Metro.Controls;
+using System.Windows.Media.Animation;
 
 namespace LosePanel.WPF
 {
     /// <summary>
     /// MainWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : MetroWindow
+    public partial class MainWindow : Window
     {
         IDataProvidable dp;
 
@@ -48,18 +48,23 @@ namespace LosePanel.WPF
             timer.Interval = new TimeSpan(0, 0, SettingsManager.RefreshFrequency);
             timer.Tick += TimerCallback;
             timer.Start();
+
+            //直接调用计时器方法
+            TimerCallback(timer, new EventArgs());
         }
 
         private void TimerCallback(object sender, EventArgs e)
         {
-            string srcStatus = lblStatus.Content.ToString();
-            lblStatus.Content = "正在获取数据……";
-
+            //更新在线玩家数、数据源名
             lblOnlinePlayerNumber.Content = dp.OnlinePlayerNumber;
             lblDataProviderName.Content = dp.ProviderName;
 
-            lblStatus.Content = srcStatus;
+            //更新服务器日志
+            lblServerLogHeader.Content = dp.LogIsConnected ? "服务器日志" : "服务器日志（未提供）";
+            txbServerLog.Text = dp.Log.ToString();
+
             LogApp("数据已更新。");
+            ChangeStatus(StatusLevels.Fine, "已更新");
         }
 
         private void LogApp(string str)
@@ -67,6 +72,60 @@ namespace LosePanel.WPF
             string nowTime = DateTime.Now.ToString();
             string log = nowTime + " " + str;
             txbAppLog.Text += log + "\n";
+        }
+
+        private void ChangeStatus(StatusLevels level, string text)
+        {
+            SolidColorBrush bgbrush;
+            switch(level)
+            {
+                case StatusLevels.Fine:
+                    bgbrush = new SolidColorBrush(Color.FromRgb(0, 153, 51));
+                    break;
+                case StatusLevels.Warning:
+                    bgbrush = new SolidColorBrush(Color.FromRgb(255, 153, 0));
+                    break;
+                case StatusLevels.Error:
+                    bgbrush = new SolidColorBrush(Color.FromRgb(204, 51, 0));
+                    break;
+                case StatusLevels.Waiting:
+                    bgbrush = new SolidColorBrush(Color.FromRgb(102, 153, 153));
+                    break;
+                default:
+                    bgbrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+                    break;
+            }
+            string srcContent = lblStatus.Content.ToString();
+            lblStatus.Background = bgbrush;
+            lblStatus.Content = text;
+
+            if (!(text == srcContent))
+            {
+                DoubleAnimation anim = new DoubleAnimation();
+                anim.From = 0;
+                anim.To = 1;
+                anim.Duration = TimeSpan.FromMilliseconds(700);
+                lblStatus.BeginAnimation(Label.OpacityProperty, anim);
+            }
+        }
+
+        private void ChangeMessage(string message)
+        {
+            DoubleAnimation anim = new DoubleAnimation();
+            anim.From = 0;
+            anim.To = 1;
+            anim.Duration = TimeSpan.FromMilliseconds(700);
+
+            lblMessage.Content = message;
+            lblMessage.BeginAnimation(Label.OpacityProperty, anim);
+        }
+
+        private enum StatusLevels
+        {
+            Fine,
+            Warning,
+            Error,
+            Waiting
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)

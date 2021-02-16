@@ -25,21 +25,28 @@ namespace LosePanel.DataSystem
         /// </summary>
         public static string BackgroundImagePath { get; set; }
 
+        /// <summary>
+        /// 是否保存日志。
+        /// </summary>
+        public static bool IsSaveLog { get; set; }
+
         public static void LoadOn()
         {
-            if (File.Exists("settings.ini"))
+            try
             {
                 XElement xd = XDocument.Load("settings.ini").Element("LosePanelSettings");
-
                 SelectedDataProvider = xd.Element("SelectedDataProvider").Value;
                 RefreshFrequency = int.Parse(xd.Element("RefreshFrequency").Value);
                 BackgroundImagePath = xd.Element("BackgroundImagePath").Value;
+                IsSaveLog = (xd.Element("IsSaveLog").Value == "True") ? true : false;
             }
-            else
+            catch
             {
                 //加载默认值
                 SelectedDataProvider = "洛书南统计服务器";
                 RefreshFrequency = 5;
+                BackgroundImagePath = null;
+                IsSaveLog = false;
             }
         }
 
@@ -49,7 +56,8 @@ namespace LosePanel.DataSystem
                 new XElement("LosePanelSettings",
                     new XElement("SelectedDataProvider", SelectedDataProvider),
                     new XElement("RefreshFrequency", RefreshFrequency.ToString()),
-                    new XElement("BackgroundImagePath", BackgroundImagePath)));
+                    new XElement("BackgroundImagePath", BackgroundImagePath),
+                    new XElement("IsSaveLog", IsSaveLog.ToString())));
             xd.Save("settings.ini");
         }
     }
