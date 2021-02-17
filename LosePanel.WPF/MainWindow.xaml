@@ -117,6 +117,25 @@
                 <Frame x:Name="frmSettings" Loaded="frmSettings_Loaded" Source="Pages/SettingsMain.xaml"
                        NavigationUIVisibility="Visible"/>
             </TabItem>
+
+            <TabItem Header="关于" Style="{StaticResource MaterialDesignNavigationRailTabItem}">
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <Label Style="{StaticResource TitleLabel}">关于洛书面板</Label>
+                        <Label Style="{StaticResource SecondaryLabel}">版本</Label>
+                        <Label>V0.4 代号叶</Label>
+                        <Label>基于 .Net Framework 及 Windows Presentation Foundation</Label>
+                        <Label Style="{StaticResource SecondaryLabel}">开发</Label>
+                        <Label>洛书南服务器团队 Minecraft LoseNone</Label>
+                        <Label>线粒体XianlitiCN 程序</Label>
+                        <Label>堆糖mofcandy 服务器接口</Label>
+                        <Label>乔一Qiaoyiiii6 沟通与协助</Label>
+                        <Label Style="{StaticResource SecondaryLabel}">授权信息</Label>
+                        <Label>苹方简体 PingFang SC ，来自 Apple Inc.</Label>
+                        <Label>由于该字体尚未获得商业授权，因此为暂用。</Label>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
         </TabControl>
 
         <!--底部栏-->
