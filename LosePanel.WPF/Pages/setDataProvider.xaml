@@ -7,36 +7,31 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="设置 - 数据源" Loaded="Page_Loaded">
-   
+      Title="设置 - 数据源" Loaded="Page_Loaded"
+      Style="{StaticResource NormalPage}">
 
-    <Grid Margin="10" HorizontalAlignment="Left">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <TextBlock FontSize="20" Margin="10">数据源</TextBlock>
-        <TextBlock Grid.Row="1" TextWrapping="Wrap" FontSize="14" Margin="10,0,0,0">选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。</TextBlock>
-        <ComboBox Margin="10" Grid.Row="2" x:Name="cmbDataProviders"/>
 
-        <TextBlock Grid.Row="3" FontSize="20" Margin="10">刷新频率</TextBlock>
-        <TextBlock Grid.Row="4" TextWrapping="Wrap" FontSize="14" Margin="10,0,0,0">数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。</TextBlock>
-        <Grid Grid.Row="5">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Slider Margin="10" x:Name="sldRefreshFrequency" Minimum="1" Maximum="60" TickFrequency="1" IsSnapToTickEnabled="True" Style="{DynamicResource MaterialDesignSlider}"/>
-            <TextBlock Grid.Column="1" x:Name="txbRefreshFrequency"
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <Label Style="{StaticResource TitleLabel}">数据源</Label>
+            <Label Style="{StaticResource SecondaryLabel}" HorizontalAlignment="Left">当前数据源</Label>
+            <Label Grid.Row="1" HorizontalAlignment="Left">选择面板数据来源。您可以将自定义数据源放置在面板目录中 DataProviders 文件夹下。</Label>
+            <ComboBox Style="{DynamicResource MaterialDesignComboBox}" Margin="10,0,10,0" Grid.Row="2" x:Name="cmbDataProviders"/>
+
+            <Label Grid.Row="3" Style="{StaticResource SecondaryLabel}" HorizontalAlignment="Left">刷新频率</Label>
+            <Label Grid.Row="4" HorizontalAlignment="Left">数据刷新频率，单位为秒。注意，这是面板从数据源获得数据的频率，并非数据源更新数据的频率。</Label>
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Slider Margin="10" x:Name="sldRefreshFrequency" Minimum="1" Maximum="60" TickFrequency="1" IsSnapToTickEnabled="True" Style="{DynamicResource MaterialDesignSlider}"/>
+                <TextBlock Grid.Column="1" x:Name="txbRefreshFrequency"
                        Text="{Binding ElementName=sldRefreshFrequency,Path=Value}"
                        TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        </Grid>
-        
-        <Button Grid.Row="6" x:Name="btnSaveDataProvider" Click="btnSaveDataProvider_Click" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto">保存并重启软件</Button>
-    </Grid>
+            </Grid>
+
+            <Button Grid.Row="6" x:Name="btnSaveDataProvider" Click="btnSaveDataProvider_Click" FontSize="14" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="Auto">保存并重启软件</Button>
+        </StackPanel>
+    </ScrollViewer>
 </Page>

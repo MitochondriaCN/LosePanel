@@ -7,12 +7,12 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="设置首页">
+      Title="设置首页" Style="{StaticResource NormalPage}">
 
     <ScrollViewer Height="Auto" Margin="20">
         <StackPanel x:Name="stackPanel" Height="Auto">
-            <Label FontSize="30" FontWeight="Light" >设置</Label>
-            <Label Margin="0,30,0,20" FontSize="20">常规</Label>
+            <Label Style="{StaticResource TitleLabel}">设置</Label>
+            <Label Style="{StaticResource SecondaryLabel}">常规</Label>
             <Button x:Name="btnstDataProvider" Click="btnstDataProvider_Click" 
                     Style="{DynamicResource MaterialDesignFlatMidBgButton}"
                     HorizontalAlignment="Left"
@@ -21,7 +21,7 @@
                     Style="{DynamicResource MaterialDesignFlatMidBgButton}"
                     HorizontalAlignment="Left"
                     Width="{Binding ActualWidth, ElementName=stackPanel, Mode=OneWay}">日志</Button>
-            <Label Margin="0,30,0,20" FontSize="20">开发者选项</Label>
+            <Label Style="{StaticResource SecondaryLabel}">开发者选项</Label>
             <Button x:Name="btnstViewFile" Click="btnstViewFile_Click"
                     Style="{DynamicResource MaterialDesignFlatMidBgButton}"
                     HorizontalAlignment="Left"

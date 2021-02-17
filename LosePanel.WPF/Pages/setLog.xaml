@@ -7,19 +7,23 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="设置 - 日志" Loaded="Page_Loaded">
+      Title="设置 - 日志" Loaded="Page_Loaded"
+      Style="{StaticResource NormalPage}">
 
-    <StackPanel Margin="20">
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Label FontSize="20">保存日志</Label>
-            <ToggleButton x:Name="tgbSaveLogs" Grid.Column="1"
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <Label Style="{StaticResource TitleLabel}">日志</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Style="{StaticResource SecondaryLabel}">保存日志</Label>
+                <ToggleButton x:Name="tgbSaveLogs" Grid.Column="1"
                           Style="{DynamicResource MaterialDesignSwitchToggleButton}"/>
-        </Grid>
-        <Label FontSize="14">自动将软件日志和服务器日志保存到单独的文件。</Label>
-        <Button x:Name="btnstSaveAndRestart" HorizontalAlignment="Right" Click="btnstSaveAndRestart_Click">保存并重启软件</Button>
-    </StackPanel>
+            </Grid>
+            <Label>自动将软件日志和服务器日志保存到单独的文件。</Label>
+            <Button x:Name="btnstSaveAndRestart" HorizontalAlignment="Right" Click="btnstSaveAndRestart_Click">保存并重启软件</Button>
+        </StackPanel>
+    </ScrollViewer>
 </Page>

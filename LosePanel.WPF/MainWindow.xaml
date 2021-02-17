@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LosePanel.WPF"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="13"
@@ -12,8 +13,10 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         mc:Ignorable="d"
-        Title="洛书面板" Height="450" Width="800" FontSize="14">
+        Title="洛书面板" Height="450" Width="800" FontSize="14"
+        Style="{StaticResource Normal}">
 
+    
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -24,9 +27,49 @@
                     Style="{DynamicResource MaterialDesignNavigatilRailTabControl}">
             <TabItem Header="在线" 
                      Style="{StaticResource MaterialDesignNavigationRailTabItem}">
-                <StackPanel Margin="20">
-                    <Label Margin="0,0,0,20" FontSize="30" FontWeight="Light">在线</Label>
-                </StackPanel>
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <Label Style="{StaticResource TitleLabel}">在线</Label>
+                        <lvc:CartesianChart AnimationsSpeed="0:0:0.2" Hoverable="False" DataTooltip="{x:Null}" Height="180">
+                            <!--曲线系列-->
+                            <lvc:CartesianChart.Series>
+                                <lvc:LineSeries x:Name="lsrOnlinePlayers"
+                                            PointGeometry="{x:Static lvc:DefaultGeometries.Circle}" 
+                                            PointGeometrySize="10"
+                                            LineSmoothness="1"
+                            	            StrokeThickness="3" 
+                            	            Stroke="#FF1D99D9"
+                            	            Fill="Transparent"/>
+                            </lvc:CartesianChart.Series>
+                            <!--X轴系列-->
+                            <lvc:CartesianChart.AxisX>
+                                <lvc:Axis x:Name="axisX" Title="时间">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator x:Name="axisXSep" IsEnabled="True" Step="1"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisX>
+                            <!--Y轴系列-->
+                            <lvc:CartesianChart.AxisY>
+                                <lvc:Axis x:Name="axisY"
+                      	              Title="人数"
+                      	              MinValue="0">
+                                    <lvc:Axis.Separator>
+                                        <lvc:Separator IsEnabled="True"/>
+                                    </lvc:Axis.Separator>
+                                </lvc:Axis>
+                            </lvc:CartesianChart.AxisY>
+                        </lvc:CartesianChart>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <DatePicker x:Name="dtpDatePicker" Text="选择日期" Style="{DynamicResource MaterialDesignDatePicker}"/>
+                            <Label Grid.Column="1" Margin="10,0,0,0">选择需要查看玩家数变化的日期，然后当天各时段玩家数将会在上方图表显示。</Label>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
             
             <TabItem Header="日志"

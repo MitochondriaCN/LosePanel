@@ -49,12 +49,16 @@ namespace LosePanel.WPF
             timer.Tick += TimerCallback;
             timer.Start();
 
+            //初始化控件
+            dtpDatePicker.SelectedDate = DateTime.Today;
+
             //直接调用计时器方法
             TimerCallback(timer, new EventArgs());
         }
 
         private void TimerCallback(object sender, EventArgs e)
         {
+            bool isOK = false;
             //更新在线玩家数、数据源名
             lblOnlinePlayerNumber.Content = dp.OnlinePlayerNumber;
             lblDataProviderName.Content = dp.ProviderName;
@@ -63,8 +67,23 @@ namespace LosePanel.WPF
             lblServerLogHeader.Content = dp.LogIsConnected ? "服务器日志" : "服务器日志（未提供）";
             txbServerLog.Text = dp.Log.ToString();
 
-            LogApp("数据已更新。");
-            ChangeStatus(StatusLevels.Fine, "已更新");
+            //更新图表
+            try
+            {
+                UpdateChartDisplay(dp.GetPlayerNumbersOfDay((DateTime)dtpDatePicker.SelectedDate));
+                isOK = true;
+            }
+            catch (Exception ex)
+            {
+                ChangeStatus(StatusLevels.Error, "无法更新图表");
+                LogApp("更新图表失败：" + ex.Message);
+            }
+
+            if (isOK)
+            {
+                LogApp("数据已更新。");
+                ChangeStatus(StatusLevels.Fine, "已更新");
+            }
         }
 
         private void LogApp(string str)
@@ -118,6 +137,21 @@ namespace LosePanel.WPF
 
             lblMessage.Content = message;
             lblMessage.BeginAnimation(Label.OpacityProperty, anim);
+        }
+
+        /// <summary>
+        /// 更新图表核心代码
+        /// </summary>
+        /// <param name="collection"></param>
+        private void UpdateChartDisplay(List<TimePointPlayerNumber> collection)
+        {
+            lsrOnlinePlayers.Values = new LiveCharts.ChartValues<int>();
+            axisX.Labels = new List<string>();
+            foreach (var v in collection)
+            {
+                lsrOnlinePlayers.Values.Add(v.PlayerNumber);
+                axisX.Labels.Add(v.TimePoint.TimeOfDay.ToString());
+            }
         }
 
         private enum StatusLevels
