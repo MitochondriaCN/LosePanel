@@ -3,11 +3,8 @@
 
 欢迎加入洛书南（LoseNone）服务器：[洛书南服务器官网](www.losenone.cn)
 
-# 开发者文档
-[SDK适配教程](http://lp.apocalypse.icu/programming.html)
-
 # 开发者
-洛书面板项目由云游科社和洛书南服务器团队合作开发。
+洛书面板项目由洛书南服务器团队开发。
 
 - @MitochondriaCN 软件开发。
 - @mofcandy 提供洛书南服务器数据源接口。
