@@ -13,36 +13,35 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
 
-            <Style x:Key="TitleLabel" TargetType="Label">
+            <Style x:Key="TitleLabel" TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
                 <Setter Property="FontSize" Value="30"/>
-                <Setter Property="Margin" Value="0,0,0,20"/>
+                <Setter Property="Margin" Value="0,20,0,10"/>
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PingFang/#PingFang SC Bold"/>
+                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Light"/>
             </Style>
 
-            <Style x:Key="SecondaryLabel" TargetType="Label">
+            <Style x:Key="SecondaryLabel" TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
                 <Setter Property="FontSize" Value="20"/>
-                <Setter Property="Margin" Value="0,20,0,0"/>
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PingFang/#PingFang SC Bold"/>
+                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Medium"/>
             </Style>
 
             <Style x:Key="Normal" TargetType="ContentControl">
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PingFang/#PingFang SC Normal"/>
+                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi"/>
             </Style>
             
             <Style x:Key="NormalPage" TargetType="Page">
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PingFang/#PingFang SC Normal"/>
+                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

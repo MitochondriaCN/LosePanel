@@ -68,6 +68,7 @@
                             <DatePicker x:Name="dtpDatePicker" Text="选择日期" Style="{DynamicResource MaterialDesignDatePicker}"/>
                             <Label Grid.Column="1" Margin="10,0,0,0">选择需要查看玩家数变化的日期，然后当天各时段玩家数将会在上方图表显示。</Label>
                         </Grid>
+                        <Label Style="{StaticResource TitleLabel}">当前玩家</Label>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -81,31 +82,33 @@
                         <ColumnDefinition MinWidth="200"/>
                     </Grid.ColumnDefinitions>
 
-                    <Grid Grid.Column="0">
+                    <Grid Grid.Column="0" Margin="20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Label x:Name="lblServerLogHeader" FontSize="20"
-                               Padding="5,0,0,0" Background="#FF008CAE" Foreground="#DDFFFFFF">服务器日志</Label>
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                            <TextBlock x:Name="txbServerLog" Grid.Row="1" Padding="10,10,10,10"/>
+                            <StackPanel>
+                                <Label x:Name="lblServerLogHeader" Style="{StaticResource TitleLabel}">服务器日志</Label>
+                                <TextBlock x:Name="txbServerLog" Grid.Row="1" Padding="10,10,10,10"/>
+                            </StackPanel>
                         </ScrollViewer>
                     </Grid>
 
                     <GridSplitter Grid.Column="1" Width="5" VerticalAlignment="Stretch" HorizontalAlignment="Center" Background="#FFCDCDCD"/>
 
-                    <Grid Grid.Column="2">
+                    <Grid Grid.Column="2" Margin="20">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <Label FontSize="20"
-                               Padding="5,0,0,0" Background="#FF12B61A" Foreground="#DDFFFFFF">面板日志</Label>
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
-                            <TextBlock x:Name="txbAppLog" Padding="10,10,10,10" Width="Auto" TextWrapping="NoWrap"/>
+                            <StackPanel>
+                                <Label  Style="{StaticResource TitleLabel}">面板日志</Label>
+                                <TextBlock x:Name="txbAppLog" Padding="10,10,10,10" Width="Auto" TextWrapping="NoWrap"/>
+                            </StackPanel>
                         </ScrollViewer>
 
                     </Grid>
@@ -130,9 +133,10 @@
                         <Label>线粒体XianlitiCN 程序</Label>
                         <Label>堆糖mofcandy 服务器接口</Label>
                         <Label>乔一Qiaoyiiii6 沟通与协助</Label>
-                        <Label Style="{StaticResource SecondaryLabel}">授权信息</Label>
-                        <Label>苹方简体 PingFang SC ，来自 Apple Inc.</Label>
-                        <Label>由于该字体尚未获得商业授权，因此为暂用。</Label>
+                        <Label Style="{StaticResource TitleLabel}">授权信息</Label>
+                        <Label Style="{StaticResource SecondaryLabel}">字体</Label>
+                        <Label>阿里巴巴普惠体 Alibaba PuHuiTi</Label>
+                        <Label>已获得商业授权。</Label>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

@@ -152,6 +152,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Bold.otf" />
+    <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Heavy.otf" />
+    <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Light.otf" />
+    <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Medium.otf" />
+    <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Regular.otf" />
     <Resource Include="Resources\PingFang\PingFang Bold.ttf" />
     <Resource Include="Resources\PingFang\PingFang ExtraLight.ttf" />
     <Resource Include="Resources\PingFang\PingFang Heavy.ttf" />
