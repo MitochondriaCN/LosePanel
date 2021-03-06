@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataSystem\DataProviderManager.cs" />
+    <Compile Include="DataSystem\Option.cs" />
     <Compile Include="DataSystem\SettingsManager.cs" />
     <Compile Include="Presets\LosenoneDataProvider.cs" />
     <Compile Include="DataSystem\NetworkTools.cs" />
