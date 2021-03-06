@@ -120,8 +120,15 @@
                 <ScrollViewer>
                     <StackPanel Margin="20">
                         <Label Style="{StaticResource TitleLabel}">设置</Label>
+                        
                         <Label Style="{StaticResource SecondaryLabel}">数据源</Label>
+                        <Label>设定面板当前使用的数据源。</Label>
                         <ComboBox x:Name="cmbDataProviders"/>
+
+                        <Label Style="{StaticResource SecondaryLabel}">刷新频率</Label>
+                        <Label>设定面板从数据源获取数据的频率，单位为秒/次。</Label>
+                        <Slider x:Name="sldRefreshFrequency" Maximum="60" Minimum="1" TickFrequency="1" TickPlacement="TopLeft" AutoToolTipPlacement="TopLeft" IsSnapToTickEnabled="True"/>
+                        <Label Content="{Binding Path=Value,ElementName=sldRefreshFrequency}"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>

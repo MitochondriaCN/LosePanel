@@ -24,6 +24,7 @@
 
             <Style x:Key="SecondaryLabel" TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
                 <Setter Property="FontSize" Value="20"/>
+                <Setter Property="Margin" Value="0,15,0,0"/>
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
