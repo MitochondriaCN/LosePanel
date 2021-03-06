@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:LosePanel.WPF"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Windows/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -19,7 +19,7 @@
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Light"/>
+                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Bold"/>
             </Style>
 
             <Style x:Key="SecondaryLabel" TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
@@ -28,6 +28,15 @@
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
                 <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Medium"/>
+            </Style>
+
+            <Style TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
+                <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
+                <Setter Property="UseLayoutRounding" Value="True"/>
+                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Regular"/>
+                <Setter Property="Opacity" Value="0.8"/>
             </Style>
 
             <Style x:Key="Normal" TargetType="ContentControl">

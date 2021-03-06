@@ -107,7 +107,7 @@
                         <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                             <StackPanel>
                                 <Label  Style="{StaticResource TitleLabel}">面板日志</Label>
-                                <TextBlock x:Name="txbAppLog" Padding="10,10,10,10" Width="Auto" TextWrapping="NoWrap"/>
+                                <TextBlock x:Name="txbAppLog" Padding="10,10,10,10" Width="Auto" TextWrapping="NoWrap" Opacity="0.8"/>
                             </StackPanel>
                         </ScrollViewer>
 
@@ -117,8 +117,13 @@
 
             <TabItem Header="设置"
                      Style="{StaticResource MaterialDesignNavigationRailTabItem}">
-                <Frame x:Name="frmSettings" Loaded="frmSettings_Loaded" Source="Pages/SettingsMain.xaml"
-                       NavigationUIVisibility="Visible"/>
+                <ScrollViewer>
+                    <StackPanel Margin="20">
+                        <Label Style="{StaticResource TitleLabel}">设置</Label>
+                        <Label Style="{StaticResource SecondaryLabel}">数据源</Label>
+                        <ComboBox x:Name="cmbDataProviders"/>
+                    </StackPanel>
+                </ScrollViewer>
             </TabItem>
 
             <TabItem Header="关于" Style="{StaticResource MaterialDesignNavigationRailTabItem}">
