@@ -33,6 +33,7 @@
 
             <Style TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
                 <Setter Property="FontSize" Value="14"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>

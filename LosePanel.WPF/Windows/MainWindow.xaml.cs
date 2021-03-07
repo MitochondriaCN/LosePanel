@@ -102,7 +102,6 @@ namespace LosePanel.WPF
 
         private void TimerCallback(object sender, EventArgs e)
         {
-            bool isOK = false;
             //更新在线玩家数、数据源名
             lblOnlinePlayerNumber.Content = dp.OnlinePlayerNumber;
             lblDataProviderName.Content = dp.ProviderName;
@@ -111,23 +110,8 @@ namespace LosePanel.WPF
             lblServerLogHeader.Content = dp.LogIsConnected ? "服务器日志" : "服务器日志（未提供）";
             txbServerLog.Text = dp.Log.ToString();
 
-            //更新图表
-            try
-            {
-                bgwGraphicsUpdater.RunWorkerAsync(dp.GetPlayerNumbersOfDay((DateTime)dtpDatePicker.SelectedDate));
-                isOK = true;
-            }
-            catch (Exception ex)
-            {
-                ChangeStatus(StatusLevels.Error, "无法更新图表");
-                LogApp("更新图表失败：" + ex.Message);
-            }
-
-            if (isOK)
-            {
-                LogApp("数据已更新。");
-                ChangeStatus(StatusLevels.Fine, "已更新");
-            }
+            LogApp("数据已更新。");
+            ChangeMessage("数据已更新");
         }
 
         private void LogApp(string str)
@@ -158,18 +142,14 @@ namespace LosePanel.WPF
                     bgbrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
                     break;
             }
-            string srcContent = lblStatus.Content.ToString();
             lblStatus.Background = bgbrush;
             lblStatus.Content = text;
 
-            if (!(text == srcContent))
-            {
-                DoubleAnimation anim = new DoubleAnimation();
-                anim.From = 0;
-                anim.To = 1;
-                anim.Duration = TimeSpan.FromMilliseconds(700);
-                lblStatus.BeginAnimation(Label.OpacityProperty, anim);
-            }
+            DoubleAnimation anim = new DoubleAnimation();
+            anim.From = 0;
+            anim.To = 1;
+            anim.Duration = TimeSpan.FromMilliseconds(700);
+            lblStatus.BeginAnimation(Label.OpacityProperty, anim);
         }
 
         private void ChangeMessage(string message)
@@ -208,8 +188,38 @@ namespace LosePanel.WPF
             
         }
 
-        private void frmSettings_Loaded(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// 加载设置项到设置选项卡。
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SettingsTab_Loaded(object sender, RoutedEventArgs e)
         {
+            cmbDataProviders.ItemsSource = DataProviderManager.DataProviders;
+            cmbDataProviders.SelectedItem = DataProviderManager.CurrentDataProvider;
+
+            sldRefreshFrequency.Value = SettingsManager.RefreshFrequency.Value;
+
+            tgbIsSaveLog.IsChecked = SettingsManager.IsSaveLog.Value;
+        }
+
+        private void btnUpdateGraphics_Click(object sender, RoutedEventArgs e)
+        {
+            //更新图表
+            try
+            {
+                bgwGraphicsUpdater.RunWorkerAsync(dp.GetPlayerNumbersOfDay((DateTime)dtpDatePicker.SelectedDate));
+            }
+            catch (Exception ex)
+            {
+                ChangeStatus(StatusLevels.Error, "无法更新图表");
+                LogApp("更新图表失败：" + ex.Message);
+                return;
+            }
+
+
+            LogApp("数据已更新。");
+            ChangeStatus(StatusLevels.Fine, "已更新");
         }
     }
 }
