@@ -14,7 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         mc:Ignorable="d"
         Title="洛书面板" Height="450" Width="800" FontSize="14"
-        Style="{StaticResource Normal}">
+        Style="{StaticResource Normal}" Icon="/LosePanel.WPF;component/Image/aumq2-w48sn-001.ico">
 
     
     <Grid>
