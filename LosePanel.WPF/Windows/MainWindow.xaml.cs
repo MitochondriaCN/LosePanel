@@ -185,15 +185,18 @@ namespace LosePanel.WPF
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            if (((sender as TabControl).SelectedItem as TabItem).Header.ToString() == "设置")
+            {
+                LoadSettingsTab();
+            }
         }
 
-        /// <summary>
-        /// 加载设置项到设置选项卡。
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void SettingsTab_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadSettingsTab();
+        }
+
+        private void LoadSettingsTab()
         {
             cmbDataProviders.ItemsSource = DataProviderManager.DataProviders;
             cmbDataProviders.SelectedItem = DataProviderManager.CurrentDataProvider;
@@ -220,6 +223,18 @@ namespace LosePanel.WPF
 
             LogApp("数据已更新。");
             ChangeStatus(StatusLevels.Fine, "已更新");
+        }
+
+        private void btnSaveSettings_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("若保存，将关闭软件，以待重启软件后生效。是否保存？", "信息", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                SettingsManager.SelectedDataProvider.Value = cmbDataProviders.SelectedItem.ToString();
+                SettingsManager.RefreshFrequency.Value = int.Parse(sldRefreshFrequency.Value.ToString());
+                SettingsManager.IsSaveLog.Value = tgbIsSaveLog.IsChecked == true ? true : false;
+
+                Application.Current.Shutdown(); 
+            }
         }
     }
 }

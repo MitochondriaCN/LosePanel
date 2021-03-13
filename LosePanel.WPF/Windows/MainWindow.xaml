@@ -72,8 +72,9 @@
                             <Label Margin="10,0,0,0">查看日期</Label>
                             <DatePicker Grid.Column="1" x:Name="dtpDatePicker" Text="选择日期" Style="{DynamicResource MaterialDesignDatePicker}"/>
                         </Grid>
-                        <Button x:Name="btnUpdateGraphics" HorizontalAlignment="Right" Margin="0,10,0,0" Click="btnUpdateGraphics_Click">更新</Button>
+                        <Button x:Name="btnUpdateGraphics" Margin="0,10,0,0" Click="btnUpdateGraphics_Click" Style="{StaticResource MaterialDesignFlatButton}">更新</Button>
                         <Label Style="{StaticResource TitleLabel}">当前玩家</Label>
+                        <ListView x:Name="lsvOnlinePlayers"/>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
@@ -150,6 +151,10 @@
                             <Label>保存日志到文件</Label>
                             <ToggleButton x:Name="tgbIsSaveLog" Style="{StaticResource MaterialDesignSwitchToggleButton}" Grid.Column="1"/>
                         </Grid>
+
+                        <Button x:Name="btnSaveSettings" Style="{StaticResource MaterialDesignFlatButton}" Click="btnSaveSettings_Click">
+                            保存并重启软件
+                        </Button>
        
                     </StackPanel>
                 </ScrollViewer>
