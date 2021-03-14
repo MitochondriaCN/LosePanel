@@ -121,6 +121,38 @@
                 </Grid>
             </TabItem>
 
+            <TabItem Header="控制台"
+                     Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                     Width="Auto">
+                
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Label Style="{StaticResource TitleLabel}">控制台</Label>
+                    <TextBlock Grid.Row="1" x:Name="txbTerminal" Margin="0,0,0,10" Background="#FF1E1E1E" Foreground="#FFD5D5E6" Text="Terminal" />
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBox x:Name="txbInputTerminal" Margin="0,0,10,0"/>
+                        <Button Grid.Column="1" Style="{StaticResource MaterialDesignFloatingActionButton}"
+                                Width="32" Height="32">
+                            <materialDesign:PackIcon Kind="SubdirectoryArrowLeft"/>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="性能"
+                     Style="{StaticResource MaterialDesignNavigationRailTabItem}"
+                     Width="Auto">
+
+            </TabItem>
+
             <TabItem Header="设置"
                      Style="{StaticResource MaterialDesignNavigationRailTabItem}" Loaded="SettingsTab_Loaded">
                 <ScrollViewer>

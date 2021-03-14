@@ -17,7 +17,9 @@ namespace LosePanel
         [STAThread]
         static void Main()
         {
-            
+            System.Drawing.Color c = System.Drawing.Color.FromArgb(1, 5, 7);
+            string str = c.ToString();
+            System.IO.File.WriteAllText("D:\\file.txt", str);
         }
     }
 }

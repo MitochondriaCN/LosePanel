@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Drawing;
 
 namespace LosePanel.DataSystem
 {
@@ -46,11 +47,15 @@ namespace LosePanel.DataSystem
             }
         }
 
-        public Option(string name, string friendlyName, string description, T value)
+        public Option(string name, string friendlyName, string description)
         {
             Name = name;
             FriendlyName = friendlyName;
             Description = description;
+        }
+
+        public void SetValueDirectly(T value)
+        {
             this.value = value;
         }
 
