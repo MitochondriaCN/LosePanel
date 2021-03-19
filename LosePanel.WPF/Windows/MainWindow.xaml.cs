@@ -27,7 +27,9 @@ namespace LosePanel.WPF
     public partial class MainWindow : Window
     {
         IDataProvidable dp;
+
         BackgroundWorker bgwGraphicsUpdater;
+        BackgroundWorker bgwCommandQueryer;
 
         DispatcherTimer timer;
 
@@ -52,18 +54,32 @@ namespace LosePanel.WPF
             timer.Tick += TimerCallback;
             timer.Start();
 
-            //设定BackgroundWorker
+            //设定BackgroundWorker:bgwGraphicsUpdater
             bgwGraphicsUpdater = new BackgroundWorker();
             bgwGraphicsUpdater.DoWork += BgwGraphicsUpdater_DoWork;
             bgwGraphicsUpdater.ProgressChanged += BgwGraphicsUpdater_ProgressChanged;
             bgwGraphicsUpdater.RunWorkerCompleted += BgwGraphicsUpdater_RunWorkerCompleted;
             bgwGraphicsUpdater.WorkerReportsProgress = true;
 
+            //设定BackgroundWorker:bgwCommandQueryer
+            bgwCommandQueryer = new BackgroundWorker();
+            bgwCommandQueryer.DoWork += BgwCommandQueryer_DoWork;
+
             //初始化控件
             dtpDatePicker.SelectedDate = DateTime.Today;
 
             //直接调用计时器方法
             TimerCallback(timer, new EventArgs());
+        }
+
+        private void BgwCommandQueryer_DoWork(object sender, DoWorkEventArgs e)
+        {
+            txbTerminal.Text = txbTerminal.Text + "\n>\t" + e.Argument.ToString() + "\n";
+
+            QueryReturn qr = dp.QueryToServer(e.Argument.ToString());
+
+            ChangeMessage("指令已执行。");
+            txbTerminal.Text = txbTerminal.Text + "\t" + qr.Return + "\n";
         }
 
         private void BgwGraphicsUpdater_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -235,6 +251,11 @@ namespace LosePanel.WPF
 
                 Application.Current.Shutdown(); 
             }
+        }
+
+        private void btnQueryCommand_Click(object sender, RoutedEventArgs e)
+        {
+            bgwCommandQueryer.RunWorkerAsync(txbInputTerminal.Text);
         }
     }
 }
