@@ -118,7 +118,6 @@ namespace LosePanel.WPF
                 chtValues.Add(v.PlayerNumber);
                 axisXLabels.Add(v.TimePoint.TimeOfDay.ToString());
 
-                bgwGraphicsUpdater.ReportProgress((i + 1) / collection.Count);
             }
 
             e.Result = new ChartInformation(chtValues, axisXLabels);
