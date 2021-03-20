@@ -54,32 +54,45 @@ namespace LosePanel.WPF
             timer.Tick += TimerCallback;
             timer.Start();
 
+            
             //设定BackgroundWorker:bgwGraphicsUpdater
             bgwGraphicsUpdater = new BackgroundWorker();
             bgwGraphicsUpdater.DoWork += BgwGraphicsUpdater_DoWork;
-            bgwGraphicsUpdater.ProgressChanged += BgwGraphicsUpdater_ProgressChanged;
             bgwGraphicsUpdater.RunWorkerCompleted += BgwGraphicsUpdater_RunWorkerCompleted;
-            bgwGraphicsUpdater.WorkerReportsProgress = true;
 
             //设定BackgroundWorker:bgwCommandQueryer
             bgwCommandQueryer = new BackgroundWorker();
             bgwCommandQueryer.DoWork += BgwCommandQueryer_DoWork;
+            bgwCommandQueryer.RunWorkerCompleted += BgwCommandQueryer_RunWorkerCompleted;
 
             //初始化控件
             dtpDatePicker.SelectedDate = DateTime.Today;
+            lsbCodeTipList.ItemsSource = new List<string>() { "list", "legal" };
 
             //直接调用计时器方法
             TimerCallback(timer, new EventArgs());
         }
 
+        private void BgwCommandQueryer_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            QueryReturn qr = e.Result as QueryReturn;
+            if (qr.IsCompleted)
+            {
+                ChangeMessage("指令已执行。");
+                txbTerminal.Text = txbTerminal.Text + "\t" + qr.Return + "\n";
+            }
+            else
+            {
+                ChangeMessage("指令执行失败。");
+                txbTerminal.Text = txbTerminal.Text + "\t" + qr.Return + "\n";
+            }
+        }
+
         private void BgwCommandQueryer_DoWork(object sender, DoWorkEventArgs e)
         {
-            txbTerminal.Text = txbTerminal.Text + "\n>\t" + e.Argument.ToString() + "\n";
-
             QueryReturn qr = dp.QueryToServer(e.Argument.ToString());
 
-            ChangeMessage("指令已执行。");
-            txbTerminal.Text = txbTerminal.Text + "\t" + qr.Return + "\n";
+            e.Result = qr;
         }
 
         private void BgwGraphicsUpdater_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -90,11 +103,6 @@ namespace LosePanel.WPF
             axisX.Labels = l;
 
             ChangeMessage("图表更新完毕");
-        }
-
-        private void BgwGraphicsUpdater_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            ChangeMessage("正在更新图表 - " + e.ProgressPercentage + "%");
         }
 
         private void BgwGraphicsUpdater_DoWork(object sender, DoWorkEventArgs e)
@@ -255,7 +263,40 @@ namespace LosePanel.WPF
 
         private void btnQueryCommand_Click(object sender, RoutedEventArgs e)
         {
+            txbTerminal.Text = txbTerminal.Text + "   >\t" + txbInputTerminal.Text + "\n";
+            txbInputTerminal.Text = "";
             bgwCommandQueryer.RunWorkerAsync(txbInputTerminal.Text);
+        }
+
+        private void txbInputTerminal_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                btnQueryCommand_Click(sender, e);
+            }
+        }
+
+        private void txbInputTerminal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (txbInputTerminal.Text != "")
+            {
+                popCodeTip.IsOpen = false;
+                popCodeTip.IsOpen = true;
+            }
+            else
+            {
+                popCodeTip.IsOpen = false;
+            }
+        }
+
+        private void txbInputTerminal_LostFocus(object sender, RoutedEventArgs e)
+        {
+            popCodeTip.IsOpen = false;
+        }
+
+        private void lsbCodeTipList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            txbInputTerminal.Text = lsbCodeTipList.SelectedItem.ToString();
         }
     }
 }

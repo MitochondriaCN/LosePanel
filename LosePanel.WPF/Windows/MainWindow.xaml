@@ -132,13 +132,21 @@
                         <RowDefinition Height="Auto"/>
                     </Grid.RowDefinitions>
                     <Label Style="{StaticResource TitleLabel}">控制台</Label>
-                    <TextBlock Grid.Row="1" x:Name="txbTerminal" Margin="0,0,0,10" Background="#FF1E1E1E" Foreground="#FFD5D5E6"/>
+                    <ScrollViewer Grid.Row="1" Margin="0,0,0,10">
+                        <TextBlock x:Name="txbTerminal" Background="#FF1E1E1E" Foreground="#FFD5D5E6"/>
+                    </ScrollViewer>
+                    
                     <Grid Grid.Row="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
-                        <TextBox x:Name="txbInputTerminal" Margin="0,0,10,0"/>
+                        <TextBox x:Name="txbInputTerminal" Margin="0,0,10,0" KeyDown="txbInputTerminal_KeyDown" TextChanged="txbInputTerminal_TextChanged" LostFocus="txbInputTerminal_LostFocus"/>
+                        <Popup x:Name="popCodeTip" StaysOpen="True" Placement="Bottom">
+                            <Border BorderBrush="Beige" BorderThickness="5" Background="White">
+                                <ListBox x:Name="lsbCodeTipList" SelectionChanged="lsbCodeTipList_SelectionChanged"/>
+                            </Border>
+                        </Popup>
                         <Button x:Name="btnQueryCommand" Grid.Column="1" Style="{StaticResource MaterialDesignFloatingActionButton}"
                                 Width="32" Height="32" Click="btnQueryCommand_Click">
                             <materialDesign:PackIcon Kind="SubdirectoryArrowLeft"/>
