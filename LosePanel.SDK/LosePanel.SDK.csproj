@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="IDataProvidable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QueryReturn.cs" />
     <Compile Include="TimePointPlayerNumber.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

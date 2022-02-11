@@ -22,12 +22,6 @@ namespace LosePanel.SDK
         List<TimePointPlayerNumber> GetPlayerNumbersOfDay(DateTime date);
 
         /// <summary>
-        /// 向服务器传递执行指令，获取返回值。
-        /// </summary>
-        /// <param name="query"></param>
-        QueryReturn QueryToServer(string command);
-
-        /// <summary>
         /// 实时在线玩家数。该数据应当实时更新以确保时效性。
         /// </summary>
         int OnlinePlayerNumber { get; }

@@ -129,11 +129,6 @@ namespace LosePanel.Presets
                 throw e;
             }
         }
-
-        public QueryReturn QueryToServer(string command)
-        {
-            return new QueryReturn(true, "指令已执行。");
-        }
     }
 }
 
