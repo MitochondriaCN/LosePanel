@@ -147,7 +147,7 @@
                         <Label>乔一 Qiaoyiiii6 / 沟通与协助</Label>
                         <Label Style="{StaticResource TitleLabel}">授权信息</Label>
                         <Label Style="{StaticResource SecondaryLabel}">字体</Label>
-                        <Label>阿里巴巴普惠体 Alibaba PuHuiTi</Label>
+                        <Label>Noto Sans Serif</Label>
                         <Label>已获得商业授权。</Label>
                         <Label Style="{StaticResource SecondaryLabel}"/>
                         <Label>© 2020—2022 洛书南 Losenone ，保留一切权利。</Label>

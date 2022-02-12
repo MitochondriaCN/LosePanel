@@ -19,7 +19,7 @@
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Bold"/>
+                <Setter Property="FontFamily" Value="Resources/Noto_Serif_SC/#Noto Serif SC Black"/>
             </Style>
 
             <Style x:Key="SecondaryLabel" TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
@@ -28,7 +28,7 @@
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Medium"/>
+                <Setter Property="FontFamily" Value="Resources/Noto_Serif_SC/#Noto Serif SC Medium"/>
             </Style>
 
             <Style TargetType="Label" BasedOn="{StaticResource MaterialDesignLabel}">
@@ -37,7 +37,7 @@
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi Regular"/>
+                <Setter Property="FontFamily" Value="Resources/Noto_Serif_SC/#Noto Serif SC"/>
                 <Setter Property="Opacity" Value="0.85"/>
             </Style>
 
@@ -45,14 +45,14 @@
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi"/>
+                <Setter Property="FontFamily" Value="Resources/Noto_Serif_SC/#Noto Serif SC"/>
             </Style>
             
             <Style x:Key="NormalPage" TargetType="Page">
                 <Setter Property="TextOptions.TextFormattingMode" Value="Ideal"/>
                 <Setter Property="TextOptions.TextRenderingMode" Value="ClearType"/>
                 <Setter Property="UseLayoutRounding" Value="True"/>
-                <Setter Property="FontFamily" Value="/LosePanel.WPF;component/Resources/PuHui/#Alibaba PuHuiTi"/>
+                <Setter Property="FontFamily" Value="Resources/Noto_Serif_SC/#Noto Serif SC"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>
