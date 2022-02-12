@@ -129,39 +129,7 @@
             <TabItem Header="设置"
                      Style="{StaticResource MaterialDesignNavigationRailTabItem}" Loaded="SettingsTab_Loaded">
                 <ScrollViewer>
-                    <StackPanel Margin="20">
-                        <Label Style="{StaticResource TitleLabel}">设置</Label>
-                        
-                        <Label Style="{StaticResource SecondaryLabel}">数据源</Label>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <Label VerticalContentAlignment="Center">当前数据源</Label>
-                            <ComboBox x:Name="cmbDataProviders" Grid.Column="1"/>
-                        </Grid>
-
-                        <Label Style="{StaticResource SecondaryLabel}">刷新频率</Label>
-                        <Label>面板从数据源获取数据频率（秒/次）</Label>
-                        <Slider x:Name="sldRefreshFrequency" Maximum="60" Minimum="1" TickFrequency="1" TickPlacement="TopLeft" AutoToolTipPlacement="TopLeft" IsSnapToTickEnabled="True"/>
-                        <Label Content="{Binding Path=Value,ElementName=sldRefreshFrequency}"/>
-
-                        <Label Style="{StaticResource SecondaryLabel}">日志</Label>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="Auto"/>
-                            </Grid.ColumnDefinitions>
-                            <Label>保存日志到文件</Label>
-                            <ToggleButton x:Name="tgbIsSaveLog" Style="{StaticResource MaterialDesignSwitchToggleButton}" Grid.Column="1"/>
-                        </Grid>
-
-                        <Button x:Name="btnSaveSettings" Style="{StaticResource MaterialDesignFlatButton}" Click="btnSaveSettings_Click">
-                            保存并重启软件
-                        </Button>
-       
-                    </StackPanel>
+                    <StackPanel Margin="20" Name="stpSettingItemsPanel"/><!--该元素内部的子元素由代码创建，见LoadSettingsTab()-->
                 </ScrollViewer>
             </TabItem>
 
@@ -170,17 +138,19 @@
                     <StackPanel Margin="20">
                         <Label Style="{StaticResource TitleLabel}">关于洛书面板</Label>
                         <Label Style="{StaticResource SecondaryLabel}">版本</Label>
-                        <Label>V0.4 代号叶</Label>
+                        <Label>V0.5 「西风」</Label>
                         <Label>基于 .Net Framework 及 Windows Presentation Foundation</Label>
                         <Label Style="{StaticResource SecondaryLabel}">开发</Label>
-                        <Label>洛书南服务器团队 Minecraft LoseNone</Label>
-                        <Label>线粒体XianlitiCN 程序</Label>
-                        <Label>堆糖mofcandy 服务器接口</Label>
-                        <Label>乔一Qiaoyiiii6 沟通与协助</Label>
+                        <Label>洛书南 Minecraft 服务器团队</Label>
+                        <Label>线粒体 XianlitiCN / 程序</Label>
+                        <Label>堆糖 mofcandy / 服务器接口</Label>
+                        <Label>乔一 Qiaoyiiii6 / 沟通与协助</Label>
                         <Label Style="{StaticResource TitleLabel}">授权信息</Label>
                         <Label Style="{StaticResource SecondaryLabel}">字体</Label>
                         <Label>阿里巴巴普惠体 Alibaba PuHuiTi</Label>
                         <Label>已获得商业授权。</Label>
+                        <Label Style="{StaticResource SecondaryLabel}"/>
+                        <Label>© 2020—2022 洛书南 Losenone ，保留一切权利。</Label>
                     </StackPanel>
                 </ScrollViewer>
             </TabItem>
