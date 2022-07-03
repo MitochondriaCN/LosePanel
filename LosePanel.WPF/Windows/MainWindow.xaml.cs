@@ -1,23 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using LosePanel.SDK;
 using LosePanel.DataSystem;
-using System.Windows.Threading;
 using System.Windows.Media.Animation;
 using System.ComponentModel;
 using LiveCharts;
+using LosePanel.WPF.DataSystem;
 
 namespace LosePanel.WPF
 {
@@ -28,71 +19,20 @@ namespace LosePanel.WPF
     {
         IDataProvidable dp;
 
-        BackgroundWorker bgwGraphicsUpdater;
-        BackgroundWorker bgwCommandQueryer;
-
-        DispatcherTimer timer;
+        DataProviderManager dataProviderManager;
+        SettingsManager settingsManager;
 
         public MainWindow()
         {
             InitializeComponent();
 
-            //将设置载入管理器
-            SettingsManager.LoadOn();
-            LogApp("设置已载入管理器。");
-
-            //将数据源列表载入管理器
-            DataProviderManager.LoadOnDataProviders();
-            LogApp("数据源列表已载入管理器。");
-            //将当前选择的数据源载入管理器
-            DataProviderManager.SetCurrentDataProvider(SettingsManager.SelectedDataProvider.Value);
-            dp = DataProviderManager.CurrentDataProvider;
-            
-            //设定计时器
-            timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, SettingsManager.RefreshFrequency.Value);
-            timer.Tick += TimerCallback;
-            timer.Start();
-
-            
-            //设定BackgroundWorker:bgwGraphicsUpdater
-            bgwGraphicsUpdater = new BackgroundWorker();
-            bgwGraphicsUpdater.DoWork += BgwGraphicsUpdater_DoWork;
-            bgwGraphicsUpdater.RunWorkerCompleted += BgwGraphicsUpdater_RunWorkerCompleted;
-
-            //设定BackgroundWorker:bgwCommandQueryer
-            bgwCommandQueryer = new BackgroundWorker();
-            bgwCommandQueryer.DoWork += BgwCommandQueryer_DoWork;
-            bgwCommandQueryer.RunWorkerCompleted += BgwCommandQueryer_RunWorkerCompleted;
+            //载入数据源管理器
+            dataProviderManager=new DataProviderManager();
+            //载入设置管理器
+            settingsManager = new SettingsManager(dataProviderManager);
 
             //初始化控件
             dtpDatePicker.SelectedDate = DateTime.Today;
-            lsbCodeTipList.ItemsSource = new List<string>() { "list", "legal" };
-
-            //直接调用计时器方法
-            TimerCallback(timer, new EventArgs());
-        }
-
-        private void BgwCommandQueryer_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
-            QueryReturn qr = e.Result as QueryReturn;
-            if (qr.IsCompleted)
-            {
-                ChangeMessage("指令已执行。");
-                txbTerminal.Text = txbTerminal.Text + "\t" + qr.Return + "\n";
-            }
-            else
-            {
-                ChangeMessage("指令执行失败。");
-                txbTerminal.Text = txbTerminal.Text + "\t" + qr.Return + "\n";
-            }
-        }
-
-        private void BgwCommandQueryer_DoWork(object sender, DoWorkEventArgs e)
-        {
-            QueryReturn qr = dp.QueryToServer(e.Argument.ToString());
-
-            e.Result = qr;
         }
 
         private void BgwGraphicsUpdater_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -219,14 +159,28 @@ namespace LosePanel.WPF
             LoadSettingsTab();
         }
 
+        /// <summary>
+        /// 加载设置选项卡
+        /// </summary>
         private void LoadSettingsTab()
         {
-            cmbDataProviders.ItemsSource = DataProviderManager.DataProviders;
-            cmbDataProviders.SelectedItem = DataProviderManager.CurrentDataProvider;
+            //清除原有元素
+            stpSettingItemsPanel.Children.Clear();
+            //加入“设置”标题
+            Label bigTitle=new Label();
+            bigTitle.Style = (Style)stpSettingItemsPanel.FindResource("TitleLabel");
+            bigTitle.Content = "设置";
+            stpSettingItemsPanel.Children.Add(bigTitle);
 
-            sldRefreshFrequency.Value = SettingsManager.RefreshFrequency.Value;
-
-            tgbIsSaveLog.IsChecked = SettingsManager.IsSaveLog.Value;
+            //对于每一个设置项
+            foreach (var v in settingsManager.Settings)
+            {
+                //初始化标题
+                Label title = new Label();
+                title.Style = (Style)stpSettingItemsPanel.FindResource("SecondaryLabel");
+                title.Content = v.Name;
+                stpSettingItemsPanel.Children.Add(title);
+            }
         }
 
         private void btnUpdateGraphics_Click(object sender, RoutedEventArgs e)
@@ -234,7 +188,7 @@ namespace LosePanel.WPF
             //更新图表
             try
             {
-                bgwGraphicsUpdater.RunWorkerAsync(dp.GetPlayerNumbersOfDay((DateTime)dtpDatePicker.SelectedDate));
+                //bgwGraphicsUpdater.RunWorkerAsync(dp.GetPlayerNumbersOfDay((DateTime)dtpDatePicker.SelectedDate));
             }
             catch (Exception ex)
             {
@@ -246,56 +200,6 @@ namespace LosePanel.WPF
 
             LogApp("数据已更新。");
             ChangeStatus(StatusLevels.Fine, "已更新");
-        }
-
-        private void btnSaveSettings_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("若保存，将关闭软件，以待重启软件后生效。是否保存？", "信息", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
-            {
-                SettingsManager.SelectedDataProvider.Value = cmbDataProviders.SelectedItem.ToString();
-                SettingsManager.RefreshFrequency.Value = int.Parse(sldRefreshFrequency.Value.ToString());
-                SettingsManager.IsSaveLog.Value = tgbIsSaveLog.IsChecked == true ? true : false;
-
-                Application.Current.Shutdown(); 
-            }
-        }
-
-        private void btnQueryCommand_Click(object sender, RoutedEventArgs e)
-        {
-            txbTerminal.Text = txbTerminal.Text + "   >\t" + txbInputTerminal.Text + "\n";
-            txbInputTerminal.Text = "";
-            bgwCommandQueryer.RunWorkerAsync(txbInputTerminal.Text);
-        }
-
-        private void txbInputTerminal_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Enter)
-            {
-                btnQueryCommand_Click(sender, e);
-            }
-        }
-
-        private void txbInputTerminal_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (txbInputTerminal.Text != "")
-            {
-                popCodeTip.IsOpen = false;
-                popCodeTip.IsOpen = true;
-            }
-            else
-            {
-                popCodeTip.IsOpen = false;
-            }
-        }
-
-        private void txbInputTerminal_LostFocus(object sender, RoutedEventArgs e)
-        {
-            popCodeTip.IsOpen = false;
-        }
-
-        private void lsbCodeTipList_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            txbInputTerminal.Text = lsbCodeTipList.SelectedItem.ToString();
         }
     }
 }

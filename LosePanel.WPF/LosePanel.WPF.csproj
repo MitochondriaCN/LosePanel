@@ -62,7 +62,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>Image\aumq2-w48sn-001.ico</ApplicationIcon>
@@ -118,6 +118,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataSystem\Setting.cs" />
+    <Compile Include="DataSystem\SettingsManager.cs" />
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -148,17 +150,18 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\Noto_Serif_SC\NotoSerifSC-Black.otf" />
+    <Resource Include="Resources\Noto_Serif_SC\NotoSerifSC-Bold.otf" />
+    <Resource Include="Resources\Noto_Serif_SC\NotoSerifSC-ExtraLight.otf" />
+    <Resource Include="Resources\Noto_Serif_SC\NotoSerifSC-Light.otf" />
+    <Resource Include="Resources\Noto_Serif_SC\NotoSerifSC-Medium.otf" />
+    <Resource Include="Resources\Noto_Serif_SC\NotoSerifSC-Regular.otf" />
+    <Resource Include="Resources\Noto_Serif_SC\NotoSerifSC-SemiBold.otf" />
     <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Bold.otf" />
     <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Heavy.otf" />
     <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Light.otf" />
     <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Medium.otf" />
     <Resource Include="Resources\PuHui\Alibaba-PuHuiTi-Regular.otf" />
-    <Resource Include="Resources\PingFang\PingFang Bold.ttf" />
-    <Resource Include="Resources\PingFang\PingFang ExtraLight.ttf" />
-    <Resource Include="Resources\PingFang\PingFang Heavy.ttf" />
-    <Resource Include="Resources\PingFang\PingFang Light.ttf" />
-    <Resource Include="Resources\PingFang\PingFang Medium.ttf" />
-    <Resource Include="Resources\PingFang\PingFang Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
